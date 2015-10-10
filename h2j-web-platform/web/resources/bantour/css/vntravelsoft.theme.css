@@ -1,0 +1,74 @@
+.question_support{
+    background-color: #00acee;
+    padding:15px ;
+    margin-bottom: 10px;
+    color:  #FFFFFF; 
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px; 
+    border-radius: 3px;
+}
+.question_support .UIFloatLeft{
+    width: 85%;
+}
+.contact_support{
+    border:#00acee 1px solid;
+    /*box-shadow: 1px 1px 1px #888888;*/
+    padding: 10px;
+    margin-bottom: 0.5em;
+
+}
+ul.PlancePanelHome li img, ul.TravelSuplierLogoPanel li.Items img{
+    opacity: 0.8;
+}
+
+ul.PlancePanelHome li img:hover,ul.TravelSuplierLogoPanel li.Items img:hover{
+    opacity: 1.0;
+}
+
+.sapo_gray{
+    color: #888888;
+}
+
+/*customer datalist*/
+.UILocationPath div{
+    border: none;
+}
+.UILocationPath ul li{
+    float:left;
+    font-size: 10px;
+}
+.UITables table thead tr th {
+    background: #00acee !important;
+    box-shadow: none;
+    text-shadow: none;
+    color: whitesmoke;
+}
+.UIMarginTop10px {
+    margin-top: 10px;
+}
+.UIColorRedBold{
+    background: yellow;
+    font-weight: bold;
+}
+#tblData tr.striped { background-color: #f0f8ff; }
+
+/* filter-table specific styling */
+#tblData td.alt { background-color: #ffc; background-color: rgba(255, 255, 0, 0.2); }
+#tblData { border-collapse: collapse; }
+#tblData th, td { padding: 5px; }
+#tblData th { border-bottom: 2px solid #999; background-color: #eee; vertical-align: bottom; }
+#tblData td { border-bottom: 1px solid #ccc; }
+
+.filter-table{
+    margin-top: 5px;
+}
+.filter-table input{
+    width: 50%;
+    padding: 3px;
+    border-radius: 3px;
+    border: 1px solid #A8A8A8;
+}
+.btnLoginSocial:hover{
+    opacity: 0.9;
+    cursor: pointer;
+}

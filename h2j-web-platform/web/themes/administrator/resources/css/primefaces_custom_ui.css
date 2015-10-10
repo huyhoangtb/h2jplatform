@@ -1,0 +1,505 @@
+/*chinh sua giao dien table*/
+.UITable {
+
+}
+div.UITableEdit .ui-state-highlight, div.UITableEdit .ui-widget-content .ui-state-highlight, div.UITableEdit .ui-widget-header .ui-state-highlight{
+background: none !important;
+padding: 0px 0px !important;
+border: 0;
+}
+.UITable table td, .UITable table th{
+    vertical-align: middle;
+}
+.UITable:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.UITable {
+
+
+}
+.UITable  th{
+    vertical-align: middle;
+    padding: 4px 5px;
+}
+
+.UITable  tr td{
+    border-color: #cccccc;
+    cursor: default;
+    vertical-align: middle;
+    padding: 4px 5px;
+}
+.UITableCenter  tr td .ui-cell-editor-input{
+    text-align: center;
+
+}
+.UITable tbody tr:hover {
+    background: #fdfdf4;
+
+}
+.UITable tbody tr[aria-selected="true"]{
+    background: #fefcca;
+    color: #000000;
+    text-shadow: none;
+
+}
+.UITable .ui-paginator-bottom{
+    float: right;
+    margin-top: 0.1em;
+    background:none;
+    border: none;
+}
+
+.UITable table thead tr th {
+    background: #1ea2d3 !important;
+    box-shadow: none;
+    text-shadow: none;
+}
+.UITable table thead tr th, .UITable table thead tr th span{
+    color: #ffffff;
+}
+/*Ket thuc chinh sua giao dien table*/
+
+.ui-state-default {
+    text-shadow: none;
+    height: 2.5em;
+}
+.ui-widget-header .ui-inputfield, .ui-widget-content .ui-inputfield {
+    height: 2.5em;
+}
+.ui-widget-header {
+    background-color: #e8e3e3;
+
+}
+
+.ui-selectcheckboxmenu .ui-selectcheckboxmenu-label {
+    height: 2.5em;
+    padding-top: 5px;
+}
+.ui-button-text-only .ui-button-text {
+    padding-top: 0.5em;
+    height: 2.5em;
+}
+.ui-button-text-icon-left .ui-button-text {
+    padding-top: 0.5em;
+}
+.ui-spinner-button {
+    height: 1.3em;
+}
+.ui-paginator .ui-paginator-page, .ui-paginator .ui-paginator-pages, .ui-paginator .ui-paginator-next, .ui-paginator .ui-paginator-last, .ui-paginator .ui-paginator-first, .ui-paginator .ui-paginator-prev, .ui-paginator .ui-paginator-current {
+    padding: 6px;
+}
+.ui-selectonemenu .ui-selectonemenu-trigger .ui-icon {
+    padding-top: 4px;
+}
+.ui-selectonemenu .ui-selectonemenu-label {
+    height: 2.35em;
+    padding-top: 6px;
+}
+/*button.ui-button {
+    background: url('../images/button_bg_default.gif') repeat-x !important;
+    background-color: #1ea2d3;
+    color: #ffffff !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    border: 1px solid #cccccc !important;
+}
+button.ui-button:hover {
+    background: url('../images/bg_button_1_bg_hover.gif') repeat-x;
+    background-color: #1ea2d3;
+}*/
+
+
+
+.ui-spinner-input {
+    padding-right: 1.4em !important;
+}
+.UIBGWhite {
+    background-color: #FFFFFF !important;
+}
+.UITabPanel {
+    border: medium none;
+    background-color: #ecf0f5;
+}
+.UITabPanel ul[role="tablist"] li.ui-tabs-selected a{
+    font-weight: bold;
+
+}
+.UITabPanel ul[role="tablist"] li.ui-tabs-selected[ role="tab"] {
+    background: none repeat scroll 0 0 #f7f8fb !important;
+
+}
+.UITabPanel ul[role="tablist"] li[ role="tab"]:hover{ 
+    box-shadow: none !important;
+  }  
+.UITabPanel ul[role="tablist"] li[ role="tab"]{
+    
+background: -moz-linear-gradient(center top , rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)) repeat scroll 0 0 #F0F0F0 !important;;
+    font-weight: normal;
+}
+.UITabPanel ul[role="tablist"]{
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border-bottom: 1px solid #D4D4D4;
+    padding: 0 !important;
+}
+
+.UITabPanel div[role="tabpanel"]{
+    border: medium none;
+    padding: 1em 0em;
+}
+.UITabProduction ul[role="tablist"] li[ role="tab"] a{
+    padding: 0.5em !important;
+    text-shadow: none !important;
+
+}
+
+.UIAutoComplate {
+
+}
+
+.UIAutoComplate input{
+    border:none;
+}
+
+.UITreeCustom {
+    min-height: 33em;
+    background-color: #ecf0f5;
+}
+.UITreeCustom .ui-tree-container{
+    min-height: 33em;
+    background-color: #ecf0f5;
+}
+
+.UIFieldsetSpace {
+    margin-bottom: 1em;
+    background-color: #ecf0f5;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-radius: 0;
+    padding: 0;
+}
+.UIFieldsetSpace .ui-fieldset-content{
+    margin-top: 0.8em;
+}
+
+.UIFieldsetSpace legend.ui-fieldset-legend {
+    padding: 0.3em 1em;
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0 ;
+}
+
+.UIFieldsetUser {
+    margin-bottom: 1em;
+    background-color: #ecf0f5;
+    width: 49em;
+}
+.UIFieldsetUser legend.ui-fieldset-legend {
+    padding: 0.3em 1em;
+    background: -moz-linear-gradient(center top , rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)) repeat scroll 0 0 #F0F0F0 !important;;
+}
+
+.UIBackEndPanel {
+    padding: 0px;
+    border: none;
+    background-color: #ecf0f5;
+}
+.UIBackEndPanel .ui-panel-titlebar{
+    background-color: #f1f1f0;
+    border: 1px solid #e9e7e7;
+}
+
+.UISelectOneButton {
+    background: url('../images/button_bg_default.gif') repeat-x !important;
+    border: 0 !important;
+    padding: 0px;
+
+}
+
+.UISelectOneButton .ui-button{
+    border: none;
+    height: 2em;
+    padding-top: 0.2em;
+}
+.UISelectOneButton .ui-state-active{
+    background: url('../images/bg_button_1_bg_hover.gif') repeat-x !important;
+}
+
+.UIBorderButtomA8A8A8 {
+    border-bottom: 1px solid #A8A8A8;
+    padding-bottom: 1em;
+}
+.UIBorderButtomCCCCC {
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 0.3em;
+}
+
+.UIFileUploadImg4Deputy {
+    position: relative;
+}
+.UIFileUploadImg4Deputy .ImagePanel{
+    padding: 0.1em;
+    max-height: 15em;
+    max-width: 14em;
+    border: 1px solid #D4D4D4;
+    background-color: #ffffff;
+    margin-bottom: 0.2em;
+}
+.UIFileUploadImg4Deputy .ImagePanel img{
+    max-height: 15em;
+    max-width: 14em;
+
+}
+.UIFileUploadImg4Deputy .ui-messages-error{
+    position: absolute;
+
+}
+.UIFileUploadImg4Deputy .ui-fileupload-buttonbar{
+    padding: 0;
+}
+.UIFileUploadImg4Deputy .ui-widget-header{
+    background: none;
+    border: 0;
+}
+.UIFileUploadImg4Deputy .ui-widget-content{
+    border: 0;
+}
+.UIFileUploadImg4Deputy .ui-fileupload-content{
+    padding: 0;
+}
+
+.UIFileUploadImg4Deputy table.ui-fileupload-files{
+    display: none;
+}
+
+.UIAutoCompleteTSelPlance {
+    width: 60em;
+}
+.UIAutoCompleteTSelPlance .ui-autocomplete-multiple-container{
+    width: auto !important;
+}
+
+.UIAutoCompleteTSelPlance input{
+    border:none;
+    height: 1.3em;
+}
+
+.UIScheduleCustom {
+
+
+}
+
+.UIScheduleCustom div.fc-view-month {
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
+
+}
+.UIScheduleCustom table.fc-border-separate th{
+    border-color: #D8D8D8;
+}
+.UIScheduleCustom table.fc-border-separate td{
+    border-color: #D8D8D8;
+}
+.UIScheduleCustom table.fc-border-separate .fc-day-header{
+    padding: 0.5em ;
+}
+.UIPrivateTourTable tr td.UICelPanel {
+    padding: 0 !important;
+    border:  0 !important;
+}
+.UICelPanel .UITable table[role="grid"] thead tr th{
+    padding: 0 !important;
+    border: 0 !important;
+}
+.UITableNoheader table[role="grid"] thead tr th{
+    padding: 0 !important;
+    border: 0 !important;
+}
+
+.UICelPanel table .ui-widget-content {
+    border: none !important;
+}
+.UICelPanel table tbody tr td:last-child {
+    border-right: none !important;
+}
+.UICelPanel table tbody tr:first-child td {
+    border-top: none !important;
+}
+.UICelPanel table tbody tr:last-child td{
+    border-bottom: none !important;
+}
+.UIHeaderTableAsDiv {
+    background-color: #1EA2D3;
+    color: #ffffff;
+    font-weight: bold;
+    width: 100%;
+     /*border: 1px solid #CCCCCC;*/
+}
+
+.UIHeaderTableAsDiv .Cell{
+     padding: 4px 5px !important;
+}
+.UIHeaderTableAsDiv .CellBR{
+     border-right: 1px solid #CCCCCC;
+      padding: 4px 5px !important;
+}
+.UIHeaderTableAsDiv .First{
+     border-left: 1px solid #CCCCCC;
+}
+.UIHeaderTableAsDiv .CellPanel .Cell{
+     padding: 0 !important;
+      border: 0 none  !important;
+     
+}
+.UIHeaderTableAsDiv .CellPanel .Cell .Cell{
+     border-right: 1px solid #CCCCCC;
+      padding: 4px 5px !important;
+     
+}
+.UIHeaderTableAsDiv .CellPanel .Cell .Cell:last-child{
+      padding: 4px 5px !important;
+     
+}
+div.UIBorderButtomCCCCCC {
+     border-bottom: 1px solid #CCCCCC !important;
+}
+.UIHeaderTableAsDiv .CellPanel .Cell{
+     padding: 0 !important;
+      
+       border-top: 1px solid #CCCCCC;
+      border-right: 1px solid #CCCCCC;
+}
+.UImargin4px5px {
+    margin: 4px 5px !important;
+}
+.UIHeaderTableAsDiv .CellPanel{
+     padding: 0 !important;
+      margin: 4px 5px !important;
+       border-top: 1px solid #CCCCCC;
+      border-right: 1px solid #CCCCCC;
+}
+.UIHeaderTableAsDiv .Cell{
+    border-right: 1px solid #CCCCCC;
+    border-top: 1px solid #CCCCCC;
+     padding: 4px 5px !important;
+}
+
+.UIDivCelPanel {
+    display:table;
+}
+.UIDivCelPanel .UIcell{
+    display:table-cell; 
+    vertical-align:middle;
+    padding: 0.2em !important;
+}
+
+.UIPrivateTourTable tr td  {
+     padding: 0.25em !important;
+}
+
+.DiaglogNoHeader .ui-widget-header {
+    height: 0;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+.DiaglogNoHeader .ui-dialog-content {
+    min-width: 15.5em;
+}
+.UITourSchedule {
+    
+}
+.UITourSchedule .fc-event-inner .fc-event-time{
+    display: none;
+}
+.UITourSchedule .fc-event-inner{
+    cursor:  pointer;
+}
+
+.UIPrimePanel {
+    padding: 5px;
+    border: 1px solid #DBD9D9;
+    margin: 5px 0px;
+    border-radius: 0;
+}
+
+.UIPrimePanel .ui-panel-titlebar {
+    background: #47ADFE;
+    color: #ffffff;
+    text-shadow: none;
+    border: 0;
+    padding: 0.5em 1em;
+}
+.UIPrimePanel .ui-panel-content {
+    padding: 0.8em 0em;
+}
+
+
+.UITourDetailPro {
+   
+}
+.UITourDetailPro .UIDayHeader{
+    font-weight: bold;
+    margin: 0.2em 0em;
+}
+.UITourDetailPro .UIDayHeader .DayTit{
+    text-transform: uppercase;
+}
+.UITourDetailPro .DayContent div.img{
+    margin-right: 1em;
+    padding: 0.2em;
+    border: medium none #C2C2C2;
+    box-shadow: 0 1px 5px #C2C2C2;
+}
+.UITourDetailPro .DayContent {
+     margin-bottom: 0.5em;
+}
+.UITourDetailPro .DayContent div.img img{
+
+    max-width: 150px;
+}
+.UITourDetailPro .DayContent div.info {
+    width: 515px;
+    text-align: justify;
+}
+
+.ui-selectonemenu .ui-selectonemenu-trigger {
+    padding: 1px;
+    width: 20px;
+}
+.ui-selectcheckboxmenu .ui-selectcheckboxmenu-trigger {
+       padding: 0px; 
+       width: 1.3em;
+}
+ .ui-widget textarea
+ {
+     height: auto !important;
+}
+.UICustomTab4MoreAction ul[role="tablist"] {
+    margin: auto !important;
+    max-width: 1200px !important;
+    min-width: 1000px !important;
+}
+.UIListDefault ul.ui-datalist-data{
+    list-style: none;
+    padding: 0.2em 0.2em 0.2em 0.5em;
+    
+}
+.UIDefaultSelectOneMenu {
+    height: 25px;
+    padding-top: 0.2em;
+    margin-top: 0.2em;
+    
+}
+.ui-bookingservices input{ 
+width: 21.6em;
+}
+.ui-date-room-services input{
+    width: 6.9em;
+}

@@ -1,0 +1,598 @@
+body {
+    background-color: #f6f6f6;
+    border: 0 none;
+    font: 12px/18px Arial,Tahoma,Helvetica,sans-serif;
+    height: 100%;
+    margin: 0;
+    min-width: 1000px;
+    outline: 0 none;
+    padding: 0;
+}
+.UIThemesPanel {
+    min-width: 1000px;
+    margin:auto 10px auto 20px;
+    padding:0;
+}
+ .UITableTTr {
+    display: table;
+}
+ .UITableTr {
+    display: table-row;
+}
+.UIMainThemesPanel {
+
+}
+
+.UIColumn01 {
+    width: 3%;
+    overflow: hidden;
+}
+.UIColumn02 {
+    width: 7%;
+    overflow: hidden;
+}
+.UIColumnContent {
+    width: 90%;
+    overflow: hidden;
+}
+.UIColumnPriceAbount {
+    width: 36%;
+    overflow: hidden;
+}
+.UIColumnPriceAbount .UIColumnPriceItem {
+    /*width: 21.5% ;*/
+    width: 25%;
+    overflow: hidden;
+}
+.UIColumnPriceItem {
+    width: 9%;
+    overflow: hidden;
+}
+
+div.UIsubcell {
+    display: table-cell;
+    padding: 0em !important;
+    vertical-align: middle;
+}
+.UIColumnCusAbount {
+    width: 10%;
+    overflow: hidden;
+}
+
+.UITopThemePanelBg1ea2d3 {
+
+    /*padding: 2em;*/
+/*    border-radius: 0.3em;*/
+    margin: 0.5em 0em 0em 0em;
+    padding: 1em  0.5em 0em  0.5em;
+}
+.UISearchBePanel {
+
+    padding: 0px;
+    margin: auto;
+    /*padding: 1.5em 0em;*/
+}
+.UISearchBePanel .UISBePanelContent {
+
+    border-radius: 0.5em;
+    min-height: 5em;
+    max-width: 950px;
+    padding: 0px;
+    margin: auto;
+}
+
+.UISearchBePanel .UIPanelHeader {
+    background: url(../images/search_panel_header.png) repeat-x;
+    padding: 0.4em 0.8em;
+    border-radius: 0.5em;
+    text-transform: uppercase;
+    color: #006699;
+    font-weight: bold;
+}
+.UISearchBePanel .UIPanelContent {
+    /*padding: 0.5em;*/
+}
+.UIRelativePanel {
+    position: relative;
+}
+.UIAbsolutePanel {
+    position: absolute;
+}
+.UIPossitionMoreMenu {
+    /*    top: 0;
+        left: 0;*/
+    height: 100%;
+    z-index: 800;
+    /*    width: 300px;
+    */
+
+}
+#organizationListId{
+    margin-left: 1.7em;
+}
+ #userDataListId{
+    margin-left: 2.2em;
+}
+.UIPossitionMoreMenu .ui-tree{
+    z-index: 9999999 !important;
+
+}
+.ui-contextmenu{
+    z-index: 99999999 !important;
+
+}
+.UIPossitionMoreMenu .UIMoreActionPanel{
+    background-color: #ecedee;
+    border: 1px solid #dbd9d9;
+
+    display: block;
+    overflow: hidden;
+    width: 336px;
+/*    height: 100%;*/
+
+}
+.UIPading0x2em {
+    padding: 0.2em;
+}
+.UIPossitionMoreMenu  .UIHeaderIconpanel {
+    padding: 0.5em 1em;
+    cursor: pointer;
+}
+.UIPossitionMoreMenu  .UIThanIcon{
+    background: url("../images/icon/moreMenu.png") repeat-x scroll 2em 0 rgba(0, 0, 0, 0);
+    height: 1em;
+    width: 2em;
+}
+.UIPossitionMoreMenu  .UILestIcon{
+    background: url(../images/icon/moreMenu.png) repeat-x;
+    height: 1em;
+    width: 2em;
+}
+.UIMinPanelContent {
+    padding: 0.2em;
+}
+.UIGroupMinPanel {
+    background-color: #ededed;
+    border-radius: 0.8em;
+    width: 38px;
+}
+.UIGroupMinPanel .UIheader {
+    background-color: #fc8106;
+    border-top-left-radius:  0.8em;
+    border-top-right-radius:  0.8em;
+    min-height: 2em;
+}
+.UIGroupMinPanel .UIcontent {
+    min-height: 5em;
+    border-bottom-left-radius: 0.8em;
+    border-bottom-right-radius: 0.8em;
+}
+.UIGroupMinPanel .UIcontent ul.UIMoreContentPage{
+    list-style: none;
+}
+.IConPanel {
+    padding: 0.1em;
+    margin-bottom: 0.2em;
+}
+.IConPanel a{
+    color: #111111;
+
+}
+.IConPanel a.active{
+    color: #006699;
+    font-weight: bold;
+
+}
+.IConPanel a:hover{
+    color: #ff9900;
+
+}
+.UIBorderButtom {
+    border-bottom: 1px dotted #cccccc;
+}
+.UIMainWebPanel {
+    min-height: 40em;
+
+}
+.UIWebFooter {
+    /*margin-top: 0.2em;*/
+    border-top: 1px solid #cccccc;
+    margin-bottom: 2em;
+}
+
+.UIDivCenter:before {
+    content: "";
+    display: inline-block;
+    height: 50em;
+    vertical-align: middle;
+}
+.UILoginPanel {
+    min-width: 950px;
+    max-width: 1200px;
+    margin:auto;
+    padding:30px 20px;
+
+}
+.UILoginPanel .UISearchBePanel{
+    width: 30em;
+
+}
+.UIMarginAuto{
+    margin: auto;
+    padding: 0;
+}
+.UIDivCenter .UIDivPanel {
+    display: inline-block;
+    font-weight: bold;
+    /*text-transform: uppercase;*/
+    vertical-align: middle;
+}
+
+.UILoginBgVnTravelSoft {
+    background: url('/resources/images/vntravelsoft/login_vntravelsoft_bg.png') top center no-repeat;
+    background-size: 200px;
+}
+
+.UIButtonClass {
+    border-radius: 0.3em;
+    background:-moz-linear-gradient( bottom , rgba(2, 89, 139, 0.9), rgba(0, 153, 212, 0)) repeat scroll 0 0 #0099d4;
+    color: #ffffff;
+    text-shadow: none;
+    border: 1px solid #016287;
+    box-shadow: 0 1px 1px #1ab9fc inset;
+}
+.ui-breadcrumb {
+    border-radius: 0;
+    background: #1EA2D3 !important;
+    border: none;
+    /*margin: 0.5em 0;*/
+    border-radius: 0.3em;
+    max-width: 1200px;
+    min-width:1000px;
+    margin: 0.5em auto 1em auto;
+    padding: 2px 5px 5px;
+}
+.ui-breadcrumb ul{
+
+}
+.ui-breadcrumb ul li a{
+    color: #ffffff;
+    text-shadow: none;
+}
+.ui-widget-header .ui-icon-home {
+    background: url('../images/icon/25px-Home_Icon.png') no-repeat left center;
+    width: 2em; height: 2em;
+
+}
+.ui-widget-header .ui-icon-triangle-1-e {
+    background: url('../images/icon/triangle-1-e.png') no-repeat left center;
+    width: 2em; height: 2em;
+
+}
+.ui-breadcrumb ul li .ui-menuitem-link {
+    margin-top: 0.4em;
+    color: #f0eeee;
+}
+.UIEditDiscountCus {
+    text-align: center;
+}
+.UIEditDiscountCus > div {
+    float: left;
+}
+.UIEditDiscountCus > div:after {
+    clear: left;
+}
+
+.UIInputEdit {
+    padding: 0 0.1em !important;
+    height: 1.5em !important;;
+}
+.UIInputMinu {
+    width: 1.5em;
+}
+
+UICategoryContent {
+    min-height: 350px;
+    position: relative;
+}
+
+.UIRightContentCate {
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 3px;
+    box-shadow: 1px 1px 5px #CFCECE;
+    /*min-height: 200px;*/
+    width: 20.5em;
+
+    height: 100%;
+    position: absolute;
+    /*right: -7px;*/
+    top: -1px;
+    width: 250px;
+}
+
+.UIRightContentCate .UIContentTree {
+    margin: 5px;
+}
+.UICategoryContentLeft {
+    margin: 0px 0 0 270px;
+    padding-bottom: 20px;
+    width: 720px;
+}
+.UIPanelMenuLeft {
+    width: 215px;
+}
+.UIMenuLeftPanel {
+    background: none !important;
+    border: 0 !important;
+    width: 100%;
+    padding: 0 !important;
+}
+.UIMenuLeftPanel .ui-state-hover {
+    background: none !important;
+    box-shadow: none !important;
+    font-weight: bold;
+}
+.uirighmenuactive {
+    font-weight: bold;
+}
+
+.TourServiceDataList {
+    border: 1px solid #EAEDE1;
+    background: #F9FFE1;
+    padding: 0.2em 0.5em;
+    margin-bottom: 1em;
+}
+.TourServiceDataList .ui-datalist-content{
+    border: none;
+    background: none;
+}
+
+.TourServiceDataList ul{
+    list-style: none;
+}
+.UILeftArticlepanel {
+    width: 220px;
+    background: none;
+    border:0;
+}
+.UILeftArticlepanel ul li.ui-menu:hover {
+    background: none;
+    font-weight: bold;
+}
+.ui-messages-close {
+    cursor: pointer;
+    float: right;
+}
+
+.UIConfirmTableOption td div.ui-chkbox{
+    margin: 2px 2px 3px 5px;
+}
+
+.UIGivenMoneyPanel {
+    border: 1px solid #eac202;
+    border-radius: 3px;
+    background-color: #1ab9fc;
+    margin: 5px 0px;
+}
+.UIGivenMoneyPanel .UILabel {
+    margin: 5px;
+    color: #ffffff;
+    font-weight: bold;
+}
+.UIBorderButtonCFCECE {
+    border-bottom: 1px solid #CFCECE;
+}
+.UIInvoiceHeaderPanel {
+
+    margin: 5px 0px;
+    padding: 5px 0px;
+}
+.UIInvoiceHeaderPanel .UICompanyInfoPanel {
+    width: 500px;
+    /*border-right: 1px solid #CFCECE;*/
+}
+.UIInvoiceHeaderPanel .UICompanyName {
+    text-transform: uppercase;
+    color: #006699;
+    font-weight: bold;
+}
+
+.UIReceiptTitle {
+    font-weight: bold;
+    font-size: 22px;
+    text-transform: uppercase;
+    padding: 20px 0px;
+    display: block;
+}
+.UIReceiptCacelTitle {
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: none;
+    display: block;
+    color: red;
+}
+input.UIInputPlanceNoBoder {
+    border:1px dotted #EAEDE1 !important;
+    height: 18px !important;
+    box-shadow: none !important;
+}
+.UILeftSingleReceiptPanel {
+    width: 340px;
+}
+.UIInvoiceAgentPanel {
+    width: 48%;
+}
+
+.UIInvoiceAgentInfor{
+    width: 310px;
+}
+.UIPriceInclude {
+    width: 48%;
+}
+.UIPriceNotInclude {
+    width: 48%;
+}
+.UIPriceInclude ul {
+    list-style:  none;
+}
+.UIPriceInclude ul li{
+    padding-left: 1.8em;
+    background: url('../images/icon/bullet_tick.png') no-repeat;
+    margin-bottom: 0.2em;
+}
+.UIPriceNotInclude ul {
+    list-style:  none;
+}
+.UIPriceNotInclude ul li{
+    padding-left: 1.8em;
+    margin-bottom: 0.2em;
+    background: url('../images/icon/bullet_minus.png') no-repeat;
+}
+.UIVisitIntroduce img {
+    max-width: 680px;
+}
+.UITourDetailBlock {
+    padding-bottom: 0.5em;
+}
+.UITourDetailBlock .UIHeader{
+    margin: 0.5em 0;
+    border-bottom: 1px solid #dbe2e2;
+    padding-bottom: 0.3em;
+}
+.UITourDetailBlock .UITitleHeader{
+    font-size: 17px;
+    font-weight: bold;
+    margin: 0.5em 0;
+}
+
+.UITourDetailPro {
+
+}
+.UITourDetailPro .UIDayHeader{
+    font-weight: bold;
+    margin: 0.2em 0em;
+}
+.UITourDetailPro .UIDayHeader .DayTit{
+    text-transform: uppercase;
+}
+.UITourDetailPro .DayContent div.img{
+    margin-right: 1em;
+    padding: 0.2em;
+    border: medium none #C2C2C2;
+    box-shadow: 0 1px 5px #C2C2C2;
+}
+.UITourDetailPro .DayContent {
+    margin-bottom: 0.5em;
+}
+.UITourDetailPro .DayContent div.img img{
+    max-width: 150px;
+}
+.UITourDetailPro .DayContent div.info {
+    width: auto !important;
+    text-align: justify;
+    max-width: 770px;
+    float: left;
+}
+.ui-autocomplete-multiple input[type="text"], input[type="password"] {
+    height: auto;
+}
+.UINewOrder {
+    background: url('../images/new_order.png')  no-repeat   left bottom ; 
+    background-size: 30px 10px;
+}
+.UIWaitingOperatorConfirm {
+    background: url('../images/waiting_operator_confirm.png')  no-repeat   right bottom ; 
+    background-size: 20px 20px;
+}
+.UIWaitingOperatorApprove {
+    background: url('../images/operator_ok.png')  no-repeat   right bottom ; 
+    background-size: 20px 20px;
+}
+.UIWaitingOperatorReject {
+    background: url('../images/operator_reject.png')  no-repeat   right bottom ; 
+    background-size: 20px 20px;
+}
+.UIDocumentEdit {
+    background: url('/resources/images/document_edit.png')  no-repeat   center center ; 
+    background-size: 20px 20px;
+    width: 22px;
+    height: 22px;
+    display: block;
+}
+
+.staff-icon-panel .edit-profile-icon{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    
+    background-color: #C2C2C2;
+    opacity: 0.8;
+    width: 100%;
+}
+.staff-icon-panel .edit-profile-icon img {
+      width: 20px !important;
+}
+.staff-icon-panel:hover .edit-profile-icon{
+    display: block;
+}
+.staff-icon-panel {
+    width: 202px;
+    margin-top: 10px;
+    background-color: #ffffff;
+    position: relative;
+    border: 1px solid #cccccc;
+}
+.staff-icon-panel img{
+    width: 200px;
+}
+
+.UISelectOneMenuTable label{
+    padding: 0 0.5em 0 0.5em;
+}
+.staff-icon-panel .edit-profile-icon{
+    display: none;
+    padding: 2px 0px 0px 0px;
+}
+.ui-custom-row .ui-grid-row h1{
+    border-bottom: 1px solid #cccccc;
+    margin-bottom: 5px;
+    line-height: 25px;
+    font-size: 15px;
+}
+.ui-custom-row .ui-grid-row{
+    line-height: 20px;
+    border-bottom: 1px solid #cccccc;
+    line-height: 25px;
+    padding: 5px 0;
+}
+.ui-custom-row .ui-grid-row:last-child{ 
+    border-bottom: none;
+}
+.cropperImgPanel img{
+/*    width: 400px;*/
+}
+
+.ui-cuscomt-attach-avatar {
+    position: relative;
+    margin: 0 1em 1em 0;
+}
+
+.ui-cuscomt-attach-avatar .ui-fileupload-choose{
+ border: none;
+ background: none;
+ box-shadow: none;
+}
+.ui-cuscomt-attach-avatar .ui-fileupload-content{
+     border: 1px solid #a8a8a8;
+}
+.ui-cuscomt-attach-avatar .ui-widget-header {
+    border: none;
+    position: absolute;
+    bottom: 33px;
+    left: 0;
+    
+}
+.ui-cuscomt-attach-avatar .ui-fileupload-content{
+    height: 200px;
+}

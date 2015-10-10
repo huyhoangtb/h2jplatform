@@ -1,0 +1,39 @@
+.UICustomMenuClass {
+    background: none;
+    border: none;
+}
+.UICustomMenuClass >ul>li{
+    background: url('../images/menu_space.png') right center no-repeat;
+
+}
+.UICustomMenuClass >ul>li a{
+    color: #ffffff;
+    font-weight: bold !important;
+    padding: 0.4em 0.6em !important;
+
+}
+.UICustomMenuClass >ul>li a.ui-state-hover{
+    background: none;
+    box-shadow: none;
+    color: #fdfed9;
+}
+.UICustomMenuClass >ul>li  ul{
+    background: #ffffff !important;
+    border: none;
+    color: #111111  !important;
+}
+.UICustomMenuClass >ul>li  ul a{
+    color: #111111  !important;
+    font-weight: normal !important;;
+    padding: 0.4em 0.3em  !important;
+
+}
+.UICustomMenuClass >ul>li  ul a:hover{
+    color: #e4b203  !important;
+    font-weight: normal !important;;
+    padding: 0.4em 0.3em  !important;
+
+}
+.UICustomMenuClass {
+
+}

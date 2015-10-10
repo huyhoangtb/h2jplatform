@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h2j="http://xmlns.jcp.org/jsf/composite/h2j">
+
+    <composite:interface> 
+    </composite:interface>
+    <composite:implementation>
+        <div class="BoxSearch">
+            <div class="UIMarginBottom3px">
+                <div class="UIFloatLeft ">
+                    <p:outputLabel value="Tên NCC"/>
+                    <p:inputText value="#{orgPartnerController.orgSearchDto.orgName}"/>
+                </div>
+                <div class="UIClearLeft"><span></span></div>
+                <div class="UIFloatLeft ">
+                    <p:outputLabel value="Quốc gia"/>
+                    <p:selectOneMenu id="nationalId" style="width: 160px" converter="locationConverter"
+                                     value="#{orgPartnerController.locationComObj.nationalSelected}">  
+                        <f:selectItems value="#{orgPartnerController.locationComObj.nationalDefault}" />  
+                        <p:ajax process="@this" event="change"  immediate="true"
+                                update="UIProvinceListBoxId "/>
+                    </p:selectOneMenu> 
+                </div>
+                <div class="UIFloatLeft ">
+                    <p:outputLabel value="Tỉnh/ Thành phố"/>
+                    <p:selectOneMenu value="#{orgPartnerController.locationComObj.provinceSelected}"  style="width: 160px"
+                                     id="UIProvinceListBoxId" converter="locationConverter">  
+                        <f:selectItems value="#{orgPartnerController.locationComObj.province4Change}" />  
+
+                    </p:selectOneMenu>
+                </div>
+                <div class="UIClearLeft"><span></span></div>
+                <div class="UIFloatLeft ">
+                    <p:outputLabel value="Độ tin cậy"/>
+                    <p:selectOneMenu  style="width: 200px" value="#{orgPartnerController.orgSearchDto.trustType}">  
+                        <f:selectItem itemLabel="----Chọn----"/>  
+                        <f:selectItem itemLabel="Đã xác thực" itemValue="1"/>  
+                        <f:selectItem itemLabel="Chưa xác thực" itemValue="2"/>  
+                    </p:selectOneMenu> 
+                    <div class="UIClearLeft"><span></span></div>
+                </div>
+                <div class="UIClearLeft"><span></span> </div>
+                <p:commandButton value="Tìm kiếm" actionListener="#{orgPartnerController.searchOrgDto}" icon="ui-icon-disk" 
+                                 ajax="true" update=":frmOrgDataTable:orgDataTable"/>
+<!--                <p:commandButton value="Tìm kiếm" actionListener="#{orgPartnerController.saveInfo}" icon="ui-icon-disk" 
+                                 update=":frmOrgDataTable:orgDataTable"/>-->
+            </div>
+        </div>
+    </composite:implementation>
+</html>

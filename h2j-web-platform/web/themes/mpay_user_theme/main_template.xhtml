@@ -1,0 +1,261 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html 
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://xmlns.jcp.org/jsf/html"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+    xmlns:h2jView="http://xmlns.jcp.org/jsf/composite/h2j/views"
+    xmlns:f="http://xmlns.jcp.org/jsf/core"
+    xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+    prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+    <f:view contentType="text/html"> 
+        <h:head >
+            <f:facet name="middle">
+                <ui:insert name="canonical"/>
+                <meta content="width=device-width" name="viewport"></meta>
+                <ui:insert name="title"/>
+                <ui:insert name="HeaderMeta"/>
+                <link rel="stylesheet" type="text/css" href="${facesContext.externalContext.requestContextPath}/resources/bantour/css/theme.include.css"></link> 
+            </f:facet>
+
+            <ui:insert name="scriptCss"/>
+            <ui:insert name="scriptJS"/>
+            <script type="text/javascript" src="${facesContext.externalContext.requestContextPath}/resources/bantour/js/jquery.filtertable.min.js"></script> 
+            <script type="text/javascript" src="${facesContext.externalContext.requestContextPath}/resources/bantour/js/h2j.themes.home.js"></script> 
+            <ui:insert name="f-param"/>
+            <link href="${facesContext.externalContext.requestContextPath}/resources/bantour/images/bookingtour_icon.ico" rel="Shortcut Icon" />
+
+
+        </h:head> 
+        <h:body>
+            <div class="UITopMenu">
+                <div class="TopMenuPanel">
+                    <div class="UIFloatLeft UIHotlineTop">
+                        <h:form rendered="#{authenticationController.human ne null}">
+                            Xin chào: #{authenticationController.human.fullName}
+                            <p:commandLink action="#{authenticationController.logout}" value="(Logout)" ajax="false">
+                            </p:commandLink>
+                        </h:form>
+                    </div>
+                    <div class="UIFloatRight">
+                        <ul class="MenuPanel">
+                            <li class="items">
+                                <h:outputLink>
+                                    <h:outputText value="Tuyển dụng" />
+                                </h:outputLink>
+                            </li>
+                            <li class="items">
+                                <h:outputLink>
+                                    <h:outputText value="Góp ý" />
+                                </h:outputLink>
+                            </li>
+                            <li class="items">
+                                <h:outputLink>
+                                    <h:outputText value="Liên hệ với chúng tôi" />
+                                </h:outputLink>
+                            </li>
+
+                            <li class=" itemLanguagle">
+                                <h:form>
+                                    <h2jView:selectSiteLanguagle/>
+                                </h:form>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="UIClearBoth"><span></span></div>
+                </div>
+            </div>
+
+
+            <div class="UIVNtravelsoftBanner ">
+                <div class="UIFloatLeft">
+                    <a class="VNtravelsoftLogo" href="/">
+                        <p:graphicImage value="${facesContext.externalContext.requestContextPath}/resources/images/logo_mpay_2.png"
+                                        height="70px"/>
+                    </a>
+
+                </div>
+                <div class="UIFloatLeft">
+                </div>
+                <div class="UIFloatRight ">
+                    <h:form>
+                        <div class="UIFloatLeft">
+                            <ul class="UIRegisterPanel">
+
+                                <li class="items Hotline">
+                                    +84 46 6868 378
+                                </li>
+                                <c:if test="#{authenticationController.human eq null}">
+                                    <li class="items">
+                                        <a  href="/web-app/login.h2j"  >
+                                            Đăng nhập
+                                        </a>
+                                    </li>
+                                </c:if>
+
+                                <c:if test="#{authenticationController.human ne null}">
+                                    <li class="items">
+                                        <p:commandLink action="bookingtour_account_info" value="#{rsBookingtour['infomation']}" ajax="false">
+                                        </p:commandLink>
+                                    </li>
+                                </c:if>
+                            </ul>
+
+                        </div>
+
+                        <div class="UIClearLeft"><span></span></div>
+                    </h:form>
+                </div>
+                <div class="UIClearBoth"><span></span></div>
+            </div>
+
+            <div class="UIMainMenu">
+                <div class="UIMainMenuPanel">
+                    <div class="UIMainMenuContentPanel TopMenuPanel clearfix">
+                        <h2jView:mpayUserMenu/>
+                    </div>
+
+                </div>
+            </div>
+            <div class="UIMainPagePortal">
+                <div class="UIMainContentPage UIPorttalContent">
+                    <!--<div class="clearfix"><span></span></div>-->
+                    <div style="min-height: 350px">
+
+                    </div>
+                    <ui:insert name="UIMainContentPage">
+
+                    </ui:insert>
+                    <div class=" clearfix UIMenuFooterPanel">
+                        <div class="UIFloatLeft  ">
+
+                            <ul class="Panel">
+                                <li  class="items ">
+                                    <a href="/" > <span>  Trang chủ </span></a>
+                                </li>
+                                <ui:repeat value="#{menuViewerController.linkMenuBottomMenu}" var="menuBottom">
+                                    <li class="items ">
+                                        <h:outputLink value="#{menuBottom.toViewUrl}">
+                                            <h:outputText value="#{menuBottom.menuName4Lang}" />
+                                        </h:outputLink>
+                                    </li>
+                                </ui:repeat>
+
+
+                            </ul>
+                        </div>
+                        <div class="UIFloatRight SocialNetwork">
+                            <ul class="Panels">
+
+                                <li class="itemsLabel"> <div class="UIPaddingTop0a3em">Chúng tôi trên: </div>
+                                </li>
+
+                                <li class="items "><a href="https://plus.google.com/u/0/107412640310010432993/posts" target="_blank"><img src="/resources/images/social_network/google-plus-icon.png"/></a>
+                                </li>
+                                <li class="items "><a href="https://twitter.com/BookingtourVn" target="_blank"><img src="/resources/images/social_network/Twitter.png"/></a>
+                                </li>
+                                <li class="items "><a href="http://facebook.com/bookingtour.vn" target="_blank"><img src="/resources/images/social_network/Facebook-icon.png"/></a>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                        <div class="UIClearBoth"><span></span></div>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="UIFooterPanel">
+                <div class="UIFooterPanelContent UIMainPagePortal ">
+                    <div class="UIPorttalContent">
+                        <div class="UIFloatLeft">
+                            <ul class="CompanyInfo">
+                                <li class="UIItems">
+                                    <span class="CompanyName">Hệ thống thanh toán tiền học phí - Unet System</span>
+                                </li>
+                                <li class="UIItems">
+                                    <span class="UIFontBold ">Địa chỉ:</span>
+                                    <span>Tầng 6 - Tòa nhà Sudico HH3 KĐT Mỹ Đình Mễ Trì - Hà Nội </span>
+                                </li>
+                                <li class="UIItems">
+                                    <span class="UIFontBold ">Email:</span>
+                                    <span> 
+                                        <a href="mailto:info@bookingtour.vn">info@bookingtour.vn</a>  
+                                    </span>
+                                </li>
+                                <li class="UIItems">
+                                    <span class="UIFontBold ">Website:</span>
+                                    <span> 
+                                        <a href=" http://bookingtour.vn"> http://bookingtour.vn</a> 
+                                    </span>
+                                </li>
+                                <li class="UIItems">
+                                    <span class="UIFontBold ">Liên hệ:</span>
+                                    <span>  CSKH - 04 6 6868 378 </span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="UIFloatLeft">
+                            <ul class="CompanyJob">
+                                <li class="UIItems">
+                                    <span class="CompanyName">Sản phẩm &amp; dịch vụ của chúng tôi</span>
+                                </li>
+                                <li class="UIItems">
+                                    <span>- Thanh toán học phí</span>
+                                </li>
+                                <li class="UIItems">
+                                    <span>- Xem lịch sử đóng học phí của con em</span>
+                                </li>
+
+                            </ul>
+                        </div>
+                        <div class="UIFloatLeft">
+                            <ul class="CompanyService">
+                                <li class="UIItems">
+                                    <span class="CompanyName">Dịch vụ khác</span>
+                                </li>
+                                <li class="UIItems">
+                                    <span>- Liên hệ với chúng tôi</span>
+                                </li>
+                                <li class="UIItems">
+                                    <span>- Góp ý</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="UIClearLeft"><span></span></div>
+
+                        <div class="SubMenuSpace01"> <span></span>  </div>
+                        <div class="SubMenuSpace02"> <span></span>  </div>
+                        <div>
+                            <div class="UIFloatLeft"><span>Copyright © 2014-2015  HOORAYSOFT., jsc All rights reserved.</span></div>
+                            <div class="UIFloatRight"><span></span></div>
+                            <div class="UIClearBoth"><span></span></div>
+                        </div>
+                    </div>
+
+                    <!--                </div>
+                                </div>-->
+
+                    <p:ajaxStatus  style="width:17.42em; height: 1.2em;position:fixed;right:5px;bottom:5px">  
+                        <f:facet name="start">  
+                            <p:graphicImage value="${facesContext.externalContext.requestContextPath}/themes/admin/resources/images/ajaxloadingbar.gif" />  
+
+                        </f:facet>  
+
+                        <f:facet name="complete">  
+                            <h:outputText value="" />  
+                        </f:facet>  
+                    </p:ajaxStatus>  
+                    <p:growl showDetail="false" life="20000" autoUpdate="true" globalOnly="true" /> 
+                </div>
+            </div>
+        </h:body>
+    </f:view>
+</html>
+

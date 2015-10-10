@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <composite:interface> 
+        <composite:attribute name="metaUrl"  />
+        <composite:attribute name="metaTitle"  />
+        <composite:attribute name="metaKeyword"  />
+        <composite:attribute name="metaDes"  />
+<composite:attribute name="styleClassPanel"  />
+    </composite:interface>
+    <composite:implementation>
+<!--UIRightContent-->
+        <div class="UIPanelTable #{cc.attrs.styleClassPanel}">
+            <div class="UILabelPanel UIFloatLeft UIWidth15em">
+                <h:outputText value="URL thân thiện" />
+            </div>
+            <div class=" UIFloatLeft ">
+                <p:inputText size="60" value="#{cc.attrs.metaUrl}" />
+            </div>
+            <div class="UIClearLeft"><span></span></div>
+        </div>
+        <div class="UIPanelTable #{cc.attrs.styleClassPanel}">
+            <div class="UILabelPanel UIFloatLeft UIWidth15em">
+                <h:outputText value="Tiêu đề trang" />
+            </div>
+            <div class=" UIFloatLeft ">
+                <p:inputText size="60" value="#{cc.attrs.metaTitle}" maxlength="67" 
+                             placeholder="Tiêu đề trang tối ứu dưới 67 ký tự!"/>
+            </div>
+            <div class="UIClearLeft"><span></span></div>
+        </div>
+        <div class="UIPanelTable #{cc.attrs.styleClassPanel}">
+            <div class="UILabelPanel UIFloatLeft UIWidth15em">
+                <h:outputText value="Thẻ keyword trang" />
+            </div>
+            <div class=" UIFloatLeft ">
+                <p:inputTextarea  value="#{cc.attrs.metaKeyword}" maxlength="200"
+
+                                  counterTemplate="Còn {0} ký tự." counter="counter2"
+                                  autoResize="false" rows="3" cols="57"
+                                  placeholder="Thẻ keyword thường chỉ lên chứa khoảng 5 từ khóa; Yêu cầu số lượng ký tự dưới 200"/>
+                <div><h:outputText style="color: #cccccc" id="counter2" /> </div>
+            </div>
+            <div class="UIClearLeft"><span></span></div>
+        </div>
+
+        <div class="UIPanelTable #{cc.attrs.styleClassPanel}">
+            <div class="UILabelPanel UIFloatLeft UIWidth15em">
+                <h:outputText value="Thẻ mô tả trang" />
+            </div>
+            <div class=" UIFloatLeft ">
+                <p:inputTextarea  value="#{cc.attrs.metaDes}" maxlength="160"
+                                  counterTemplate="Còn {0} ký tự." counter="counter3"
+                                  autoResize="false" rows="3" cols="57"
+                                  placeholder="Thẻ mô tả trang sẽ được xuất hiện khi người dùng tìm kiếm trên google. Theo quy định hiện tại của google; bạn chỉ lên đặt tối đa 160 ký tự"/>
+                <div><h:outputText style="color: #cccccc" id="counter3" /> </div>
+
+            </div>
+            <div class="UIClearLeft"><span></span></div>
+        </div>
+
+
+    </composite:implementation>
+</html>

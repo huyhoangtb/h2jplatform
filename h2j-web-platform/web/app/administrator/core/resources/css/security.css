@@ -1,0 +1,86 @@
+@charset "utf-8";
+.UICustomHPanelGrid {
+    border: 0;
+}
+.UICustomHPanelGrid tr{
+    width: 880px;
+    border: 0;
+}
+.UICustomHPanelGrid td{
+    padding: 5px 10px;
+    vertical-align: middle;
+    border: 0;
+}
+
+.UIButtonPanel {
+/*    text-align: center;
+    padding: 10px 0px;*/
+padding: 10px 0px;
+    display: table; 
+    margin: auto; 
+}
+.UIButtonPanel button{
+    margin-right: 10px;
+}
+
+.UIPanelTable {
+    margin-bottom: 10px;
+
+}
+.UIDivLabel{
+    padding: 10px 0px 0px 0px;
+    /*padding-top: 10px;*/
+}
+.UIPanelTable .UILabelPanel{
+    width: 170px;
+    padding-top: 10px;
+}
+
+.UIPanelTable .UIRightContent {
+    margin-left: 190px;
+}
+
+.UIAdminImagesPanel {
+    position: relative;
+}
+.UIAdminImagesPanel .UIPanel{
+    background-color: #F4F4F4;
+    border: 1px solid #D0D0D0;
+    bottom: -53px;
+    height: 93px;
+    left: 79px;
+    padding: 10px;
+    position: absolute;
+}
+
+.UIAdminImagesPanel .UIPanel img{
+    height: 93px;
+}
+
+.UINoPadding .ui-panel-content{
+    padding: 0px !important;
+}
+
+.UINoPadding .ui-panel {
+    padding: 0px !important;
+}
+.UINoPadding .ui-panel .ui-panel-titlebar {
+    padding: 0.7em 1em !important;
+}
+.UIPanelTable .UILabelPanel120 {
+     width: 120px;
+}
+
+.UIPanelTable .UIRightContent120 {
+    margin-left: 120px;
+}
+
+.UIMenuRightPanel {
+    margin: 10px 5px;
+}
+
+ .UIRightPanelHeader{
+    padding: 0.5em 1em 0.4em;
+    border-bottom: 1px solid #CCCCCC;
+    font-weight: bold;
+}

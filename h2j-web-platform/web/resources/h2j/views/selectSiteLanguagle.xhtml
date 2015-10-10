@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <composite:interface> 
+        <composite:attribute name="languagleList"  />
+
+    </composite:interface>
+    <composite:implementation>
+        <ui:repeat value="#{siteLanguagle.languagleAvaiable}" var="languagle">
+            
+            <p:commandLink action="#{siteLanguagle.changeLanguagle(languagle)}" ajax="false" styleClass="LanguagleItem">
+                <p:graphicImage  value="#{facesContext.externalContext.requestContextPath}/resources/images/location_flag/code/#{languagle}.png"/>
+            </p:commandLink>
+        </ui:repeat>
+
+    </composite:implementation>
+</html>

@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h2j="http://xmlns.jcp.org/jsf/composite/h2j">
+    <h:form id="searchFormId">
+
+        <!--<p:messages  id="messagesId"/>-->
+        <p:outputPanel id="searchPanelId">
+            <div class="UIMarginBottom15px"> 
+                <div class="UIFloatLeft UIMarginRight10px ">
+                    <p:inputText id="fullNameId"  value="#{orgPartnerController.searchData.fullName}" size="16"/>
+                    <p:watermark for="fullNameId" value="Họ và tên" />
+                </div>
+                <div class="UIFloatLeft UIMarginRight10px ">
+                    <p:inputText id="usernameId" value="#{orgPartnerController.searchData.username}" size="16"/>
+                    <p:watermark for="usernameId" value="Tên đăng nhập (nếu có)" />
+                </div>
+                <div class="UIFloatLeft UIMarginRight10px ">
+                    <p:calendar id="birthdayId"  value="#{orgPartnerController.searchData.birthday}" pattern="dd/MM/yyyy"  size="16"
+                                rendered="#{orgPartnerController.commandButton eq 'cushumanList' ? 'false':'true'}">
+                    </p:calendar>
+                    <p:watermark for="birthdayId" value="Ngày sinh" />
+                </div>
+
+
+                <div class="UIFloatLeft UIMarginRight10px ">
+                    <p:inputText id="emailId"  value="#{orgPartnerController.searchData.emailAddress}"  size="16"/>
+                    <p:watermark for="emailId" value="Email" />
+                </div>
+                <div class="UIFloatLeft UIMarginRight10px ">
+                     <p:selectOneMenu style="width: 120px" value="#{orgPartnerController.searchData.gender}" converter="javax.faces.Integer">
+                        <f:selectItem itemLabel="#{msg['user_gender_select']}" itemValue="-1"/>
+                        <f:selectItems value="#{humanController.userGenderList}"/>
+                    </p:selectOneMenu>
+                </div>
+                <div class="UIFloatLeft UIMarginRight10px ">
+                    <div class="UIFloatLeft UIMarginRight10px ">
+                        <p:commandButton  style="height: 30px" value="#{msg['label_search']}" ajax="false" actionListener ="#{orgPartnerController.searchHuman}" update=":userListId"
+                                          disabled="#{orgPartnerController.organization.organizationId == -1}"/>
+                    </div>
+                    <div class="UIFloatLeft UIMarginRight10px ">
+                        <div class="UIFloatLeft UIMarginRight10px ">
+                            <p:commandButton  style="height: 30px" value="#{msg['label_create_new']}" actionListener ="#{orgPartnerController.onStartCreatedHuman4Org}"  update=":orgTabPanelId"
+                                              disabled="#{orgPartnerController.organization.organizationId == -1}"/>
+                        </div>
+                    </div>
+                    <div class="UIClearLeft"><span></span></div>
+                </div>
+                <div class="UIClearLeft"><span></span></div>
+            </div>
+
+        </p:outputPanel>
+
+    </h:form>
+    <div class="UICategoryContent" >
+
+        <h:form >
+
+            <p:outputPanel autoUpdate="false" id="userDataListId">
+                <p:dataTable  id="userListId" var="userdata" value="#{orgPartnerController.humanLazyDataModel}" paginator="true" rows="10"  
+                              paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"  
+                              rowsPerPageTemplate="5,10,15" selectionMode="single" selection="#{orgPartnerController.human}"  lazy="true"
+                              emptyMessage="Danh sách thành viên rỗng!" draggableColumns="true" paginatorPosition="bottom"
+                              styleClass="UITable UIMarginTop10px">  
+                    <p:column headerText="Họ và tên" sortBy="#{userdata.fullName}">  
+                        <h:outputText value="#{userdata.fullName}" />  
+                    </p:column> 
+                    <p:column headerText="Tên đăng nhập" sortBy="#{userdata.username}" 
+                              width="110">  
+                        <h:outputText value="#{userdata.username}" />  
+                    </p:column> 
+
+                    <p:column headerText="Ngày sinh" sortBy="#{userdata.birthday}" width="80" rendered="#{orgPartnerController.commandButton eq 'cushumanList' ? 'false':'true'}">  
+                        <h:outputText value="#{userdata.birthday}" >
+                            <f:convertDateTime pattern="dd/MM/yyyy"/>
+                        </h:outputText>  
+                    </p:column> 
+                    <p:column headerText="Điện thoại" width="100">  
+                        <h:outputText value="#{userdata.tel}" />  
+                    </p:column> 
+
+                    <p:column headerText="Email" width="110">  
+                        <h:outputText value="#{userdata.emailAddress}" />  
+                    </p:column>
+
+                    <p:column headerText="Yahoo" width="110">  
+                        <h:outputText value="#{userdata.yahoo}" />  
+                    </p:column>
+                    <p:column headerText="Trạng thái" width="110">  
+                        <h:outputText value="#{userdata.statusName}" />  
+                    </p:column>
+                    <p:column headerText="Chi tiết" width="7%" styleClass="UITextCenter">  
+                        <p:commandLink  styleClass="UIViewLink" actionListener ="#{orgPartnerController.editHuman4Org}"  update=":orgTabPanelId">
+                            <f:setPropertyActionListener value="#{userdata}" target="#{orgPartnerController.human}" />  
+                        </p:commandLink>
+                    </p:column> 
+                </p:dataTable>
+            </p:outputPanel>
+            <div class="UIClearRight"><span></span></div>
+
+        </h:form>
+    </div>
+</ui:composition>

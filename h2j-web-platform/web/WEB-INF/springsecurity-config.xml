@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:faces="http://www.springframework.org/schema/faces"
+       xmlns:int-security="http://www.springframework.org/schema/integration/security"
+       xmlns:sec="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/integration/security http://www.springframework.org/schema/integration/security/spring-integration-security-3.2.xsd
+		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.2.xsd
+		http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/faces http://www.springframework.org/schema/faces/spring-faces-2.4.xsd">
+    <sec:global-method-security pre-post-annotations="enabled" secured-annotations="enabled" jsr250-annotations="enabled" />
+<!--auto-config="true"-->
+<sec:http pattern="/web-app/**" security="none"/>
+    <sec:http pattern="/frameworks/**" security="none"/>
+    <sec:http auto-config="false" use-expressions="true" access-denied-page="/app/administrator/login/index.h2j">
+        <sec:form-login always-use-default-target="false"
+                        login-processing-url="/j_spring_security_check"
+                        login-page="/app/administrator/login/index.h2j"
+                        default-target-url="/"
+                        authentication-failure-url="/app/administrator/login/index.h2j"
+                        authentication-success-handler-ref="authenticationSuccessHandler"/>
+        <sec:logout	logout-success-url="/" invalidate-session="true"/>
+        
+        <!--<sec:intercept-url pattern="/index.h2j" filters="none"/>-->
+       
+         <sec:intercept-url pattern="/app/administrator/core/permission/**" access="hasAnyRole('ROLE_SUPER_ADMIN')"/>
+        <sec:intercept-url pattern="/app/administrator/core/role/**" access="hasAnyRole('ROLE_SUPER_ADMIN','ROLE_AS_ADMIN')"/>
+
+         <sec:intercept-url pattern="/app/administrator/sale/service_order/**" access="hasAnyRole('ROLE_SUPER_ADMIN','ROLE_AS_ADMIN','PER_SALE_ALL','PER_ACCOUNT_ALL','PER_SUB_PARTNER')"/>
+         <sec:intercept-url pattern="/app/administrator/core/partner/**" access="hasAnyRole('ROLE_SUPER_ADMIN','ROLE_AS_ADMIN')"/>
+                
+        <sec:intercept-url pattern="/app/administrator/core/**" access="hasAnyRole('ROLE_SUPER_ADMIN','ROLE_AS_ADMIN','PER_SUB_PARTNER','PER_PRODUCT_INTRODUCTION','ROLE_MARKETING_ONLINE')"/>
+        
+        <sec:intercept-url pattern="/app/administrator/sale/**" access="hasAnyRole('ROLE_SUPER_ADMIN','ROLE_AS_ADMIN','PER_SUB_PARTNER','PER_PRODUCT_INTRODUCTION','PER_SALE_ALL','PER_OPERATOR_ALL')"/>
+        <sec:intercept-url pattern="/app/administrator/job_schedule/**" access="hasAnyRole('ROLE_SUPER_ADMIN','ROLE_AS_ADMIN','ROLE_MARKETING_ONLINE')"/>
+        <sec:intercept-url pattern="/app/administrator/site_manager/**" access="hasAnyRole('ROLE_SUPER_ADMIN','ROLE_AS_ADMIN','ROLE_MARKETING_ONLINE')"/>
+        <sec:intercept-url pattern="/app/administrator/index.h2j" access="hasAnyRole('ROLE_SUPER_ADMIN','ROLE_AS_ADMIN','ROLE_MARKETING_ONLINE')"/>
+        
+
+        
+        
+        
+<!--        <sec:intercept-url pattern="/app/administrator/login/**" filters="none"/>
+        <sec:intercept-url pattern="/index.h2j" filters="none"/>
+        <sec:intercept-url pattern="/resources/**" filters="none"/>
+        <sec:intercept-url pattern="/app/administrator/core/**" access="hasAnyRole('ROLE_SUPER_ADMIN','ROLE_AS_ADMIN')"/>
+        
+        <sec:intercept-url pattern="/app/administrator/**"  filters="none"/>
+        <sec:intercept-url pattern="/frameworks/**" filters="none"/>-->
+    </sec:http>
+    
+    <bean id="rememberMeFilter" class= "org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter">
+        <property name="rememberMeServices" ref="rememberMeServices"/>
+        <property name="authenticationManager" ref="authenticationManager" />
+    </bean>
+
+    <bean id="rememberMeServices" class="org.springframework.security.web.authentication.rememberme.TokenBasedRememberMeServices">
+        <property name="userDetailsService" ref="userServiceImpl"/>
+        <property name="key" value="springRocks"/>
+    </bean>
+
+    <bean id="rememberMeAuthenticationProvider" class="org.springframework.security.authentication.RememberMeAuthenticationProvider">
+        <property name="key" value="springRocks"/>
+    </bean>
+
+    <sec:authentication-manager  alias="authenticationManager">
+        <sec:authentication-provider
+            user-service-ref="userServiceImpl" />
+    </sec:authentication-manager>
+    <bean id="authenticationSuccessHandler" class="net.hj2eplatform.core.component.CustomAuthenticationSuccessHandler">
+        <property name="useReferer" value="true"/>
+    </bean>
+    <!--    <bean id="exceptionTranslationFilter" class="org.springframework.security.web.access.ExceptionTranslationFilter">
+        <property name="authenticationEntryPoint" ref="authenticationEntryPoint"/>
+        <property name="accessDeniedHandler" ref="accessDeniedHandler"/>
+         <constructor-arg value="/login/redirect" />
+    </bean>
+    <bean id="authenticationEntryPoint"  class="org.springframework.security.web.authentication.LoginUrlAuthenticationEntryPoint">
+        <property name="loginFormUrl" value="/app/administrator/login/index.h2j"/>
+    </bean>
+    <bean id="accessDeniedHandler" class="org.springframework.security.web.access.AccessDeniedHandlerImpl">
+        <property name="errorPage" value="/app/administrator/login/index.h2j"/>
+    </bean>-->
+
+</beans>

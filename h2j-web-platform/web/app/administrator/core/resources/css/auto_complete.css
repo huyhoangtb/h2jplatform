@@ -1,0 +1,27 @@
+.UIMyAutoComplete {
+  
+}
+.UIMyAutoComplete ul li.ui-autocomplete-token{
+    padding: 6px 0px !important;
+}
+.UIMyAutoComplete .ui-autocomplete-multiple-container{
+    border: 1px solid #D5D5D5;
+    max-width: 900px;
+    min-width: 488px;
+    overflow: hidden;
+    width: 100%;
+}
+.UIMyAutoComplete .ui-autocomplete-input-token input{
+    margin: 0px 4px;
+}
+
+.UIMyAutoComplete input {
+    border: none !important;
+}
+.UIMyAutoComplete input:hover {
+    border: none !important;
+}
+.UIMyAutoComplete input:focus {
+    border: none !important;
+    box-shadow: none !important;
+}

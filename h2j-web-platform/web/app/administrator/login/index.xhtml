@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                template="#{Themes.currentTheme}"
+                xmlns:p="http://primefaces.org/ui">
+    <!--    <ui:define name="LoginLabel">
+            Đăng nhập hệ thống
+        </ui:define>
+    -->
+    <ui:define name="UIMainContentPage" >
+        <p:outputPanel styleClass="UIMarginTopBottom1em" rendered="#{Themes.domainType eq 1}">
+             <ui:include src="login_admin.xhtml" />
+        </p:outputPanel>
+        <p:outputPanel  styleClass="UIMarginTopBottom1em"  rendered="#{Themes.domainType eq 2}">
+             <ui:include src="site_login_popup.xhtml" />
+        </p:outputPanel>
+    </ui:define>
+</ui:composition>

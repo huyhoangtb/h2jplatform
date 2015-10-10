@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <composite:interface> 
+        <composite:attribute name="header"  />
+        <composite:attribute name="header"  />
+        <composite:attribute name="maxWidth"  />
+        <composite:attribute name="disableThemePanel" default="true" />
+
+    </composite:interface>
+    <composite:implementation>
+
+        <div class="#{cc.attrs.disableThemePanel eq 'true' ? '' : 'UIThemesPanel'} " >
+            <div class="UITopThemePanelBg1ea2d3 ">
+                <div class="UISearchBePanel" >
+                    <div class="UISBePanelContent"> <!--   style="max-width:#{cc.attrs.maxWidth}em" -->
+<!--                        <div class="UIPanelHeader">
+                            <span>
+                                #{cc.attrs.header}
+                            </span>
+                        </div>-->
+                        <div class="UIPanelContent">
+                            <composite:insertChildren/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </composite:implementation>
+</html>

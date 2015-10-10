@@ -1,0 +1,102 @@
+.MenuLeftContent {
+    background: none repeat scroll 0 0 #FFFFFF;
+    padding: 0.5em 1em 0;
+    font-weight:  normal;
+     box-shadow: 1px 1px 5px #CFCECE;
+}
+/*.UIMenuLeft {
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 3px;
+    box-shadow: 1px 1px 5px #CFCECE;
+    min-height: 200px;
+    width: 21em;
+}*/
+.UISubMenuLeft {
+    /*margin-top: 0.5em;*/
+    /*margin-bottom: 1em;*/
+}
+/*.MenuLeftContent .UISubHeader:last-child {
+    border: none;
+}*/
+.UISubMenuLeft .UISubHeader{
+    border-bottom: 1px solid #D4D8DA;
+    color: #06ACEA;
+    font-weight: bold;
+    padding: 0.5em 0;
+    text-transform: uppercase;
+}
+.UISubMenuLeft  a.LinkTop{
+    color: #06acea;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.UISubMenuLeft .UISubHeader a.LinkTop:hover{
+    color: #24BEBE;
+}
+.UISubMenuLeft .UISubContent{
+
+}
+
+.UISubMenuLeft .UISubContent ul li {
+    padding: 0.5em 0em;
+}
+.UISubMenuLeft .UISubContent ul li a{
+    color: #111111;
+}
+.UISubMenuLeft .UISubContent ul li:hover a{
+    color: #049BD3;
+}
+.UISubMenuLeft .UISubContent ul li:hover {
+    border-bottom: 1px solid #F2F2F2;
+    /*background: url('../images/icon/sub_menu_icon_active.png') no-repeat right center;*/
+}
+.UISubMenuLeft .UISubContent ul li{
+    border-bottom: 1px solid #F2F2F2;
+    /*background: url('../images/icon/sub_menu_icon.png') no-repeat right center;*/
+}
+.UISubMenuLeft .UISubContent ul li.moreItem:hover {
+    border-bottom: 1px solid #F2F2F2;
+    background: url('../images/sub_menu_icon_active.png') no-repeat right center;
+}
+.UISubMenuLeft .UISubContent ul li.moreItem{
+    border-bottom: 1px solid #F2F2F2;
+    background: url('../images/sub_menu_icon.png') no-repeat right center;
+}
+.UIMenuLeft .UIHeader {
+    background: url("../images/searchPanelHeaderBg.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0);
+    border-bottom: 1px solid #E0E0E0;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    color: #3B3F44;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 0.5em 1em;
+    text-transform: uppercase;
+}
+
+.UISubMenuLeft .UISubContent ul li {
+    padding: 0.5em 0em;
+}
+.UISubMenuLeft .UISubContent ul li a{
+    color: #111111;
+}
+.UISubMenuLeft .UISubContent ul li:hover a{
+    color: #049BD3;
+}
+.UISubMenuLeft .UISubContent ul li:hover {
+    border-bottom: 1px solid #F2F2F2;
+}
+.UISubMenuLeft .UISubContent ul li{
+    border-bottom: 1px solid #F2F2F2;
+}
+.UISubMenuLeft .UISubContent ul li.moreItem:hover {
+    background: url('../images/sub_menu_icon_active.png') no-repeat right center;
+}
+.UISubMenuLeft .UISubContent ul li.moreItem{
+    background: url('../images/sub_menu_icon.png') no-repeat right center;
+}
+.UISubMenuLeft .UISubContent ul {
+    list-style: none outside none;
+    margin-top: 0.3em;
+}

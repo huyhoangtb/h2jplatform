@@ -1,0 +1,69 @@
+.UITableControl .ui-datatable td.UIImagpanel {
+    max-width: 45px;
+}
+.UITableControl .ui-datatable td.UIImagpanel img{
+    max-height: 30px;
+}
+
+/*.UITableControl .ui-datatable table {
+    max-width: 950px;
+}*/
+.UITableControl.ui-datatable table td{
+    vertical-align:middle;
+}
+
+.UITableControl .ui-datatable  .ui-paginator-top {
+    display: none;
+}
+
+.UITableControl .ui-datatable  th[role='columnheader'] {
+    padding: 10px 3px;
+}
+
+
+.UITableControl .ui-datatable td[role="gridcell"]{
+    border: 1px solid #A8A8A8;
+}
+.UITableControl .ui-datatable .ui-paginator{
+    float: right;
+}
+.UITableControl .ui-widget-header {
+    background:none;
+    border:none;
+}
+.UITableControl .ui-state-hover {
+    background: #F2F5F9 !important;
+    box-shadow: none !important;
+   border: 1px solid #A8A8A8;
+}
+
+.ui-datatable tbody td {
+    border-color: #A8A8A8!important;
+}
+
+.UITableControl .ui-state-hover td:first-child {
+    border-left: 1px solid #A8A8A8!important;
+}
+.UITableControl .ui-state-hover td:last-child {
+    border-right: 1px solid #A8A8A8 !important;
+}
+.UITableControl .ui-state-hover td {
+    border: 0 !important;
+}
+.UITableControl .ui-state-hover tr:last-child td {
+    border-bottom: 1px solid #A8A8A8 !important;
+}
+.UITableControl .ui-datatable-odd {
+    background-color: #FCFCFD ;
+}
+
+.UITableControl .ui-state-highlight {
+    background: #DEECFE !important;
+    color: #111111 !important;
+    text-shadow: none !important;
+    
+}
+.UITableControl .ui-datatable tbody td {
+    white-space: normal !important;
+    
+}

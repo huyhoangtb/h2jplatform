@@ -1,0 +1,200 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="#{Themes.currentTheme}"
+                xmlns:h2j="http://xmlns.jcp.org/jsf/composite/h2j">
+    <ui:define name="title">Quản lý nhân viên</ui:define>
+    <ui:define name="pageModuleTitle">Quản lý nhân viên</ui:define>
+    <ui:define name="pageSmallTitle">
+        Danh sách nhân viên
+    </ui:define>
+    <ui:define name="breadcrumb">
+        <li >Quản lý nhân viên</li>
+        <li class="active">Danh sách nhân viên</li>
+    </ui:define>
+    <ui:define name="UIMainContentPage">
+        <div class="UIRelativePanel UIMainWebPanel ">
+            <h2j:more-action  moreActionPanelId="moreActionPanelId" >
+                <h2j:more-action-full fullContentId="fullContentId" title="Thông tin tổ chức">
+
+                    <h:form>
+
+                        <p:contextMenu for="treeOrg" >  
+                            <p:menuitem value="Xem thông tin tổ chức" ajax="false"  actionListener="#{humanController.organizationTree.viewTreeOrganization}" icon="ui-icon-search" >
+                                <f:param name="actionFlag" value="org_edit"/>
+                            </p:menuitem>  
+                            <p:menuitem value="Tạo tổ chức con" ajax="false"  actionListener="#{humanController.organizationTree.addSubTreeOrganization}" icon="ui-icon-search" >
+                                <f:param name="actionFlag" value="org_add_new"/>
+                            </p:menuitem>  
+                            <p:menuitem value="Xóa tổ chức này" update="treeOrg" actionListener="#{humanController.organizationTree.deleteTreeOrganization}" icon="ui-icon-close"> 
+                                <f:param name="actionFlag" value="org_add_new"/>
+
+                            </p:menuitem>  
+                            <p:menuitem value="Thêm nhân viên"  ajax="false"
+                                        action="#{humanController.organizationTree.addUserTreeOrganization}" icon="ui-icon-close">
+                            </p:menuitem>  
+                        </p:contextMenu>  
+
+
+                        <p:tree animate="true" style="width: 290px" value="#{humanController.organizationTree.root}" var="node" dynamic="true" cache="true" 
+                                selectionMode="single" selection="#{humanController.organizationTree.selectedNode}"
+                                id="treeOrg" styleClass="UITreeCustom">  
+                            <p:ajax event="expand" listener="#{humanController.organizationTree.onNodeExpand}" />  
+                            <p:ajax event="select" update=":humanListFromId:userDataListId :searchFormId:searchboxId:organizationSearchPojo"  listener="#{humanController.onNodeSelected}" />
+                            <p:treeNode>  
+                                <h:outputText value="#{node.organizationName}"/>  
+                            </p:treeNode>  
+                        </p:tree>  
+
+                    </h:form>
+                </h2j:more-action-full>
+                <h2j:more-action-small smallContentId="smallContentId">
+                    <ui:include src="org_small_shortcut.xhtml"/>
+                </h2j:more-action-small>
+            </h2j:more-action>
+            <script>
+                $(document).ready(function() {
+//                    var menu = new MoreActionMenu("moreActionPanelId", "smallContentId", "fullContentId", "-363px");
+                    var menu = new MoreActionMenu("moreActionPanelId", "smallContentId", "fullContentId", "-290px");
+                });
+            </script>
+            <div class="UIThemesPanel">
+                <h:form prependId="false" id="searchFormId">
+                    <h2j:searchBox header="Tìm kiếm thông tin nhân viên" id="searchboxId">
+
+                        <p:outputPanel id="searchPanelId">
+                            <div class="UIPanelTable">
+                                <div class="UIFloatLeft UIMarginRight10px">
+                                    <p:autoComplete value="#{humanController.organizationSearch}"   
+                                                    id="organizationSearchPojo" completeMethod="#{organizationController.completeOrganization}"  
+                                                    var="organization" itemLabel="#{organization.organizationName}" itemValue="#{organization}" 
+                                                    converter="organizationConverter" 
+                                                    forceSelection="true" size="40">  
+
+                                    </p:autoComplete>
+                                    <p:watermark for="organizationSearchPojo" value="Tên tổ chức, Mã tổ chức, tên viết tắt, tên tiếng anh" />
+                                </div>
+                                <div class="UIClearLeft"><span></span></div>
+                            </div>
+
+                            <div class="UIMarginBottom15px"> 
+
+                                <div class="UIFloatLeft UIMarginRight10px UIDivLabel">
+                                    <h:outputLabel value="Họ và tên"/>
+                                </div>
+                                <div class="UIFloatLeft UIMarginRight10px ">
+                                    <p:inputText   value="#{humanController.searchData.fullName}" size="16"/>
+                                </div>
+
+                                <div class="UIFloatLeft UIMarginRight10px UIDivLabel">
+                                    <h:outputLabel value="Tên đăng nhập"/>
+                                </div>
+                                <div class="UIFloatLeft UIMarginRight10px ">
+                                    <p:inputText  value="#{humanController.searchData.username}" size="16"/>
+                                </div>
+                                <div class="UIFloatLeft UIMarginRight10px UIDivLabel">
+                                    <h:outputLabel value="Ngày sinh"/>
+                                </div>
+                                <div class="UIFloatLeft UIMarginRight10px ">
+                                    <p:calendar  value="#{humanController.searchData.birthday}" pattern="dd/MM/yyyy"  size="16">
+                                    </p:calendar>
+                                </div>
+
+                                <div class="UIFloatLeft UIMarginRight10px UIDivLabel">
+                                    <h:outputLabel value="Email"/>
+                                </div>
+                                <div class="UIFloatLeft UIMarginRight10px ">
+                                    <p:inputText   value="#{humanController.searchData.emailAddress}"  size="16"/>
+                                </div>
+
+                                <div class="UIClearLeft"><span></span></div>
+                            </div>
+                            <div class="UIMarginBottom15px" style="display: table; margin: auto; padding-bottom: 15px;"> 
+                                <div class="UIFloatLeft UIMarginRight10px ">
+                                    <p:commandButton  value="#{msg['label_search']}" ajax="false" actionListener ="#{humanController.searchHuman}" update="userListId"/>
+                                </div>
+                                <div class="UIFloatLeft UIMarginRight10px ">
+                                    <p:commandButton value="#{msg['label_create_new']}" process="@this" action="#{humanController.onStartCreatedNewHuman}"  ajax="false">
+                                    </p:commandButton>
+                                </div>
+                                <div class="UIClearLeft"><span></span></div>
+                            </div>
+
+                        </p:outputPanel>
+
+                    </h2j:searchBox>
+                </h:form>
+                <div class="UICategoryContent" >
+
+
+
+
+                    <h:form id="humanListFromId" prependId="false">
+
+                        <p:contextMenu for="userListId">  
+<!--                            <p:menuitem value="#{msg['staff_edit']}" icon="ui-icon-pencil" 
+                                        action="#{humanController.editDetailHuman}" 
+                                        ajax="false">
+                            </p:menuitem>  -->
+                            <p:menuitem value="#{msg['staff_infomation']}" icon="ui-icon-circle-zoomin" 
+                                        actionListener="#{humanController.viewDetailHuman}" 
+                                        oncomplete="userDigVar.show()" ajax="false">
+                            </p:menuitem>  
+                            <p:menuitem value="#{msg['label_lock']}" update="userListId" icon="ui-icon-locked" >
+                            </p:menuitem>
+                        </p:contextMenu>  
+
+                        <p:outputPanel autoUpdate="false" id="userDataListId">
+                            <p:dataTable  id="userListId" var="userdata" value="#{humanController.humanLazyDataModel}" paginator="true" rows="20"  
+                                          paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"  
+                                          rowsPerPageTemplate="20,30,40,50" selectionMode="single" selection="#{humanController.human}"  lazy="true"
+                                          emptyMessage="Danh sách thành viên rỗng!" draggableColumns="true" paginatorPosition="bottom"
+                                          styleClass="UITable UIMarginTop10px">  
+                                <p:column headerText="Họ và tên" sortBy="#{userdata.fullName}" width="150">  
+                                    <h:outputText value="#{userdata.fullName}" />  
+                                </p:column> 
+                                <p:column headerText="Tên đăng nhập" sortBy="#{userdata.username}" 
+                                          width="120">  
+                                    <h:outputText value="#{userdata.username}" />  
+                                </p:column> 
+
+                                <p:column headerText="Ngày sinh" sortBy="#{userdata.birthday}" width="80">  
+                                    <h:outputText value="#{userdata.birthday}" >
+                                        <f:convertDateTime pattern="dd/MM/yyyy"/>
+                                    </h:outputText>  
+                                </p:column> 
+                                <p:column headerText="Điện thoại" width="110">  
+                                    <h:outputText value="#{userdata.tel}" />  
+                                </p:column> 
+
+                                <p:column headerText="Email" width="130">  
+                                    <h:outputText value="#{userdata.emailAddress}" />  
+                                </p:column>
+                                
+                                <p:column headerText="Yahoo" width="125">  
+                                    <h:outputText value="#{userdata.yahoo}" />  
+                                </p:column>
+                                <p:column headerText="Trạng thái" width="80">  
+                                    <h:outputText value="#{userdata.statusName}" />  
+                                </p:column>
+                                <p:column headerText="Chi tiết" width="8%" styleClass="UITextCenter">  
+                                    <h:link  styleClass="UIViewLink" outcome="edit_staff_admin"  >
+                                        <f:param name="humanId" value="#{userdata.humanId}" />
+                                    </h:link>
+                                </p:column> 
+                            </p:dataTable>
+                        </p:outputPanel>
+                        <div class="UIClearRight"><span></span></div>
+
+                    </h:form>
+
+                </div>
+                <ui:include src="edit_popup.xhtml"/>
+                <ui:include src="/app/administrator/core/organization/edit_popup.xhtml"/>
+            </div>
+        </div>
+    </ui:define>
+</ui:composition>

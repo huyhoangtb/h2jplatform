@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="">
+  <Resource auth="Container" driverClassName="oracle.jdbc.OracleDriver" maxActive="20" maxIdle="10" maxWait="-1" name="mpay/jdbc" password="hooraydev123" type="javax.sql.DataSource" url="jdbc:oracle:thin:@104.155.223.126:1521:ORCL" username="hooraydev"/>
+</Context>

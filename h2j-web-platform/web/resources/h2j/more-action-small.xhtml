@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:p="http://primefaces.org/ui">
+
+    <composite:interface> 
+
+        <composite:attribute name="smallContentId" required="true" />
+
+    </composite:interface>
+    <composite:implementation>  
+
+        <div id="#{cc.attrs.smallContentId}" style="display: block">
+
+            <div class="UIAbsolutePanel UIPossitionMoreMenu " >
+                <div class="UIMoreActionPanel" >
+                    <div class="UIPading0x2em">
+                        <div class="UIHeaderIconpanel" >
+                            <div class="UIFloatLeft"> 
+                                <span>#{cc.attrs.title}</span>
+                            </div>
+                            <div class="UILestIcon UIFloatRight">
+                                <span></span>
+                            </div>
+                            <div class="UIClearBoth"><span></span></div>
+                        </div>
+                        <div class="UIMinPanelContent" >
+                            <composite:insertChildren />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </composite:implementation>
+</html>

@@ -1,0 +1,1993 @@
+body {
+    /*background-color:*/ 
+    border: 0 none;
+    font: 0.8em/1.3em Tahoma,Arial,Helvetica,sans-serif;
+    height: 100%;
+    margin: 0;
+    min-width: 1000px;
+    outline: 0 none;
+    padding: 0;
+
+    background: #ffffff !important;
+    /*background: #f7fdff ;*/
+    /*    background: #f7fdff url('../images/bg_page.png') no-repeat right top;*/
+} 
+.ui-widget-header {
+    text-shadow: none !important;
+}
+.ui-widget {
+    font-family: Tahoma,Arial,Helvetica,sans-serif;
+}
+.UIMainPagePortal{
+    max-width: 1200px;
+    margin:auto;
+    padding: 0;
+}
+table.UICustomCheckBoxSearch01  tr td label{
+    margin: 0 0.5em 0 0.2em;
+}
+.UIPorttalContent {
+    min-width: 1000px;
+    margin:auto;
+    padding: 0;
+}
+.UITopMenu {
+    background-color: #f6f7f8;
+    color: #1b1b1b;
+    border-bottom: 1px solid #eceded;
+}
+.UITopMenu .TopMenuPanel{
+    max-width: 1200px;
+    margin: auto;
+    padding: auto;
+    font-size: 11px;
+}
+
+.UITopMenu .TopMenuPanel ul.MenuPanel{ 
+    list-style: none;
+}
+.UITopMenu .TopMenuPanel ul.MenuPanel li.items {
+    display: inline-block;
+}
+.UITopMenu .TopMenuPanel ul.MenuPanel li.items a{ 
+    color: #1b1b1b;
+    display: inline-block;
+    padding: 0 0.5em;
+}
+h2.font-normal {
+    font-weight: normal !important;
+}
+.UITopMenu .TopMenuPanel ul.MenuPanel li.items a:hover{ 
+    color: #009fe3;
+}
+.UIVNtravelsoftBanner {
+      margin: auto;
+    max-width: 1200px;
+    padding: 0.2em 0 0.1em;
+}
+ a.VNtravelsoftLogo img{
+    margin: 0.5em 2em;
+}
+ul.UIRegisterPanel {
+    list-style: none;
+    display: inline-block;
+    padding-top: 2.2em;
+}
+ul.UIRegisterPanel  li.items {
+    display: inline-block;
+}
+ul.UIRegisterPanel  li.Hotline {
+    background: url('../images/tel_icon.png') no-repeat center left;
+    padding-left: 1.3em;
+}
+ul.MenuPanel li.itemLanguagle {
+    display: inline-block;
+}
+ul.MenuPanel li.itemLanguagle a{ 
+    /*padding: 0.2 0.1em !important;*/
+    color: #323131;
+    padding-top: 0.3em;
+    height: 1em;
+    display: inline-block;
+}
+ul.UIRegisterPanel li.items a{ 
+    color: #323131;
+    display: inline-block;
+    padding: 0 0.5em;
+}
+ul.UIRegisterPanel li.items a:hover{ 
+    color: #009fe3;
+}
+.UIMainMenu {
+    background-color: #009fe3;
+    box-shadow: 0 0 3px #a9a6a6;
+    margin-bottom: 1.5em;
+}
+.UIMainMenu .UIMainMenuPanel {
+    padding: 0.5em 0;
+    margin: auto;
+    max-width: 1200px;
+}
+li.UIHomeIcon {
+    background: url('../images/home_bantour.png') no-repeat center left;
+}
+li.UIHomeIcon a{
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+}
+
+.HomeBantourTable {
+
+}
+.HomeBantourTable .UIColum48Percent{
+    width: 48.2%;
+}
+.HomeBantourTable .UIPanelLeft {
+    border: 5px solid #fff;
+    box-shadow: 0 0 5px #ccc;
+    padding: 0.35em;
+    position: relative;
+}
+.HomeBantourTable .UIColum48Percent .bx-wrapper ul.bxslider li a {
+    top: 1em !important;
+}
+.HomeBantourTable .UIColum48Percent .bx-wrapper ul.bxslider li img {
+    /*width: 982px;*/
+    height: 370px;
+}
+
+.HomeBantourTable .UIColum48Percent .bx-wrapper ul.bxslider li img {
+    width: 100% !important;
+    max-width:  100% !important;
+}
+.HomeBantourTable .UIColum48Percent .bx-wrapper .bx-viewport {
+    border: 0;
+    box-shadow: none;
+    left: 0;
+}
+ul.UIHomeProduction {
+    list-style: none;
+}
+ul.UIHomeProduction li.UIBoxProductLarge {
+    display: inline-block;
+    background: url('../images/home_tour_panel_bg.png') no-repeat left bottom;
+    width: 48%;
+    padding: 0 0 2em 0 ;
+    margin: 0 0.2em 0.1em 0.5em;
+
+}
+.UIBoxProductLarge .UIPanelContent{ 
+    min-height: 19em;
+    border:1px solid #e7f2f4;
+    background: #ffffff;
+}
+.TourDataListHome .ui-widget-content{
+    border: 0;   
+}
+.TourDataListHome .ui-widget-content ul.ui-datalist-data li a.linkTourImg {
+    display: block;
+    position: relative;
+}
+.UIDiscountPanel {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: url('/resources/images/icons/discount_icon.png') top right no-repeat;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 0.5em 0em;
+    text-align: center;
+}
+
+.TourDataListHome .ui-widget-content ul.ui-datalist-data{
+    list-style: none;
+}
+.TourDataListHome3colum .ui-widget-content ul.ui-datalist-data li.ui-datalist-item {
+    width: 31.8% !important;
+    border: 0 !important;
+}
+.TourDataListHome .ui-widget-content ul.ui-datalist-data li.ui-datalist-item{
+    display: inline-block !important;
+    background: url('../images/home_tour_panel_bg.png') no-repeat left bottom;
+    width: 48%;
+    padding: 0 0 2em 0 ;
+    margin: 0 0.2em 0.1em 0.5em;
+    height: 19.1em;
+}
+.TourDataListHome .ui-widget-content ul.ui-datalist-data li.ui-datalist-item .UIPanelContent{
+    height: 18.7em;
+    border:1px solid #e7f2f4;
+    background: #ffffff;
+    padding: 0.3em;
+
+}
+.TourDataListHome .ui-widget-content ul.ui-datalist-data li.ui-datalist-item .UIPanelContent img.Header{ 
+    width: 100%;
+    height: 11em;
+} 
+.TourDataListHome .ui-widget-content ul.ui-datalist-data li.ui-datalist-item .UITourInfo .UIPricePanel{ 
+    border-top: 1px solid #cccccc;
+    padding-top: 0.3em;
+}
+.TourDataListHome .ui-widget-content ul.ui-datalist-data li.ui-datalist-item .UITourInfo{ 
+    margin-top: 0.5em;
+} 
+.TourDataListHome .ui-widget-content ul.ui-datalist-data li.ui-datalist-item .UITourInfo .TourNamePanel {
+    height: 3em;
+    margin-bottom: 0.5em;
+    overflow-y: hidden;
+}
+.TourDataListHome .ui-widget-content ul.ui-datalist-data li.ui-datalist-item .UITourInfo .TourNamePanel .tourName{ 
+    font-weight: bold;
+    color: #111111;
+width: 98%;
+display: inherit;
+} 
+.TourDataListHome .ui-widget-content ul.ui-datalist-data li.ui-datalist-item .UITourInfo .TourNamePanel  .tourName:hover{ 
+    color: #009fe3;
+} 
+.LinkName {
+    font-weight: bold;
+    color: #111111;
+}
+.LinkName:hover {
+    color: #009fe3;
+}
+a.UIBookingNow:hover {
+    background-color: #009fe3
+}
+a.UIBookingNow {
+    color: #ffffff;
+    background-color: #ef2403;
+    padding: 0.3em 0.7em;
+    display: inline-block;
+    border-top-left-radius: 0.3em;
+    border-bottom-right-radius: 0.3em;
+    margin-top: 0.3em;
+    min-width: 4.1em;
+
+}
+
+.BoxSearchHome{
+    background: url('/resources/images/white_bg.png');
+    min-height: 20px;
+    min-width: 50px;
+    position: absolute;
+    bottom: 10em;
+    left: 2em;
+    border-radius: 5px;
+    padding:  0.1em   1em  1em  1em;
+}
+
+
+.UITabHomeSite{
+    border: none;
+}
+.UITabHomeSite ul.ui-tabs-nav{
+    background: #ffffff;
+}
+.UITabHomeSite div.ui-tabs-panels{
+    border-top: 1px solid #cccccc;
+}
+.UITabHomeSite ul.ui-tabs-nav li:first-child a {
+    padding-left: 0 !important;
+}
+.UITabHomeSite ul.ui-tabs-nav li.ui-state-default a{
+    color: #111111;
+    cursor: pointer;
+}
+.UITabHomeSite ul.ui-tabs-nav li.ui-state-default a:visited{
+    color: #111111;
+}
+.UITabHomeSite ul.ui-tabs-nav li.ui-state-default{
+    background: #ffffff;
+    border: none;
+    box-shadow: none;
+}
+
+.UITabHomeSite ul.ui-tabs-nav li.ui-tabs-selected a{
+    display: block;
+    font-size: 12px;
+    font-weight:bold;
+    padding:0.2em 1em 0.4em 1em;
+    color: #038fcb;
+}
+.UITabHomeSite .ui-tabs-nav li a {
+    padding: 0.4em 1em !important;
+}
+
+.UITabHomeSite ul.ui-tabs-nav li.ui-state-default a:hover {
+    color: #c0a803;
+}
+.UITabHomeSite .ui-tabs-panels .ui-widget-content{
+    padding: 0.6em 0em;
+}
+.UITabHomeSite .ui-tabs-panels .ui-widget-content .ui-widget-content{
+    border:none;
+}
+.UITabHomeSite .ui-tabs-panels .ui-widget-content .ui-widget-content ul.ui-datalist-data{
+    list-style: none;
+}
+.UITabHomeSite .ui-tabs-panels .ui-widget-content .ui-widget-content ul.ui-datalist-data li{
+    display: block;
+    border-bottom: 1px dotted #8f9192;
+}
+.UITabHomeSite .ui-tabs-panels .ui-widget-content .ui-widget-content ul.ui-datalist-data li:last-child{
+    border-bottom: none;
+}
+ul.PlancePanelHome {
+    list-style: none;
+    width: 100%;
+}
+
+ul.PlancePanelHome li{
+    float: left;
+    display: block;
+    border-right: 1px solid #ffffff;
+    position: relative;
+    margin: 0;
+    width: 12.37%;
+}
+ul.PlancePanelHome li:last-child{
+    clear: left;
+}
+
+ul.PlancePanelHome li img{
+    width: 100%;
+    height: 15em;
+}
+ul.PlancePanelHome li div.BG {
+    opacity: 0.9;
+    background: url('../images/home_plance_bg.png') no-repeat center left;
+    background-color: #009fe3;
+    height: 3em;
+    position: absolute;
+    bottom: 0em;
+    width: 100%;
+
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+ul.PlancePanelHome li div.BG:hover {
+    opacity: 1;
+}
+ul.PlancePanelHome li div.BG span {
+    color: #ffffff;
+    display: block;
+    padding: 0.7em 0 0 2.5em;
+}
+.UIWidth100percent{
+    width: 100%;
+}
+
+.UIWidth70percent {
+    width: 68%;
+}
+
+.UIWidth48percent {
+    width: 48%;
+}
+.UIWidth50percent {
+    width: 50%;
+}
+
+.UIWidth60percent {
+    width: 60%;
+}
+.UIWidth40percent {
+    width: 38%;
+
+}
+
+.UIWidth30percent {
+    width: 30%;
+
+}
+
+.UIPaddingImg2px{
+    padding: 3px;
+}
+.UIBorderImgGray{
+    border: 1px solid #eaeaea;
+}
+.UIBorderShadow{
+    box-shadow: 0 0 5px #ccc;
+}
+.UIPadding5px{
+    padding: 5px;
+}
+.UIPadding10px{
+    padding:10px;
+}
+.uiBoxNew {
+    height: 61.5em;
+    border: 1px solid #ccc;
+    margin-bottom: 0.5em;
+    overflow-y: hidden;
+}
+.UIBlockHomeNew h4 {
+    display: inline;
+    font-weight: normal;
+}
+.UIBlockHomeNew {
+    background-color: #e4ebee;
+    padding: 0.5em;
+    border-bottom: 1px solid #ccc;
+}
+.UIBlockHomeNew a{
+    color: #111111;
+    padding-right: 1em;
+    border-right: 1px solid #ccc;
+}
+.UIBlockHomeNew a:last-child{
+    padding-right: 0em;
+    border-right: none;
+    padding-left: 1em;
+}
+.UIBlockHomeNew a:hover{
+    color: #038fcb;
+}
+
+.UIBlockHomNewContent {
+    padding: 0.5em;
+}
+
+ul.UIBlockArticle {
+    list-style: none;
+    margin-top: 0.5em;
+}
+ul.UIBlockArticle li.item:last-child{
+    border-bottom:0;
+}
+ul.UIBlockArticle li.item{
+    padding: 0.2em 0.2em 0.2em 0.2em;
+    /*margin-bottom: 0.3em;*/
+    border-bottom: 1px dotted #cccccc;
+    height: 7.7em;
+    overflow-y: hidden;
+}
+ul.UIBlockArticle li.item a .ImagePanel{
+    padding: 0.2em;
+    display: block;
+
+    border: 1px solid #ccc;
+    margin-right:  0.5em;
+}
+ul.UIBlockArticle li.item a.titleName {
+    display: block;
+    padding-bottom: 0.2em;
+}
+ul.UIBlockArticle li.item a{
+    color: #0d1a20;
+    font-weight: bold;
+}
+ul.UIBlockArticle li.item a:hover{
+    color: #069FD8;
+}
+ul.UIBlockArticle li.item .UISmallImg{
+    width: 75px;
+    height: 57px;
+
+}
+ul.UIBlockArticle li.item .UITitleArtcle{
+    /*width: 15em;*/
+    margin-left: 0.2em;
+}
+
+.WhyChoiceUs {
+    color: #009fe3;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+ul.TravelSuplierLogoPanel {
+    list-style: none;
+}
+
+
+/*
+@media screen and (max-width: 1000px) {
+    .UIDetailBlockContent ul.PrivatePricePanel li div.col3 {
+        display: table-cell;
+        font-size: 10px;
+        font-weight: bold;
+        max-width: 15.84%;
+        min-height: 5em;
+        min-width: 15%;
+        padding: 0.3em 0.5em;
+        vertical-align: middle;
+        width:  15.84%;
+    }
+}*/
+
+@media screen and (max-width: 1000px) {
+    ul.TravelSuplierLogoPanel li.Items{
+        border: 1px solid #ccc;
+        display: inline-block;
+        margin: 0.5em;
+        padding: 0.2em;
+        width: 16.4%;
+        height: 6em;
+        border-radius: 0.3em;
+        text-align: center;
+    }
+      .UIDetailBlockContent ul.PrivatePricePanel li div.col3 {
+        display: table-cell;
+        font-size: 10px;
+        font-weight: bold;
+        max-width: 15.84%;
+        min-height: 5em;
+        min-width: 15%;
+        padding: 0.3em 0.5em;
+        vertical-align: middle;
+        width:  15.84%;
+    }
+}
+@media screen and (min-width: 1001px) {
+    ul.TravelSuplierLogoPanel li.Items{
+        border: 1px solid #ccc;
+        display: inline-block;
+        margin: 0.5em;
+        padding: 0.2em;
+        width: 17%;
+        height: 6em;
+        border-radius: 0.3em;
+        text-align: center;
+    }
+    .UIDetailBlockContent ul.PrivatePricePanel li div.col3 {
+        display: table-cell;
+        font-size: 10px;
+        font-weight: bold;
+        max-width: 13.1%;
+        min-height: 5em;
+        /*min-width: 15%;*/
+        padding: 0.3em 0.5em;
+        vertical-align: middle;
+        width: 13.1%;
+    }
+}
+
+ul.TravelSuplierLogoPanel li.Items img {
+    max-width: 100%;
+    max-height: 6.1em;
+}
+.WhyChoiseUsPanel {
+    list-style: none;
+}
+.WhyChoiseUsPanel li .Des{
+    color: #323131;
+}
+.WhyChoiseUsPanel li .Header{
+    font-weight: bold;
+    font-size: 18px;
+    color: #009fe3;
+}
+.WhyChoiseUsPanel li{
+    display: block;
+    min-height: 3.95em;
+    padding: 1em 1em 0 5em;
+    background: url('../images/whychoiseUsIcon.png') no-repeat left;
+}
+
+.WhyChoiceUs img{
+    max-width: 485px;
+}
+.SocialNetwork {
+    position: relative;
+}
+.SocialNetwork  ul.Panels {
+    list-style: none;
+    padding: 0px 1em;
+}
+.SocialNetwork ul.Panels li.itemsLabel {
+    margin-top: 3px !important;
+    display: inline-block;
+    color: #078ec1 !important;
+}
+.SocialNetwork ul.Panels li.items {
+    list-style: none;
+    display: inline;
+    color: #078ec1 !important;
+    background: none !important;
+    padding: 0px !important;
+}
+.UIFooterPanel {
+    background-color: #00474d;
+    border-top: 1px solid #eaeaea;
+    padding-top:0.5em;
+    padding-bottom: 0.5em;
+}
+.UIFooterPanel .UIFooterPanelContent{
+    min-height: 140px;
+    padding-top: 0.5em;
+    margin-top: 0.5em;
+}
+.UIFooterPanel .UIFooterPanelContent ul.CompanyInfo {
+    list-style: none;
+    width: 430px;
+
+}
+.UIFooterPanel .UIFooterPanelContent ul.CompanyJob {
+    list-style: none;
+    width: 330px;
+
+}
+.UIFooterPanel .UIFooterPanelContent ul.CompanyService {
+    list-style: none;
+    width: 230px;
+
+}
+.UIFooterPanel .UIFooterPanelContent ul .CompanyName {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 0.5em;
+    display: inline-block;
+}
+.UIFooterPanel .UIFooterPanelContent ul li.UIItems{
+    color: #f3f5f5;
+    line-height: 20px;
+}
+.UIFooterPanel .UIFooterPanelContent ul li.UIItems a{
+    color: #0698ce;
+}
+.UIFooterPanel .UIFooterPanelContent ul li.UIItems a:hover{
+    text-decoration: underline;
+}
+
+.UIFooterPanel .UIFooterPanelContent ul.CompanyJob li {
+}
+
+.UIFooterPanel .MenuSpace{
+    background-color: #c6c8c7;
+    height: 2px;
+    margin: 10px 0 5px 0;
+}
+.UIFooterPanel .SubMenuSpace01 {
+    margin-top: 0.5em;
+    background-color: #989999;
+    height: 1px;
+}
+.UIFooterPanel .SubMenuSpace02 {
+    background-color: #bfc0c1;
+    height: 1px;
+    margin-bottom: 0.5em;
+}
+.UIMenuFooterPanel  ul.Panel {
+    list-style: none;
+}
+.UIMenuFooterPanel ul.Panel li.items {
+    list-style: none;
+    display: inline-block;
+}
+.UIMenuFooterPanel ul.Panel li.items{
+    color: #111111;
+    /*background: url('../images/secondMenuBg.png') no-repeat right center;*/
+    margin-top: 5px;
+
+}
+.UIMenuFooterPanel ul.Panel li.items:last-child{
+    color: #111111;
+    background: none;
+    margin-top: 5px;
+
+}
+.UIMenuFooterPanel ul.Panel li.items a {
+    color: #111111;
+    display: block;
+}
+.UIMenuFooterPanel ul.Panel li.items a {
+    padding: 0px 11px 0px 10px;
+}
+.UIMenuFooterPanel ul.Panel li.items a:hover {
+    color: #078bbd;
+}
+.UIMenuFooterPanel {
+    background: #e4ebee;
+    height: 28px;
+    border-top:1px solid #dadcdc;
+    border-left:1px solid #dadcdc;
+    border-right:1px solid #dadcdc;
+    border-radius: 1px;
+    /*margin: 1em auto;*/
+    padding: 0.5em 0em;
+}
+.UIBantourSearchBottom:hover {
+    background:  url('../images/button_search_hover.png') no-repeat !important;
+}
+.UIBantourSearchBottom {
+    background:  url('../images/button_search.png') no-repeat !important;
+    width: 73px !important;
+    height: 36px !important;
+    box-shadow: none !important;
+    border: 0 !important;
+    border-radius: 0;
+    padding: 0.3px 0.5px !important;
+}
+.UIBantourSearchBottom .ui-button-text {
+    padding: 0  !important;
+    color: #ffffff;
+    text-shadow: none;
+}
+.BoxSearchHome input.Search {
+    height: 30px !important;
+    width: 30em;
+    border-radius: 1px;
+    box-shadow: 0 1px 1px #f0f1f2 inset;
+    border: 1px solid #d1d6da;
+}
+.UISearchPanelSubScreen {
+    border: 1px solid #d4d1d1;
+    background-color: #f3f4f4;
+    padding: 0.5em 0.5em;
+    margin-bottom: 1.5em;
+}
+input.UIInputDefaultType1 {
+    height: 26px !important;
+    border-radius: 1px;
+    box-shadow: 0 1px 1px #f0f1f2 inset;
+    border: 1px solid #abadb3;
+}
+.UISearchPanelSubScreen input.UIInputDefault {
+    height: 30px !important;
+    border-radius: 1px;
+    box-shadow: 0 1px 1px #f0f1f2 inset;
+    border: 1px solid #abadb3;
+}
+.UIBookingDate input {
+    height: 26px !important;
+    border-radius: 1px;
+    box-shadow: 0 1px 1px #f0f1f2 inset;
+    border: 1px solid #abadb3;
+}
+.UIComment {
+    color: #999999;
+}
+.UISelectBooking {
+    height: 33px;
+    width: 12em;
+    /*box-shadow: 0 1px 1px #f0f1f2 inset;*/
+    /*border: 1px solid #d1d6da;*/
+}
+.UICalandarSearchHome input {
+    height: 30px !important;
+    border-radius: 1px;
+    box-shadow: 0 1px 1px #f0f1f2 inset;
+    border: 1px solid #d1d6da;
+}
+.UIWidth30em{
+    width: 30em !important;
+}
+.UISelectBox  .ui-selectonemenu .ui-selectonemenu-trigger .ui-icon {
+    margin-top: 10px;
+}
+.UISelectBox  .ui-state-default,.UISelectBox  .ui-widget-content .ui-state-default, .UISelectBox  .ui-widget-header .ui-state-default{
+    /*height: 35px !important;*/
+    border-color:  #d1d6da !important;
+
+    /*    box-shadow: 0 1px 1px #f0f1f2 inset;
+        border: 1px solid #d1d6da;*/
+}
+.UISelectBox  .ui-inputfield{
+    border-radius: 1px;
+    /*border: 1px solid #d1d6da !important;*/
+    /*border: 1px solid #d1d6da !important;*/
+    box-shadow: 0 1px 1px #f0f1f2 inset!important;
+    height: 27px !important;
+}
+.UISuggestBox  input.ui-inputfield{
+    border-radius: 1px;
+    /*border: 1px solid #d1d6da !important;*/
+    /*border: 1px solid #d1d6da !important;*/
+    box-shadow: 0 1px 1px #f0f1f2 inset!important;
+    height: 29px !important;
+}
+.UISearchTypeSpace {
+    padding-right: 0.5em;
+    margin-right: 0.5em;
+    border-right: 1px solid #d1d6da;
+}
+
+.UITourListResoultList {
+
+}
+.UITourListResoultList a.tourName {
+    color: #037baf;
+    font-size: 13px;
+    font-weight: bold;
+    /*display: inline-block;*/
+    line-height: 22px;
+}
+.UITourListResoultList a.tourName:hover {
+    color: #069FD8;
+}
+.UITourListResoultList ul.ui-datascroller-list li {
+    border-bottom: 1px dotted #8F9192;
+    display: block;
+    margin-bottom: 0.7em;
+    padding-bottom: 0.5em; 
+
+
+}
+.UITourListResoultList ul.ui-datascroller-list li:last-child {
+    /*border-bottom: none;*/
+}
+.UITourListResoultList ul.ui-datascroller-list li .UIImgPanelS {
+    background: url("../images/home_tour_panel_bg.png") no-repeat scroll left bottom rgba(0, 0, 0, 0);
+    background-size:  7em;
+    padding-bottom: 0.7em;
+}
+.UITourListResoultList ul.ui-datascroller-list li .UIGridPanelImg {
+    border: 1px solid #CCCCCC;
+    background-color: #ffffff;
+    margin-right: 0.5em;
+    padding: 0.2em;
+    max-width: 150px;
+
+
+}
+.UITourListResoultList ul.ui-datascroller-list li .UIGridPanelImg img{
+    height: 120px;
+    width: 150px;
+}
+@media screen and (max-width: 1200px) {
+    .UITourListResoultList ul.ui-datascroller-list li .UITourInfo   {
+        width: 76%;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .UITourListResoultList ul.ui-datascroller-list li .UITourInfo   {
+        width: 79%;
+    }
+}
+
+.UITourListResoultList ul.ui-datascroller-list li .UITourInfoShort   {
+    width: 13em;
+}
+.UITourListResoultList ul.ui-datascroller-list li .UITourShortInfoPanel   {
+    width: 75%;
+    background: url("../images/price_panel_bg.png") no-repeat scroll right center rgba(0, 0, 0, 0);
+    padding-right: 16px;
+    min-height: 100px;
+    color: #111111;
+}
+.UITourListResoultList ul.ui-datascroller-list li .UITourShortVisit   {
+    width: 15em;
+
+}
+.UITourListResoultList ul.ui-datascroller-list li .UITourScheduleListS   {
+    width: 20em;
+
+}
+.UITourListResoultList ul.ui-datascroller-list li .UIPriceLabel {
+    font-size: 13px;
+    line-height: 20px;
+    color: #c9b901;
+    font-weight: bold;
+
+}
+.UITourListResoultList ul.ui-datascroller-list li .UIDiscount {
+    background: url("../images/discount_icon.png") no-repeat scroll left bottom rgba(0, 0, 0, 0);
+    color: #D80108;
+    font-size: 13px;
+    font-weight: bold;
+    height: 17px;
+    padding-left: 70px;
+    padding-top: 16px;
+}
+.UITourListResoultList ul.ui-datascroller-list li .SellPrice {
+    font-size: 13px;
+    line-height: 20px;
+    color: #c9b901;
+    font-weight: bold;
+}
+.UITourListResoultList ul.ui-datascroller-list li .UIInfoDescription {
+    font-size: 10px;
+}
+.UITourListResoultList ul.ui-datascroller-list li .PricePanel {
+    width: 9em;
+    text-align: right
+}
+
+.UISearchResultPanel .ui-datascroller-content {
+    border:0;
+    padding: 0 !important;
+}
+.UILabelTour {
+    color: #111111;
+    font-weight: bold;
+}
+
+
+.UICategoryPanel {
+}
+.UICategoryPanel div.imgPanel .UITitlePanel a {
+    color: #ffffff;
+    font-weight: bold;
+}
+.UICategoryPanel div.imgPanel .UITitlePanel {
+    background: url("../images/new_feature_bg.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    bottom: 0.2em;
+    padding: 0.2em;
+    position: absolute;
+    width: 180px;
+}
+.UICategoryDetail li div.imgPanel {
+    background: url("../images/home_tour_panel_bg.png") no-repeat scroll left bottom / 8em auto rgba(0, 0, 0, 0);
+    padding-bottom: 0.9em;
+}
+.UICategoryDetail li div.imgPanel a {
+    background-color: #ffffff;
+    border: 1px solid #cccccc  !important;; 
+    /*border-radius: 3px;*/
+    display: block;
+    padding: 0.1em;
+}
+.UICategoryDetail li div.imgPanel img {
+    /*border-radius: 3px;*/
+    height: 120px;
+    width: 170px;
+}
+.UICategoryDetail li:last-child {
+    border: medium none;
+}
+.UICategoryDetail li {
+    border-bottom: 1px dotted #cccccc !important;
+    margin: 0.5em 0;
+    padding-bottom: 0.5em;
+}
+.UICategoryDetail li .UIArticleDesc {
+    margin-left: 15.5em;
+    /*width: 38.5em;*/
+}
+h2.UICategoryPanelTitle {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 0 0 0.2em;
+}
+h2.UICategoryPanelTitle a {
+    color: #111111;
+    font-size: 14px;
+    padding: 0 0.5em 0.5em 0;
+    text-transform: uppercase;
+}
+h2.UICategoryPanelTitle a:hover {
+    color: #049bd3;
+}
+.UICategoryDetail li .UIActicleTitle {
+    padding: 0 0 0.5em;
+}
+.UICategoryDetail li .UIActicleTitle a {
+    color: #404040;
+    font-size: 13px;
+    font-weight: bold;
+}
+.UICategoryDetail li .UIActicleTitle a:hover {
+    color: #049bd3;
+}
+ul.UIListArticle  {
+    list-style: none outside none;
+}
+.UIListArticle .ui-widget-content {
+ border: none !important;   
+}
+.UIListArticle .ui-paginator-bottom{
+    float: right;
+    margin-top: 0.1em;
+    background:none;
+    border: none;
+}
+h2.UIArtTitlePanelTitle {
+    padding: 0 0.5em 0.5em 0;
+}
+h2.UIArtTitlePanelTitle a {
+    color: #111111;
+}
+
+.UIMoreActicle li {
+    background: url("../images/gray-square.gif") no-repeat scroll left 0.8em rgba(0, 0, 0, 0);
+    padding: 0.2em 0 0.2em 0.8em;
+}
+.UIMoreActicle li a {
+    color: #111111;
+}
+.UIMoreActicle li a:hover {
+    color: #049BD3;
+}
+.UIContentPanelCms ul {
+    list-style: none outside none;
+
+}
+.MoreActicleTitle {
+    border-bottom: 1px solid #e0e0e0;
+    margin-bottom: 0.5em;
+    padding: 1em 0 0.2em;
+    text-transform: uppercase;
+}
+
+ul.ArticleListBlock {
+    list-style: none outside none;
+}
+ul.ArticleListBlock li.Article {
+    margin-bottom: 0.3em;
+    margin-left: 0.5em;
+}
+ul.ArticleListBlock li.Article div.imgPanel {
+    border: 1px solid #dddcdb;
+    margin-right: 0.5em;
+    padding: 0.2em;
+}
+ul.ArticleListBlock li.Article div.UITitleArtcle {
+    /*width: 13.8em;*/
+    margin-left: 6em;
+}
+ul.ArticleListBlock li.Article div.UITitleArtcle a {
+    color: #111111;
+}
+ul.ArticleListBlock li.Article div.UITitleArtcle a:hover {
+    color: #049bd3;
+}
+ul.ArticleListBlock li.Article div.imgPanel img {
+    height: 45px;
+    width: 64px;
+}
+.UIBlockHeader {
+    /*margin-top: 0.5em;*/
+    background-color: #e4ebee;
+    /*border-bottom: 1px solid #ccc;*/
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    padding: 0.7em 0 0.8em 0.5em;
+}
+.UIMenuTopLeft {
+    border: 1px solid #cedfe6;
+    margin-top: 0.5em;
+    padding: 1px;
+    margin-bottom: 1em;
+}
+
+.UIMenuGroupHeader {
+    background-color: #e4ebee;
+    /*border-bottom: 1px solid #ccc;*/
+    font-weight: bold;
+    margin-bottom: 0.5em;
+    padding: 0.7em 0 0.8em 0.5em;
+}
+.UISupportOnlinePanel {
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+    width: 38%;
+}
+.UISupportOnlineItemsPanel {
+    border-bottom: 1px solid #f2f2f2;
+}
+.UISupportOnlinePanel .imgPanel {
+    height: 3em;
+}
+.UISupportOnlinePanel a {
+    color: #ffa207;
+    font-weight: bold;
+}
+.UISupportOnlinePanel a:hover {
+    color: #06acea;
+}
+.UISupportOnlinePanel .SupportName {
+    margin-top: 0.5em;
+    text-align: center;
+}
+.UISupportOnlinePanel img {
+    margin: 0 0 0 1em;
+    padding: 0;
+}
+.MenuLeftContent {
+    background: none repeat scroll 0 0 #ffffff;
+    /*box-shadow: 1px 1px 5px #cfcece;*/
+    font-weight: normal;
+    /*padding: 0.5em 1em 0;*/
+}
+.UISubMenuLeft {
+}
+.UISubMenuLeft .UISubHeader:last-child {
+    border-bottom: none;
+}
+.UISubMenuLeft .UISubHeader {
+    border-bottom: 1px solid #d4d8da;
+    color: #06acea;
+    font-weight: bold;
+    padding: 0.5em 0;
+    text-transform: uppercase;
+}
+.UISubMenuLeft a.LinkTop {
+    color: #06acea;
+    font-weight: bold;
+    text-transform: none;
+}
+.UISubMenuLeft .UISubHeader a.LinkTop:hover {
+    color: #24bebe;
+}
+.UISubMenuLeft .UISubContent {
+}
+.UISubMenuLeft .UISubContent ul li {
+    padding: 0.5em 0;
+}
+.UISubMenuLeft .UISubContent ul li a {
+    color: #111111;
+}
+.UISubMenuLeft .UISubContent ul li:hover a {
+    color: #049bd3;
+}
+.UISubMenuLeft .UISubContent ul li:hover {
+    border-bottom: 1px solid #f2f2f2;
+}
+.UISubMenuLeft .UISubContent ul li {
+    border-bottom: 1px solid #f2f2f2;
+}
+.UISubMenuLeft .UISubContent ul li:last-child {
+    border-bottom: none;
+}
+.UISubMenuLeft .UISubContent ul li.moreItem:hover {
+    /*background: url("../images/sub_menu_icon_active.png") no-repeat scroll right center rgba(0, 0, 0, 0);*/
+    border-bottom: 1px solid #f2f2f2;
+}
+.UISubMenuLeft .UISubContent ul li.moreItem {
+    /*background: url("../images/sub_menu_icon.png") no-repeat scroll right center rgba(0, 0, 0, 0);*/
+    border-bottom: 1px solid #f2f2f2;
+}
+
+.UITourDetailShortInfo {
+    background-color: #ffffff;
+    border: 1px solid #e3e0e0;
+    border-radius: 0.2em;
+    box-shadow: 0 0 5px #cccccc;
+    padding: 0.5em;
+}
+.UITourPresentImg {
+    width: 49%;
+}
+.UITourPresentImg img {
+    border: 1px solid #e3e0e0;
+    height: 270px;
+    width: 100%;
+}
+.UITourDetailShortInfo .UITourShortInfo {
+    width: 49%;
+    /*margin-left: 34em;*/
+}
+.UILabelTour {
+    color: #111111;
+    font-weight: bold;
+}
+.UITourDetailShortInfo .UITourShortInfo h2 {
+      border-bottom: 1px solid #dbe2e2;
+    height: 5.5em;
+    overflow: hidden;
+    padding-bottom: 0.5em;
+}
+.UITourDetailShortInfo .UITourShortInfo h2 a.tourName {
+    color: #111111;
+    font-size: 13px;
+}
+.UITourDetailShortInfo .UITourShortInfo h2 a.tourName:hover {
+    color: #f7941e;
+}
+.UITourDetailShortInfo .UITourShortInfo .UIShortInfo {
+    border-bottom: 1px solid #dbe2e2;
+    padding: 0.5em 0;
+}
+.UIPageTitle a{
+    color: #111111;
+    font-size: 13px;
+}
+.UIPageTitle a:hover {
+    color: #f7941e;
+}
+.UIViewOnTourIcon {
+    background: url("../images/view-on-tour-icon.png") no-repeat scroll left 2px rgba(0, 0, 0, 0);
+    padding: 0 0 0 1.5em;
+}
+.UIPriceRedBold {
+    color: #fe1a19;
+    font-weight: bold;
+}
+.UIFontSize16px {
+    font-size: 14px;
+}
+.UIInfoDescription {
+    color: #999999;
+}
+h2.UIBookingHeader {
+    margin-bottom: 0.2em;
+}
+h2.UIBookingHeader a.tourName {
+    color: #0492cf;
+    font-size: 13px;
+}
+h2.UIBookingHeader a.tourName:hover {
+    color: #f7941e;
+}
+.UIBookingHeaderPanel {
+    background-color: #f4f6f8;
+    padding: 1.2em 0.8em;
+    /*border-radius: 0.2em;*/
+    border:1px solid #eaedef;
+}
+.UIPrinter {
+    background: url('../images/printer_program.png') no-repeat center center;
+    width: 28px;
+    height: 25px;
+    display: inline-block;
+}
+.TourServiceDataList .ui-datalist-data {
+    background: none repeat scroll 0 0 #f2fafd;
+    padding: 0.5em 0.5em 0.2em 0.5em;
+    margin-bottom: 1em;
+}
+.UIBookingTourPanel {
+    border: medium none;
+    /*    box-shadow: 0 1px 6px #c2c2c2;*/
+}
+.UIBookingTourPanel input{
+    border: 1px solid #abadb3;
+    border-radius: 1px;
+    box-shadow: 0 1px 1px #f0f1f2 inset !important;
+    height: 26px !important;
+}
+.UIFieldsetAtherRequest {
+    border: medium none;
+    border-radius: 0;
+    margin-bottom: 1em;
+    padding: 0 !important;
+}
+.UITourDetailInfo {
+    background-color: #ffffff;
+    box-shadow: 0 0 5px #cccccc;
+    line-height: 20px;
+    margin-top: 1em;
+    padding: 0.8em;
+}
+.UITourDetailBlock {
+    padding-bottom: 0.5em;
+}
+.UITourDetailBlock .UIHeader {
+    border-bottom: 1px solid #dbe2e2;
+    margin: 0.5em 0;
+    padding-bottom: 0.3em;
+}
+.UITourDetailBlock .UITitleHeader {
+    font-size: 17px;
+    font-weight: bold;
+    margin: 0.5em 0;
+}
+.UIDetailBlockContent ul.PricePanel {
+    list-style: none outside none;
+}
+.UIDetailBlockContent ul.PricePanel li.Header div.uitable {
+    background-color: #00b0ee;
+    border-collapse: collapse;
+    color: #ffffff;
+    display: table;
+    width: 100%;
+}
+.UIDetailBlockContent ul.PricePanel li {
+    border-bottom: 1px solid #d6d6cc;
+    border-right: 1px solid #d6d6cc;
+}
+.UIDetailBlockContent ul.PricePanel li.Header div.uitable .UIBorderLeft {
+    border-left: 1px solid #d6d6cc;
+}
+.UIDetailBlockContent ul.PricePanel li.Header div.uitable .UIBorderRight {
+    border-right: 1px solid #d6d6cc;
+}
+.UIDetailBlockContent ul.PricePanel li.Header div.uitable .UIBorderLeftd6d6cc {
+    border-left: 1px solid #d6d6cc;
+}
+.UIDetailBlockContent ul.PricePanel li div.uitable {
+    background-color: #fcfde5;
+    border-collapse: collapse;
+    display: table;
+    width: 100%;
+}
+.UIDetailBlockContent ul.PricePanel li div.uitable .UIBorderRight {
+    border-right: 1px solid #d6d6cc;
+}
+.UIDetailBlockContent ul.PricePanel li div.uitable .UIBorderLeft {
+    border-left: 1px solid #d6d6cc;
+}
+.UIDetailBlockContent ul.PricePanel li div.panel {
+    display: table-row;
+}
+.UIDetailBlockContent ul.PricePanel li div.panel:hover {
+    background-color: #ffffff;
+    box-shadow: 0 1px 6px #c2c2c2;
+}
+.UIDetailBlockContent ul.PricePanel li.Header div.panel:hover {
+    background-color: #00b0ee;
+    box-shadow: none;
+}
+.UIDetailBlockContent ul.PricePanel li div.col1 {
+    display: table-cell;
+    max-width: 20%;
+    min-height: 5em;
+    min-width: 20%;
+    padding: 0.3em 0.5em;
+    vertical-align: middle;
+    width: 20%;
+}
+.UIDetailBlockContent ul.PricePanel li div.col {
+    display: table-cell;
+    font-size: 10px;
+    font-weight: bold;
+    max-width: 11.3%;
+    min-height: 5em;
+    min-width: 11.3%;
+    padding: 0.2em 0.05em;
+    text-align: center;
+    vertical-align: middle;
+    width: 11.3%;
+}
+.UIDetailBlockContent ul.PrivatePricePanel {
+    list-style: none outside none;
+}
+.UIDetailBlockContent ul.PrivatePricePanel li.Header div.uitable {
+    background-color: #00b0ee;
+    border-collapse: collapse;
+    color: #ffffff;
+    display: table;
+    width: 100%;
+}
+.UIDetailBlockContent ul.PrivatePricePanel li {
+    border-bottom: 1px solid #d6d6cc;
+    border-right: 1px solid #d6d6cc;
+}
+.UIDetailBlockContent ul.PrivatePricePanel li.Header div.uitable .UIBorderLeft {
+    border-left: 1px solid #d6d6cc;
+}
+.UIDetailBlockContent ul.PrivatePricePanel li.Header div.uitable .UIBorderRight {
+    border-right: 1px solid #d6d6cc;
+}
+.UIDetailBlockContent ul.PrivatePricePanel li.Header div.uitable .UIBorderLeftd6d6cc {
+    border-left: 1px solid #d6d6cc;
+}
+.UIDetailBlockContent ul.PrivatePricePanel li div.uitable {
+    background-color: #fcfde5;
+    border-collapse: collapse;
+    display: table;
+    width: 100%;
+}
+.PrivateTourPricePanel > div:first-child {
+    border-top: medium none;
+}
+.PrivateTourPricePanel > div {
+    border-top: 1px solid #d6d6cc;
+}
+.UIDetailBlockContent ul.PrivatePricePanel li div.uitable .UIBorderRight {
+    border-right: 1px solid #d6d6cc;
+}
+.UIDetailBlockContent ul.PrivatePricePanel li div.uitable .UIBorderLeft {
+    border-left: 1px solid #d6d6cc;
+}
+.UIDetailBlockContent ul.PrivatePricePanel li div.panel {
+    display: table-row;
+}
+.UIDetailBlockContent ul.PrivatePricePanel li div.panel:hover {
+    background-color: #dff4ca;
+    box-shadow: 0 1px 6px #c2c2c2;
+}
+.UIDetailBlockContent ul.PrivatePricePanel li.Header div.panel:hover {
+    background-color: #00b0ee;
+    box-shadow: none;
+}
+.UIDetailBlockContent ul.PrivatePricePanel li div.col1 {
+    display: table-cell;
+    max-width: 10%;
+    min-height: 5em;
+    min-width: 10%;
+    padding: 0.3em 0.5em;
+    vertical-align: middle;
+    width: 10%;
+}
+.UIDetailBlockContent ul.PrivatePricePanel li div.col2 {
+    display: table-cell;
+    max-width: 6%;
+    min-height: 6em;
+    min-width: 6%;
+    padding: 0.3em 0.5em;
+    vertical-align: middle;
+    width: 5%;
+}
+
+
+/*    .UIDetailBlockContent ul.PrivatePricePanel li div.col3 {
+        display: table-cell;
+        font-size: 10px;
+        font-weight: bold;
+        max-width: 13.1%;
+        min-height: 5em;
+        min-width: 15%;
+        padding: 0.3em 0.5em;
+        vertical-align: middle;
+        width: 13.1%;
+    }*/
+/*
+@media screen and (max-width: 1000px) {
+    .UIDetailBlockContent ul.PrivatePricePanel li div.col3 {
+        display: table-cell;
+        font-size: 10px;
+        font-weight: bold;
+        max-width: 15.84%;
+        min-height: 5em;
+        min-width: 15%;
+        padding: 0.3em 0.5em;
+        vertical-align: middle;
+        width:  15.84%;
+    }
+}*/
+
+
+.UIDetailBlockContent ul.PrivatePricePanel li  .UITableTr {
+    /*display: table-row;*/
+    display: inherit;
+}
+.UIDetailBlockContent ul.PrivatePricePanel li div.colDes {
+    display: table-cell;
+    max-width: 20%;
+    min-height: 5em;
+    padding: 0.3em 0.5em;
+    vertical-align: middle;
+    width: 20%;
+}
+.UIDetailBlockContent ul.PrivatePricePanel li div.col {
+    display: table-cell;
+    font-size: 10px;
+    font-weight: bold;
+    max-width: 12.5%;
+    min-height: 5em;
+    min-width: 12.5%;
+    padding: 0.2em 0.05em;
+    text-align: center;
+    vertical-align: middle;
+    width: 12.5%;
+}
+span.UIDayOnWeekName {
+    color: #ddf4fc;
+    display: block;
+    padding: 0.2em;
+    text-align: center;
+}
+span.UIDayOnMonth {
+    color: #ddf4fc;
+    display: block;
+    font-size: 18px;
+    padding: 0 0 0.2em;
+    text-align: center;
+}
+.UIPriceInclude {
+    width: 48%;
+}
+.UIPriceNotInclude {
+    width: 48%;
+}
+.UIPriceInclude ul {
+    list-style: none outside none;
+}
+.UIPriceInclude ul li {
+    background: url("../images/bullet_tick.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    margin-bottom: 0.2em;
+    padding-left: 1.8em;
+}
+.UIPriceNotInclude ul {
+    list-style: none outside none;
+}
+.UIPriceNotInclude ul li {
+    background: url("../images/bullet_minus.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    margin-bottom: 0.2em;
+    padding-left: 1.8em;
+}
+.UIVisitIntroduce img {
+    max-width: 680px;
+}
+.UITourDetailPro {
+}
+.UITourDetailPro .UIDayHeader {
+    font-weight: bold;
+    margin: 0.5em 0;
+}
+.UITourDetailPro .UIDayHeader .DayTit {
+    text-transform: uppercase;
+}
+.UITourDetailPro .DayContent div.img {
+    border: medium none #c2c2c2;
+    box-shadow: 0 1px 5px #c2c2c2;
+    margin-right: 1em;
+    padding: 0.2em;
+}
+.UITourDetailPro .DayContent {
+    margin-bottom: 0.5em;
+}
+.UITourDetailPro .DayContent div.img img {
+    max-width: 150px;
+}
+.UITourDetailPro .DayContent div.info {
+    text-align: justify;
+    width: 78%;
+}
+a.UIShortLink {
+    color: #f59829;
+    text-decoration: underline;
+}
+a.UIShortLink:hover {
+    font-weight: bold;
+}
+.UIFieldsetAtherRequest {
+    border: medium none;
+    border-radius: 0;
+    margin-bottom: 1em;
+    padding: 0 !important;
+}
+.UIFieldsetAtherRequest .ui-fieldset-content {
+    margin-top: 0.8em;
+}
+.UIFieldsetAtherRequest .ui-fieldset-legend {
+    border: medium none;
+}
+.UIFieldsetAtherRequest legend.ui-fieldset-legend {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+    box-shadow: none;
+    color: #cccccc;
+    padding: 0;
+}
+.UIFieldsetSpace {
+    border-bottom: 1px dotted #cccccc;
+    border-left: medium none;
+    border-radius: 0;
+    border-right: medium none;
+    margin-bottom: 1em;
+    padding: 0 !important;
+}
+.UIFieldsetSpace .ui-fieldset-content {
+    margin-top: 0.8em;
+}
+.UIFieldsetSpace legend.ui-fieldset-legend {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+    box-shadow: none;
+    color: rgb(192, 168, 3);
+    padding: 0;
+}
+.UICustomerBookingTab {
+    /*border-color: -moz-use-text-color -moz-use-text-color #cccccc;*/
+    /*border-left: medium none;*/
+    /*border-right: medium none;*/
+    border:none;
+    /*border-style: none none dotted;*/
+    /*border-width: medium medium 1px;*/
+    margin-bottom: 1em;
+    margin-top: 1em;
+    /*padding: 0px;*/
+}
+.UITourShortInfo >div {
+    margin-bottom: 0em !important;
+}
+.UICustomerBookingTab ul.ui-tabs-nav {
+    background-color: #ffffff;
+}
+.UICustomerBookingIcon {
+}
+.TourServiceDataList .ui-widget-content {
+    border: medium none;
+}
+.UICustomerBookingTab .ui-tabs-panels > div{
+    padding: 0px !important;
+}
+.UICustomerBookingIcon a {
+    background: url("../images/customer.png") no-repeat scroll center center rgba(0, 0, 0, 0);
+    display: inline-block;
+    min-height: 25px;
+    min-width: 25px;
+}
+ul.UIStepByStep {
+    background-image: url("../images/step_by_step.png");
+    background-repeat: no-repeat;
+    background-size: 680px auto;
+    display: block;
+    height: 53px;
+    list-style: none outside none;
+}
+ul.UIStepByStep2 {
+    background-position: left -4.7em;
+}
+ul.UIStepByStep3 {
+    background-position: left -9.2em;
+}
+ul.UIStepByStep4 {
+    background-position: left -13.8em;
+}
+ul.UIStepByStep li.Step {
+    display: inline-block;
+    line-height: 15px;
+    width: 10em;
+}
+ul.UIStepByStep li.Step a div.StepName {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+}
+ul.UIStepByStep li.Step a div.StepShortInfoNomal {
+    color: #b5ecff;
+    font-size: 10px;
+}
+ul.UIStepByStep li.Step a div.StepShortInfoActive {
+    color: #b1e35d;
+    font-size: 10px;
+}
+ul.UIStepByStep li.Step1 {
+    padding: 0.5em 0.3em 0.4em 3.5em;
+}
+ul.UIStepByStep li.Step2 {
+    padding: 0.5em 0.3em 0.4em 3.3em;
+}
+ul.UIStepByStep li.Step3 {
+    padding: 0.5em 0.3em 0.4em 3.9em;
+}
+ul.UIStepByStep li.Step4 {
+    padding: 0.5em 0.3em 0.4em 3.5em;
+}
+.ui-widget {
+    font-size: 12px;
+}
+
+ul.UIResultSuggest {
+    list-style: none;
+    margin-bottom: 1em;
+    margin-top: 1em;
+    border-bottom: 1px solid #e5e5e5;
+}
+ul.UIResultSuggest li.items{
+    display: inline-block;
+}
+ul.UIResultSuggest li.items h2{
+    font-weight: normal;   
+}
+
+ul.UIResultSuggest li.items a{
+    color: #111111;
+    display: inline-block;
+    font-size: 13px;
+
+    /*padding: 0.3em 0.8em 0.2em 1em;*/
+    padding: 0.3em 0.6em 0.2em 0.6em;
+}
+ul.UIResultSuggest li.items a:hover{
+    color: #037baf;
+}
+ul.UIResultSuggest li.active a{
+    color: #037baf;
+    font-weight: bold;
+    border-bottom: solid 0.35em #009fe3;
+}
+ul.UIResultSuggest li.active span {
+    color: #037baf;
+    font-weight: bold;
+    display: inline-block;
+    font-size: 13px;
+    white-space: nowrap;
+    padding: 0.3em 1em 0em 0em;
+}
+
+.UIWidth98Percent {
+    width: 98%;
+}
+
+h2.UIContactUs a {
+    color: #049bd3;
+    font-size: 19px;
+    text-transform: uppercase;
+}
+h2.UIContactUs {
+    border-bottom: 1px solid #f2f2f2;
+    margin-bottom: 0.5em;
+    padding-bottom: 0.3em;
+}
+.UICapcharPanel .recaptcha_only_if_privacy {
+    display: none;
+}
+a.UIDetail {
+    background-color: #03aaee;
+    border-radius: 3px 0;
+    color: #ffffff;
+    display: block;
+    font-weight: bold;
+    margin-top: 0.5em;
+    padding: 4px 10px;
+    text-align: center;
+}
+a.UIDetail:hover {
+    background-color: #f7941e;
+}
+.UIContactUsOrgInfo {
+    background: url("/themes/web-app/travelTemp02/resources/images/contactUsBg.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: 1px solid #e7dfdf;
+    color: #f39801;
+    height: 120px;
+    padding: 0.5em;
+    width: 300px;
+}
+.UISupportBottom {
+    background: none repeat scroll 0 0 #f6f7f8;
+    border-top: 1px solid #eceded;
+    bottom: 0;
+    /*box-shadow: 0 0 8px #DDDDDD;*/
+    display: block;
+    left: 0;
+    min-width: 800px;
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    z-index: 99;
+}
+.UISupportBottom .UIHotlineBottom {
+    background: none repeat scroll 0 0 #009fe3;
+    float: left;
+    font-weight: 600;
+    padding: 6px 55px;
+    position: relative;
+    text-transform: uppercase;
+}
+.UISupportBottom .UIHotlineBottom span {
+    color: #FFFFFF;
+    font-size: 14px;
+    text-shadow: none;
+    font-family: "Tahoma,Verdana,Lucida Grande Sans-Serif";
+}
+.UISupportBottom .UIHotlineBottom .arrow_hotline {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) #009fe3;
+    border-image: none;
+    border-style: solid;
+    border-width: 16px;
+    height: 0;
+    position: absolute;
+    right: -32px;
+    top: 0;
+    width: 0;
+}
+.UISupportBottom .main_nav_hotline {
+    float: left;
+    padding: 6px 20px;
+}
+.UISupportBottom .main_nav_hotline .nav_tit_location {
+    color: #049dd7;
+    text-transform: uppercase;
+}
+.UISupportBottom .main_nav_hotline ul li {
+    color: #706B6B !important;
+    display: inline;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    padding-right: 5px;
+}
+.UIYahooBottomPanel {
+    padding: 0.5em 1em 0em 0.2em;
+}
+.UIYahooBottomPanel ul li {
+    color: #706B6B !important;
+    display: inline;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    padding-left: 5px;
+}
+
+.UIDiscountTourCode label{
+    color: #ffffff;
+    font-weight: bold;
+    margin-top: 0.5em;
+    display: inline-block;
+}
+.UIDiscountTourCode {
+    margin-top: 4em !important;
+    border:1px solid #00acee;
+    background: #00acee;
+    border-radius: 3px;
+
+    padding: 0.2em 0.5em;
+}
+.UIDiscountTourCode input {
+    border: 0 !important;
+    box-shadow: none  !important;
+    background-color: #ffffff;
+    color: #111111;
+
+}
+.UITourBillInfo {
+    border:1px solid #cedfe6;
+    padding: 0.2em 0.5em;
+}
+.UISiteLoginMenu{
+    background: none !important;
+    border-radius: 0 !important;
+    border: 1px solid #00acee;
+    margin-bottom: 1em;
+    padding: 10px;
+    width:  100% !important;
+}
+.UISiteLoginMenu .ui-menu-list .ui-widget-header {
+    width:  96% !important;
+}
+.UISiteLoginMenu .ui-widget-header {
+    padding: 0.5em !important;
+    background: #00acee !important;
+    border-radius: 0 !important;
+    color: #FFFFFF !important;
+    text-shadow:  none !important;
+    border: 1px solid #00acee;
+}
+.UISiteLoginMenu .ui-menu-list .ui-state-hover {
+    background:  none !important;
+    box-shadow: none !important;
+    color: #00acee;
+}
+
+.UIFileUploadImg4Deputy {
+    position: relative;
+}
+.UIFileUploadImg4Deputy .ImagePanel{
+    padding: 0.1em;
+    max-height: 15em;
+    max-width: 14em;
+    border: 1px solid #D4D4D4;
+    background-color: #ffffff;
+    margin-bottom: 0.2em;
+}
+.UIFileUploadImg4Deputy .ImagePanel img{
+    max-height: 15em;
+    max-width: 14em;
+
+}
+.UIFileUploadImg4Deputy .ui-messages-error{
+    position: absolute;
+
+}
+.UIFileUploadImg4Deputy .ui-fileupload-buttonbar{
+    padding: 0;
+}
+.UIFileUploadImg4Deputy .ui-widget-header{
+    background: none;
+    border: 0;
+}
+.UIFileUploadImg4Deputy .ui-widget-content{
+    border: 0;
+}
+.UIFileUploadImg4Deputy .ui-fileupload-content{
+    padding: 0;
+}
+
+.UIFileUploadImg4Deputy table.ui-fileupload-files{
+    display: none;
+}
+
+.UIFileUploadImg4Deputy {
+    position: relative;
+}
+.UIFileUploadImg4Deputy .ImagePanel{
+    padding: 0.1em;
+    max-height: 10em;
+    max-width: 12.3em;
+    border: 1px solid #D4D4D4;
+    background-color: #ffffff;
+    margin-bottom: 0.2em;
+}
+.UIFileUploadImg4Deputy .ImagePanel img{
+    max-height: 10em;
+    max-width: 12.3em;
+
+}
+.UIFileUploadImg4Deputy .ui-messages-error{
+    position: absolute;
+
+}
+.UIFileUploadImg4Deputy .ui-fileupload-buttonbar{
+    padding: 0;
+}
+.UIFileUploadImg4Deputy .ui-widget-header{
+    background: none;
+    border: 0;
+}
+.UIFileUploadImg4Deputy .ui-widget-content{
+    border: 0;
+}
+.UIFileUploadImg4Deputy .ui-fileupload-content{
+    padding: 0;
+}
+
+.UIFileUploadImg4Deputy table.ui-fileupload-files{
+    display: none;
+}
+.UIFileUploadImg4Deputy .ui-button-text-icon-left .ui-button-text {
+    padding: 0.3em 0.5em 0.3em 1.7em;
+}
+.UIFileUploadImg4Deputy .ui-button-text-only .ui-button-text {
+    padding: 0.3em 0.5em;
+}
+.UIFileUploadImg4Deputy  span.ui-button{
+    /*background: -moz-linear-gradient(center top , rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0)) repeat scroll 0 0 #00acee !important;*/
+}
+.addthis_native_toolbox {
+    height: 2em;
+    overflow-y: hidden;
+    margin-top: 0.5em;
+}
+a.nextButton {
+    background: url("../images/next_date_price.png") no-repeat scroll -34px 8px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 30px;
+    padding-left: 37px;
+    color: #f59829;
+    margin-top: 0.2em;
+}
+a.nextButton:hover {
+    background: url("../images/next_date_price.png") no-repeat scroll -34px -16px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 30px;
+    padding-left: 37px;
+    color: #da8704;
+    margin-top: 0.2em;
+    text-decoration: underline;
+}
+a.preButton {
+    background: url("../images/next_date_price.png") no-repeat scroll 75px 8px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 30px;
+    padding-right: 37px;
+    color: #00b0ee;
+    margin-right: 0.5em;
+    margin-top: 0.2em;
+}
+a.preButton:hover {
+    background: url("../images/next_date_price.png") no-repeat scroll 75px -16px rgba(0, 0, 0, 0);
+    display: inline-block;
+    height: 30px;
+    padding-right: 37px;
+    color: #0491da;
+    margin-top: 0.2em;
+    text-decoration: underline;
+}
+.NPriceLabel {
+    display: inline-block;
+    margin-top: 0.2em;
+    margin-right: 0.5em;
+}
+.UIFixPosition .ui-dock-container-bottom {
+    bottom: 2.5em;
+}
+
+.UIPopupShareFaceBook {
+    
+}
+.UITourInfoShort {
+    overflow: hidden;
+    width: auto;
+}
+
+.H2jTopMenuStyle01 ul li a {
+        white-space: nowrap;
+}
+
+ul.MenuPanel li a {
+    white-space: nowrap;
+}
+ul.UIResultSuggest li a {
+    white-space: nowrap;
+}
+.UIMenuFooterPanel ul li a {
+    white-space: nowrap;
+}
+.UIHotlineBottom span{
+    white-space: nowrap;
+}

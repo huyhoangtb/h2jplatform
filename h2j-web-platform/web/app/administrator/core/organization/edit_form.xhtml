@@ -1,0 +1,192 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h2j="http://xmlns.jcp.org/jsf/composite/h2j">
+
+    <h:form id="organizationFormId" enctype="multipart/form-data" >  
+        <p:messages id="messages"/>
+
+        <div class="UIPanelTable UIBorderButtomA8A8A8 UIMarginTop0a8em">
+            <div class="UILabelPanel UIFloatLeft UIWidth15em">
+                <h:outputText value="Chi nhánh/phòng ban cấp trên"/>
+            </div>
+            <div class="UIFloatLeft UIMarginRight10px">
+                <p:autoComplete value="#{organizationController.organizationParent}"   
+                                id="basicPojo" completeMethod="#{organizationController.completeOrganization}"  
+                                var="organizationParent" itemLabel="#{organizationParent.organizationName}" itemValue="#{organizationParent}" 
+                                converter="organizationConverter"  forceSelection="true"
+                                size="40">  
+
+                </p:autoComplete>  
+                <p:watermark for="basicPojo" value="Tên công ty, tổ chức, đơn vị cấp trên" />
+            </div>   
+            <div class="UIClearLeft"><span></span></div>
+        </div>
+        <div class="UIPanelTable">
+            <div class="UILabelPanel UIFloatLeft UIWidth15em">
+                <h:outputText value="Chọn tỉnh thành (*)"/>
+            </div>
+            <div class="UIFloatLeft">
+                <div class="UIFloatLeft UIMarginRight10px">
+                    <p:selectOneMenu id="nationalId" style="width: 160px" converter="locationConverter"
+                                     value="#{organizationController.organization.locationComObj.nationalSelected}">  
+                        <f:selectItems value="#{organizationController.organization.locationComObj.nationalDefault}" />  
+                        <p:ajax process="@this" event="change"  immediate="true"
+                                update="UIProvinceListBoxId UIDistrictListBoxIdcl UIStreetListBoxIdcl"/>
+                    </p:selectOneMenu> 
+                </div>
+
+                <div class="UIFloatLeft UIMarginRight10px">
+                    <p:selectOneMenu value="#{organizationController.organization.locationComObj.provinceSelected}"  style="width: 160px"
+                                     id="UIProvinceListBoxId" converter="locationConverter">  
+                        <f:selectItems value="#{organizationController.organization.locationComObj.province4Change}" />  
+                        <p:ajax process="@this " event="change" immediate="true" 
+                                update="UIDistrictListBoxId UIStreetListBoxIdcl" />
+                    </p:selectOneMenu>
+                </div>
+
+                <div class="UIFloatLeft UIMarginRight10px">
+                    <p:outputPanel id="UIDistrictListBoxIdcl">
+                        <p:selectOneMenu value="#{organizationController.organization.locationComObj.districtSelected}" style="width: 160px"
+                                         converter="locationConverter" id="UIDistrictListBoxId">  
+                            <f:selectItems value="#{organizationController.organization.locationComObj.district4Change}" />  
+                            <p:ajax process="@this" event="change"  
+                                    update="UIStreetListBoxIdcl"/>
+                        </p:selectOneMenu>
+                    </p:outputPanel>
+                </div>
+                <div class="UIFloatLeft UIMarginRight10px">
+                    <p:outputPanel id="UIStreetListBoxIdcl">
+                        <p:selectOneMenu value="#{organizationController.organization.locationComObj.streetSelected}"  rendered="#{organizationController.organization.locationComObj.streetList.size() > 1}"
+                                         id="UIStreetListBoxId"  
+                                         converter="locationConverter" style="width: 160px">  
+                            <f:selectItems value="#{organizationController.organization.locationComObj.street4Change}" />  
+                        </p:selectOneMenu>
+                    </p:outputPanel>
+                </div>
+                <div class="UIClearLeft"><span></span></div>
+            </div>
+            <div class="UIClearLeft"><span></span></div>
+        </div>
+        <div>
+            <div class="UIFloatLeft">
+                <div class="UIPanelTable">
+                    <div class="UILabelPanel UIFloatLeft UIWidth15em">
+                        <h:outputText value="Tên công ty/tổ chức (*)" />
+                    </div>
+                    <div class="UIFloatLeft">
+                        <div class="UIFloatLeft UIMarginRight10px">
+                            <p:inputText id="organizationNameId" size="40"   value="#{organizationController.organization.organizationName}" />
+                        </div>
+
+                        <div class="UIClearLeft"><span></span></div>
+                    </div>
+                    <div class="UIClearLeft"><span></span></div>
+                </div>
+                <div class="UIPanelTable">
+                    <div class="UILabelPanel UIFloatLeft UIWidth15em">
+                        <h:outputText value="Tên viết tắt"/>
+                    </div>
+                    <div class="UIFloatLeft">
+                        <p:inputText value="#{organizationController.organization.shortName}"/>
+                    </div>
+                    <div class="UIClearLeft"><span></span></div>
+                </div>
+
+                <!--        <div class="UIPanelTable">
+                            <div class="UILabelPanel UIFloatLeft UIWidth15em">
+                                <h:outputLabel value="Tên tiếng anh: " />  
+                            </div>
+                            <div class="UIFloatLeft">
+                                <p:inputText size="40"   value="{organizationController.organization.enlishName}"/>
+                            </div>
+                            <div class="UIClearLeft"><span></span></div>
+                        </div>-->
+
+                <div class="UIPanelTable">
+                    <div class="UILabelPanel UIFloatLeft UIWidth15em">
+                        <h:outputText value="Địa chỉ "/>
+                    </div>
+                    <div class="UIFloatLeft">
+                        <p:inputText size="40"   value="#{organizationController.organization.address}"/>
+                    </div>
+                    <div class="UIClearLeft"><span></span></div>
+                </div>
+
+                <div class="UIPanelTable">
+                    <div class="UILabelPanel UIFloatLeft UIWidth15em">
+                        <h:outputText value="Điện thoại"/>
+                    </div>
+                    <div class="UIFloatLeft">
+                        <p:inputText    value="#{organizationController.organization.phone}"/>
+                    </div>
+                    <div class="UIClearLeft"><span></span></div>
+                </div>
+                <div class="UIPanelTable">
+                    <div class="UILabelPanel UIFloatLeft UIWidth15em">
+                        <h:outputText value="Fax"/>
+                    </div>
+                    <div class="UIFloatLeft">
+                        <p:inputText  value="#{organizationController.organization.fax}"/>   
+                    </div>
+                    <div class="UIClearLeft"><span></span></div>
+                </div>
+
+                <div class="UIPanelTable">
+                    <div class="UILabelPanel UIFloatLeft UIWidth15em">
+                        <h:outputText value="Email"/>
+                    </div>
+                    <div class="UIFloatLeft">
+                        <p:inputText id="EmailId"   value="#{organizationController.organization.emailAddress}"/>
+                        <h:message for="EmailId"/>
+                    </div>
+                    <div class="UIClearLeft"><span></span></div>
+                </div>
+
+                <div class="UIPanelTable">
+                    <div class="UILabelPanel UIFloatLeft UIWidth15em">
+                        <h:outputText value="Website"/>
+                    </div>
+                    <div class="UIFloatLeft">
+                        <p:inputText size="40" id="websiteEmailId"  value="#{organizationController.organization.website}" validatorMessage="(*)"/>
+                        <h:message for="websiteEmailId"/>
+                    </div>
+                    <div class="UIClearLeft"><span></span></div>
+                </div>
+            </div>
+            <div class="UIFloatLeft UIMarginLeft2em">  
+
+                <h2j:Img4Deputy />   
+
+            </div>
+            <div class="UIClearLeft"><span></span></div>
+        </div>
+
+
+        <div class="UIButtonPanel">
+
+            <p:commandButton  value="#{msg['label_create_new']}"  rendered="#{organizationController.organization.organizationId eq null}"
+                             action="#{organizationController.createOrganization}" ajax="false">
+            </p:commandButton>
+            <p:commandButton  value="Thêm mới &amp; tiếp tục"  rendered="#{organizationController.organization.organizationId eq null}"
+                             actionListener="#{organizationController.createOrganizationAndContinues}" ajax="false">
+            </p:commandButton>
+            <p:commandButton value="#{msg['label_retyping_date']}"  rendered="#{organizationController.organization.organizationId eq null}"
+                             actionListener="#{organizationController.retypeOrganization}" ajax="false">
+            </p:commandButton>
+            <p:commandButton value="#{msg['label_confirm_update']}"   rendered="#{organizationController.organization.organizationId ne null}"
+                             action="#{organizationController.updateOrganization}" ajax="false">
+            </p:commandButton>
+            <p:commandButton value="#{msg['organization_delete']}"   rendered="#{organizationController.organization.organizationId ne null}"
+                             actionListener="#{organizationController.deleteOrganization}" ajax="false">
+                <p:confirmDialog  header="Xóa tổ chức này" message="Bạn có chắc chắn muốn xóa tổ chức này không?"  /> 
+            </p:commandButton>
+            <p:commandButton value="#{msg['label_confirm_close_window']}"   rendered="#{organizationController.dilogControl eq 'true'}"
+                             actionListener="#{organizationController.closeDetailOrganization}" ajax="false">
+            </p:commandButton>
+        </div>
+    </h:form>
+</ui:composition>

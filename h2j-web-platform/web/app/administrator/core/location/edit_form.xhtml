@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:pe="http://primefaces.org/ui/extensions"
+                xmlns:h2j="http://xmlns.jcp.org/jsf/composite/h2j"
+                xmlns:p="http://primefaces.org/ui">   
+<h:form  id="editFormId">
+ <h2j:multiLanguagle update=":editFormId"/>
+ <div class="UIPanelTable">
+                    <div class="UILabelPanel UIFloatLeft UIWidth15em">
+                        <h:outputText value="Thuộc địa danh"/>
+                    </div>
+                    <div class="UIRightContent">
+                        <p:autoComplete value="#{locationController.parentLocation}" disabled="#{locationController.location.locationId ne null}"
+                                        id="planceLocationPojoId" completeMethod="#{locationController.suggetPlaceLocation}"  
+                                        var="location" itemLabel="#{location.locationName}" itemValue="#{location}" 
+                                        converter="locationConverter"  forceSelection="true" size="33">
+                        </p:autoComplete>  
+                        <p:watermark for="planceLocationPojoId" value="Quốc gia, tỉnh thành..." />
+                    </div>
+                    <div class="UIClearLeft"><span></span></div>
+                </div>
+
+                <div class="UIPanelTable">
+                    <div class="UILabelPanel UIFloatLeft UIWidth15em">
+                        <h:outputText value="Loại địa danh"/>
+                    </div>
+                    <div class="UIRightContent">
+                        <p:selectOneMenu  style="width: 166px" value="#{locationController.location.type}" converter="javax.faces.Integer">
+                            <f:selectItem itemLabel="Chọn loại địa danh" itemValue="-1"/>
+                            <f:selectItem itemLabel="Quốc gia" itemValue="1"/>
+                            <f:selectItem itemLabel="Tỉnh thành" itemValue="2"/>
+                            <f:selectItem itemLabel="Quận huyện" itemValue="3"/>
+                            <f:selectItem itemLabel="Phường xã" itemValue="4"/>
+                            <f:selectItem itemLabel="Địa danh du lịch" itemValue="5"/>
+                        </p:selectOneMenu>
+
+                    </div>
+                    <div class="UIClearLeft"><span></span></div>
+                </div>
+                <div class="UIPanelTable">
+                    <div class="UILabelPanel UIFloatLeft UIWidth15em">
+                        <h:outputText value="Tên địa danh"/>
+                    </div>
+                    <div class="UIRightContent">
+                        <div class=" UIFloatLeft UIMarginRight10px">
+                            <p:inputText value="#{locationController.location.locationName}"/>
+                        </div>
+                        <div class=" UIFloatLeft">
+                            <p:inputText value="#{locationController.location.locationCode}" size="8" placeholder="Mã địa danh"/>
+                        </div>
+                    </div>
+                    <div class="UIClearLeft"><span></span></div>
+                </div>
+
+                <div class="UIPanelTable">
+                    <div class="UILabelPanel UIFloatLeft UIWidth15em">
+                        <h:outputText value="Trạng thái"/>
+                    </div>
+                    <div class="UIRightContent">
+                        <div class=" UIFloatLeft UIMarginRight10px">
+                            <p:selectOneMenu  style="width: 166px" value="#{locationController.location.status}" converter="javax.faces.Integer">
+                                <f:selectItem itemLabel="Chọn trạng thái" itemValue="-1"/>
+                                <f:selectItem itemLabel="Hoạt động" itemValue="1"/>
+                                <f:selectItem itemLabel="Ngưng hoạt động" itemValue="0"/>
+                            </p:selectOneMenu>
+                        </div>
+                        <div class=" UIFloatLeft">
+                            <p:spinner value="#{locationController.location.orderShow}" size="6" placeholder="Số thứ tự" min="0"/>
+                        </div>
+
+
+                    </div>
+
+                    <div class="UIClearLeft"><span></span></div>
+                </div>
+        <div class="UIPanelTable">
+
+            <div class=" UIFloatLeft UIMarginRight10px">
+               
+                <h2j:seoTools metaUrl="#{locationController.location.metaUrl4Lang}" 
+                              metaTitle="#{locationController.location.metaTitle4Lang}" 
+                              metaDes="#{locationController.location.metaDescription4Lang}" 
+                              metaKeyword="#{locationController.location.metaKeyword4Lang}"/>
+
+
+            </div>
+            <div class=" UIFloatLeft">
+                <div class="UIPanelTable">
+                    <h2j:Img4Deputy/>
+                </div>
+            </div>
+            <div class="UIClearLeft"><span></span></div>
+        </div>
+        <div class="UIPanelTable">
+            <div class=" UIFloatLeft UIWidth15em  ">
+                <h:outputText value="Mô tả ngắn địa danh"/>
+            </div>
+            <div class="UIFloatLeft">
+                <p:editor  value="#{locationController.location.sapo}" height="100"/>
+
+
+            </div>
+
+            <div class="UIClearLeft"><span></span></div>
+        </div>
+
+
+        <div class="UIPanelTable">
+            <div class="UILabelPanel UIMarginBottom0a5em">
+                <h:outputText value="Giới thiệu về địa danh này"/>
+            </div>
+            <pe:ckEditor width="100%" height="300px" value="#{locationController.location.detail}"
+                         customConfig="${facesContext.externalContext.requestContextPath}/app/administrator/system-resources/ckeditor/config.js"
+                         escape="true" interfaceColor="#F0F0F0"/>
+        </div>
+
+
+        <div class="UIButtonPanel">
+
+            <p:commandButton  value="#{msg['label_create_new']}"  rendered="#{locationController.location.locationId eq null}"
+                              actionListener="#{locationController.createLocation}" ajax="false">
+
+            </p:commandButton>
+            <p:commandButton value="#{msg['label_retyping_date']}"  rendered="#{locationController.location.locationId eq null}"
+                             actionListener="#{locationController.retypeLocation}" ajax="false">
+            </p:commandButton>
+            <p:commandButton value="#{msg['label_confirm_update']}"  rendered="#{locationController.location.locationId ne null}"
+                             actionListener="#{locationController.updateLocation}" ajax="false">
+            </p:commandButton>
+            <p:commandButton value="#{msg['label_delete']}"  rendered="#{locationController.location.locationId ne null}"
+                             actionListener="#{locationController.deleteLocation}" ajax="false">
+            </p:commandButton>
+        </div>
+    </h:form>
+</ui:composition>

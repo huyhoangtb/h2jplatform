@@ -1,0 +1,236 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <composite:interface> 
+        <composite:attribute name="locationComObj" required="true" />
+        <composite:attribute name="orgDto" required="true" />
+        <composite:attribute name="orgAgentGroup"  />
+        <composite:attribute name="orgPartnerTypeList"  />
+
+    </composite:interface>
+    <composite:implementation> 
+
+        <div class="UIPanelTable">
+            <div class="UILabelPanel UIFloatLeft UIWidth12em">
+                <h:outputText value="Chọn tỉnh thành (*)"/>
+            </div>
+            <div class="UIRightContent">
+                <div class="UIFloatLeft UIMarginRight10px ">
+                    <p:selectOneMenu id="nationalId" style="width: 160px" converter="locationConverter"
+                                     value="#{cc.attrs.locationComObj.nationalSelected}">  
+                        <f:selectItems value="#{cc.attrs.locationComObj.nationalDefault}" />  
+                        <p:ajax process="@this" event="change"  immediate="true"
+                                update="UIProvinceListBoxId UIDistrictListBoxIdcl UIStreetListBoxIdcl"/>
+                    </p:selectOneMenu> 
+                </div>
+
+                <div class="UIFloatLeft UIMarginRight10px">
+                    <p:selectOneMenu value="#{cc.attrs.locationComObj.provinceSelected}"  style="width: 160px"
+                                     id="UIProvinceListBoxId" converter="locationConverter">  
+                        <f:selectItems value="#{cc.attrs.locationComObj.province4Change}" />  
+                        <p:ajax process="@this " event="change" immediate="true" 
+                                update="UIDistrictListBoxId UIStreetListBoxIdcl" />
+                    </p:selectOneMenu>
+                </div>
+
+                <div class="UIFloatLeft UIMarginRight10px">
+                    <p:outputPanel id="UIDistrictListBoxIdcl">
+                        <p:selectOneMenu value="#{cc.attrs.locationComObj.districtSelected}" style="width: 160px"
+                                         converter="locationConverter" id="UIDistrictListBoxId">  
+                            <f:selectItems value="#{cc.attrs.locationComObj.district4Change}" />  
+                            <p:ajax process="@this" event="change"  
+                                    update="UIStreetListBoxIdcl"/>
+                        </p:selectOneMenu>
+                    </p:outputPanel>
+                </div>
+                <div class="UIFloatLeft UIMarginRight10px">
+                    <p:outputPanel id="UIStreetListBoxIdcl">
+                        <p:selectOneMenu value="#{cc.attrs.locationComObj.streetSelected}"  rendered="#{cc.attrs.locationComObj.streetList.size() > 1}"
+                                         id="UIStreetListBoxId"  
+                                         converter="locationConverter" style="width: 160px">  
+                            <f:selectItems value="#{cc.attrs.locationComObj.street4Change}" />  
+                        </p:selectOneMenu>
+                    </p:outputPanel>
+                </div>
+                <div class="UIClearLeft"><span></span></div>
+            </div>
+            <div class="UIClearLeft"><span></span></div>
+        </div>
+
+        <div class="UIPanelTable">
+            <div class="UILabelPanel UIFloatLeft UIWidth12em">
+                <h:outputText value="Tên công ty/tổ chức (*)" />
+            </div>
+            <div class="UIRightContent">
+                <div class="UIFloatLeft UIMarginRight10px">
+                    <p:inputText id="organizationNameId" size="40"   value="#{cc.attrs.orgDto.organizationName}" />
+                </div>
+                <div class="UIFloatLeft UIMarginRight10px">
+                    <p:inputText id="orgShortNameId" value="#{cc.attrs.orgDto.shortName}"/>
+                    <p:watermark for="orgShortNameId" value="Tên viết tắt (nếu có)" />
+                </div>
+                <div class="UIClearLeft"><span></span></div>
+            </div>
+            <div class="UIClearLeft"><span></span></div>
+        </div>
+        <div class="UIPanelTable">
+            <div class="UILabelPanel UIFloatLeft UIWidth12em">
+                <h:outputLabel value="Tên tiếng anh: " />  
+            </div>
+            <div class="UIRightContent">
+                <p:inputText size="40"   value="#{cc.attrs.orgDto.enlishName}"/>
+            </div>
+            <div class="UIClearLeft"><span></span></div>
+        </div>
+
+<!--        <p:fieldset legend="Phân loại nhà cung cấp" toggleable="true" toggleSpeed="500"
+                    styleClass="UIFieldsetSpace" rendered="#{cc.attrs.orgPartnerTypeList ne null}">  
+            <div class=" UIFloatLeft UIWidth30em">
+                <div class="UILabelPanel UIFloatLeft UIWidth12em">
+                    <h:outputLabel value="Dịch vụ cung cấp: " />  
+                </div>
+                <div class="UIRightContent">
+                    <p:selectOneMenu value="{cc.attrs.orgDto.groupId}" style="width: 150px">  
+                        <f:selectItems value="#{cc.attrs.orgPartnerTypeList}"/>
+                    </p:selectOneMenu>  
+                </div>
+                <div class="UIClearLeft"><span></span></div>
+            </div>
+            <div class=" UIFloatLeft UIWidth30em" >
+                <div class="UILabelPanel UIFloatLeft UIWidth12em">
+                    <h:outputLabel value="Phân loại chất lượng: " />  
+                </div>
+                <div class="UIRightContent">
+                    <p:selectOneMenu value="{cc.attrs.orgDto.groupId}" style="width: 150px">  
+                        <f:selectItems value="#{cc.attrs.orgPartnerTypeList}"/>
+                    </p:selectOneMenu>  
+                </div>
+                <div class="UIClearLeft"><span></span></div>
+            </div>
+            <div class="UIClearLeft"><span></span></div>
+        </p:fieldset>
+        <p:fieldset legend="Nhóm đại lý" toggleable="true" toggleSpeed="500"
+                    styleClass="UIFieldsetSpace" rendered="{cc.attrs.orgAgentGroup ne null}">  
+            <div class="UIPanelTable">
+                <p:selectOneButton styleClass="UISelectOneButton" value="{cc.attrs.orgDto.groupId}">  
+                    <f:selectItems value="{cc.attrs.orgAgentGroup}"/>
+                </p:selectOneButton>  
+            </div>
+
+        </p:fieldset>-->
+        <p:fieldset legend="Thông tin nhà cung cấp" toggleable="true" toggleSpeed="500"
+                    styleClass="UIFieldsetSpace">  
+
+
+            <div class="UIPanelTable">
+                <div class="UILabelPanel UIFloatLeft UIWidth12em">
+                    <h:outputText value="Địa chỉ kinh doanh"/>
+                </div>
+                <div class="UIRightContent">
+                    <p:inputText size="40"   value="#{cc.attrs.orgDto.address}"/>
+                </div>
+                <div class="UIClearLeft"><span></span></div>
+            </div>
+
+            <div class="UIPanelTable">
+                <div class="UILabelPanel UIFloatLeft UIWidth12em">
+                    <h:outputText value="Điện thoại"/>
+                </div>
+                <div class="UIRightContent">
+                    <div class="UIFloatLeft UIMarginRight10px">
+                        <p:inputText  value="#{cc.attrs.orgDto.phone}"/>
+                    </div>
+                    <div class="UIFloatLeft UIMarginRight10px UILabelPanel" style="width: 132px">
+                        <h:outputText value="Fax"/>
+                    </div>
+                    <div class="UIFloatLeft UIPanel UIMarginRight10px">
+                        <p:inputText   value="#{cc.attrs.orgDto.fax}"/>   
+                    </div>
+                    <div class="UIClearLeft"><span></span></div>
+                </div>
+                <div class="UIClearLeft"><span></span></div>
+            </div>
+
+            <div class="UIPanelTable">
+                <div class="UILabelPanel UIFloatLeft UIWidth12em">
+                    <h:outputText value="Email"/>
+                </div>
+                <div class="UIRightContent">
+                    <p:inputText id="EmailId"   value="#{cc.attrs.orgDto.emailAddress}"/>
+                    <h:message for="EmailId"/>
+                </div>
+                <div class="UIClearLeft"><span></span></div>
+            </div>
+
+            <div class="UIPanelTable">
+                <div class="UILabelPanel UIFloatLeft UIWidth12em">
+                    <h:outputText value="Website"/>
+                </div>
+                <div class="UIRightContent">
+                    <p:inputText size="30" id="websiteEmailId"  value="#{cc.attrs.orgDto.website}" validatorMessage="(*)"/>
+                    <h:message for="websiteEmailId"/>
+                </div>
+                <div class="UIClearLeft"><span></span></div>
+            </div>
+        </p:fieldset>
+        <p:fieldset legend="Thông tin viết hóa đơn giá trị gia tăng" toggleable="true" toggleSpeed="500"
+                    styleClass="UIFieldsetSpace">  
+            <div class="UIPanelTable">
+                <div class="UILabelPanel UIFloatLeft UIWidth12em">
+                    <h:outputText value="Mã số thuế "/>
+                </div>
+                <div class="UIRightContent">
+                    <p:inputText   value="#{cc.attrs.orgDto.taxCode}"/>
+                </div>
+                <div class="UIClearLeft"><span></span></div>
+            </div>
+            <div class="UIPanelTable">
+                <div class="UILabelPanel UIFloatLeft UIWidth12em">
+                    <h:outputText value="Địa chỉ viết hóa đơn"/>
+                </div>
+                <div class="UIRightContent">
+                    <p:inputText size="40"   value="#{cc.attrs.orgDto.invoiceAddress}"/>
+                </div>
+                <div class="UIClearLeft"><span></span></div>
+            </div>
+            <div class="UIPanelTable">
+                <div class="UILabelPanel UIFloatLeft UIWidth12em">
+                    <h:outputText value="Số tài khoản"/>
+                </div>
+                <div class="UIRightContent">
+                    <div class="UIFloatLeft UIMarginRight10px">
+                        <p:inputText   value="#{cc.attrs.orgDto.bankNumber}"/>
+                    </div>
+                    <div class="UIFloatLeft UIMarginRight10px UILabelPanel" style="width: 132px">
+                        <h:outputText value="Chủ tài khoản"/>
+                    </div>
+                    <div class="UIFloatLeft UIPanel UIMarginRight10px">
+                        <p:inputText   value="#{cc.attrs.orgDto.bankHolder}"/>   
+                    </div>
+                    <div class="UIClearLeft"><span></span></div>
+                </div>
+                <div class="UIClearLeft"><span></span></div>
+            </div>
+            <div class="UIPanelTable">
+                <div class="UILabelPanel UIFloatLeft UIWidth12em">
+                    <h:outputText value="Tại ngân hàng"/>
+                </div>
+                <div class="UIRightContent">
+                    <div class="UIFloatLeft UIMarginRight10px">
+                        <p:inputText   value="#{cc.attrs.orgDto.bankName}"/>
+                    </div>
+                    <div class="UIClearLeft"><span></span></div>
+                </div>
+                <div class="UIClearLeft"><span></span></div>
+            </div>
+        </p:fieldset>
+
+
+    </composite:implementation>
+</html>

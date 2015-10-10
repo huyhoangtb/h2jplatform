@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <composite:interface> 
+        <composite:attribute name="panelClass" class="java.lang.String"/>
+        <composite:attribute name="titlePanelClass" class="java.lang.String"/>
+        <composite:attribute name="panelContentClass" class="java.lang.String"/>
+    </composite:interface>
+    <composite:implementation>
+        <p:outputPanel styleClass ="#{cc.attrs.panelClass}" rendered="#{menuViewerBySelect.menuViewer.hasSubMenu}">
+            <div class="#{cc.attrs.panelContentClass}">
+                <div class="#{cc.attrs.titlePanelClass}">#{menuViewerBySelect.menuViewer.menuName4Lang}</div>
+                <div class="MenuLeftContent">
+
+                    <ui:repeat value="#{menuViewerBySelect.menuViewer.subMenu}" var="menu">
+
+                        <div class="UISubMenuLeft">
+                            <div class="UISubHeader">
+                                <span><a href="#{menu.toViewUrl}" class="LinkTop"> 
+                                        #{menu.menuName} </a></span>
+                            </div>
+
+
+                            <p:outputPanel styleClass="UISubContent" rendered="#{menu.hasSubMenu}">
+                                <ul class="clearfix navmenu-v">
+                                    <ui:repeat value="#{menu.subMenu}" var="menuLevel0">
+                                        <li class="#{menuLevel0.addSubClass('moreItem')}">
+                                            <h:outputLink value="#{menuLevel0.toViewUrl}" >
+                                                #{menuLevel0.menuName}
+                                            </h:outputLink>
+                                            <c:if test="#{menuLevel0.hasSubMenu == true}">
+                                                <ul>
+                                                    <ui:repeat value="#{menuLevel0.subMenu}" var="menuLevel1">
+                                                        <li class="#{menuLevel0.addSubClass('moreItem')}">
+                                                            <h:outputLink value="#{menuLevel1.toViewUrl}" >
+                                                                #{menuLevel1.menuName}
+                                                            </h:outputLink>
+                                                            <c:if test="#{menuLevel1.hasSubMenu!=true}">
+                                                                <ul>
+                                                                    <ui:repeat value="#{menuLevel1.subMenu}" var="menuLevel2">
+                                                                        <li class="#{menuLevel0.addSubClass('moreItem')}">
+                                                                            <h:outputLink value="#{menuLevel2.toViewUrl}" >
+                                                                                #{menuLevel2.menuName}
+                                                                            </h:outputLink>
+                                                                        </li>
+                                                                    </ui:repeat>
+                                                                </ul>
+                                                            </c:if>
+
+                                                        </li>
+                                                    </ui:repeat>
+                                                </ul>
+                                            </c:if>
+
+                                        </li>
+                                    </ui:repeat>
+                                </ul>
+                            </p:outputPanel>
+                        </div>
+
+                    </ui:repeat>
+
+                </div>
+            </div>
+        </p:outputPanel>
+    </composite:implementation>
+</html>

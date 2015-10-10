@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <composite:interface> 
+        <composite:attribute name="humanDtoDataModel" required="true" />
+        <composite:attribute name="selectedhuman" required="true" />
+        <composite:attribute name="hasEdit"  />
+        <composite:attribute name="selectSingleColumn"  />
+        <composite:attribute name="renderUserAccount" default="true" class="java.lang.Boolean"/>
+
+    </composite:interface>
+    <composite:implementation> 
+        <p:dataTable  id="userListId" var="userdata" value="#{cc.attrs.humanDtoDataModel}" paginator="true" rows="10"  
+                      paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"  
+                      rowsPerPageTemplate="5,10,15" selectionMode="single" selection="#{cc.attrs.selectedHuman}"  lazy="true"
+                      emptyMessage="Danh sách thành viên rỗng!"  paginatorPosition="bottom"
+                      styleClass="UITable UIMarginTop10px">  
+            <p:ajax event="rowSelect" process="userListId" update="userListId"/>
+            <p:column selectionMode="single" rendered="#{cc.attrs.selectSingleColumn eq 'true'}" width="3%"/>
+            <p:column headerText="Họ và tên" sortBy="#{userdata.fullName}" width="16%">  
+                <h:outputText value="#{userdata.fullName}" />  
+            </p:column> 
+            <p:column headerText="Tên đăng nhập" sortBy="#{userdata.username}" rendered="#{cc.attrs.renderUserAccount}"
+                      width="10%">  
+                <h:outputText value="#{userdata.username}"   />  
+            </p:column> 
+
+            <p:column headerText="Ngày sinh" sortBy="#{userdata.birthday}" width="10%">  
+                <h:outputText value="#{userdata.birthday}" >
+                    <f:convertDateTime pattern="dd/MM/yyyy"/>
+                </h:outputText>  
+            </p:column> 
+            <p:column headerText="Điện thoại" width="12%">  
+                <h:outputText value="#{userdata.tel}" />  
+            </p:column> 
+
+            <p:column headerText="Email" width="18%">  
+                <h:outputText value="#{userdata.emailAddress}" />  
+            </p:column>
+
+            <p:column headerText="Yahoo" width="18%">  
+                <h:outputText value="#{userdata.yahoo}" />  
+            </p:column>
+            <p:column headerText="Trạng thái" width="12%">  
+                <h:outputText value="#{userdata.statusName}" />  
+            </p:column>
+            <p:column headerText="Chi tiết" width="25" styleClass="UITextCenter" rendered="#{cc.attrs.hasEdit eq 'true'}">  
+                <p:commandLink  styleClass="UIViewLink" actionListener ="#{orgPartnerController.editHuman4Org}"  update=":orgTabPanelId">
+                    <f:setPropertyActionListener value="#{userdata}" target="#{orgPartnerController.human}" />  
+                </p:commandLink>
+            </p:column> 
+        </p:dataTable>
+    </composite:implementation>
+</html>

@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:p="http://primefaces.org/ui">
+
+    <composite:interface> 
+        <composite:attribute name="header"  />
+        <composite:attribute name="maxWidth"  />
+
+    </composite:interface>
+    <composite:implementation>
+
+        <div class="UIFileUploadImg4Deputy ">
+            <p:outputPanel id="imagesh2jpanel" styleClass ="ImagePanel">
+                <h:graphicImage  value="#{h2jPlatformAppUtils.serverImage}#{resourceManagerController.myResource.imageUrl}"
+                                 rendered="#{resourceManagerController.myResource.resourceId ne null}"/>
+                <h:graphicImage  value="/themes/admin/resources/images/icon/nologo_type01.png"
+                                 rendered="#{resourceManagerController.myResource.resourceId eq null}"/>
+            </p:outputPanel>
+            <div>
+                <div class="UIFloatLeft">
+                    <p:fileUpload   mode="advanced" auto="true" dragDropSupport="true" immediate="false"
+                                    fileLimit="3" 
+                                    fileUploadListener="#{resourceManagerController.handleFileUpload}"
+                                    label="Chọn ảnh" update="imagesh2jpanel"/>   
+                </div>
+                <div class="UIFloatLeft">
+                    <p:commandButton value="Xóa ảnh" process="@this" 
+                                     actionListener="#{resourceManagerController.deleteResource}" update="@form"/>   
+                </div>
+                <div class="UIClearLeft"><span></span></div>
+            </div>
+
+        </div>
+
+
+    </composite:implementation>
+</html>

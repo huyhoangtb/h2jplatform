@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h2jView="http://xmlns.jcp.org/jsf/composite/h2j/views">
+
+    <composite:interface> 
+    </composite:interface>
+    <composite:implementation>
+     
+        <div class="H2jTopMenuStyle01 clearfix">
+            <ul>
+                <ui:repeat value="#{menuViewerController.linkMenuTopMenu}" var="menu">
+                    <li class="#{menu.addSubClass('has-sub')}">
+                        <a href="#{menu.toViewUrl}" >#{menu.menuName4Lang}</a>
+                        <h2jView:ulPanel rendered ="#{menu.hasSubMenu}">
+                            <ui:repeat value="#{menu.subMenu}" var="menuLevel0">
+                                <li class="#{menuLevel0.addSubClass('has-sub')}">
+                                    <a href="#{menuLevel0.toViewUrl}">#{menuLevel0.menuName4Lang}</a>
+                                    <h2jView:ulPanel rendered ="#{menuLevel0.hasSubMenu}">
+                                        <ui:repeat value="#{menuLevel0.subMenu}" var="menuLevel1">
+                                            <li><a href="#{menuLevel1.toViewUrl}" >#{menuLevel1.menuName4Lang}</a></li>
+                                        </ui:repeat>
+                                    </h2jView:ulPanel>
+                                </li>
+                            </ui:repeat>
+
+                        </h2jView:ulPanel>
+                    </li>
+                </ui:repeat>
+                
+            </ul>
+        </div>
+    </composite:implementation>
+</html>

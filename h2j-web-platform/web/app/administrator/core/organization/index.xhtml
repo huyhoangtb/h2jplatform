@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="#{Themes.currentTheme}"
+                xmlns:h2j="http://xmlns.jcp.org/jsf/composite/h2j">
+
+    <ui:define name="title">Quản lý tổ chức</ui:define>
+    <ui:define name="pageModuleTitle">Quản lý mô hình tổ chức</ui:define>
+    <ui:define name="pageSmallTitle">
+        Phòng ban - chi nhánh
+    </ui:define>
+    <ui:define name="breadcrumb">
+        <li >Quản lý phòng ban</li>
+        <li class="active">Danh sách phòng ban</li>
+    </ui:define>
+
+    <ui:define name="UIMainContentPage">
+        <div class="UIRelativePanel UIMainWebPanel ">
+            <h2j:more-action  moreActionPanelId="moreActionPanelId" >
+                <h2j:more-action-full fullContentId="fullContentId">
+                    <h:form>
+
+                        <p:contextMenu for="treeOrg" >  
+                            <p:menuitem value="Xem thông tin tổ chức" ajax="false"  actionListener="#{organizationController.organizationTree.viewTreeOrganization}" icon="ui-icon-search" >
+                                <f:param name="actionFlag" value="org_edit"/>
+                            </p:menuitem>  
+                            <p:menuitem value="Tạo tổ chức con" ajax="false" actionListener="#{organizationController.organizationTree.addSubTreeOrganization}" icon="ui-icon-search" >
+                                <f:param name="actionFlag" value="org_add_new"/>
+                            </p:menuitem>  
+                            <p:menuitem value="Xóa tổ chức này"  actionListener="#{organizationController.organizationTree.deleteTreeOrganization}" icon="ui-icon-close"> 
+                                <f:param name="actionFlag" value="org_add_new"/>
+
+                            </p:menuitem>  
+                            <p:menuitem value="Thêm nhân viên"   ajax="false"
+                                        action="#{organizationController.organizationTree.addUserTreeOrganization}" icon="ui-icon-close">
+                            </p:menuitem>  
+                        </p:contextMenu>  
+
+
+                        <p:tree animate="true" style="width: 290px" value="#{organizationController.organizationTree.root}" var="node" dynamic="true" cache="true" 
+                                selectionMode="single" selection="#{organizationController.organizationTree.selectedNode}"
+                                id="treeOrg" styleClass="UITreeCustom">  
+                            <p:ajax event="expand" update="treeOrg" listener="#{organizationController.organizationTree.onNodeExpand}" />  
+                            <p:ajax event="select" update=":orgSearchForm:h2jSearch:basicPojo :orgSearchForm:organizationListId"  listener="#{organizationController.onNodeSelected}" />
+                            <p:treeNode>  
+                                <h:outputText value="#{node.organizationName}"/>  
+                            </p:treeNode>  
+                        </p:tree>  
+
+                    </h:form>
+                </h2j:more-action-full>
+                <h2j:more-action-small smallContentId="smallContentId">
+                    <ui:include src="org_small_shortcut.xhtml"/>
+                </h2j:more-action-small>
+            </h2j:more-action>
+            <script>
+                $(document).ready(function () {
+//                    var menu = new MoreActionMenu("moreActionPanelId", "smallContentId", "fullContentId", "-363px");
+                    var menu = new MoreActionMenu("moreActionPanelId", "smallContentId", "fullContentId", "-290px");
+                });
+            </script>
+
+            <h:form id="orgSearchForm" prependId="false">
+                <div class="UIThemesPanel">
+                    <h2j:searchBox id='h2jSearch' header="Tìm kiếm tổ chức, phòng ban">
+                        <div class="UIPanelTable">
+
+                            <div class="UIFloatLeft UIMarginRight10px UIDivLabel UIWidth11em" >
+                                <h:outputLabel value="Đơn vị/tổ chức cấp trên"/>
+                            </div>
+                            <div class="UIFloatLeft UIMarginRight10px">
+                                <p:autoComplete value="#{organizationController.organizationParent}"   
+                                                id="basicPojo" completeMethod="#{organizationController.completeOrganization}"  
+                                                var="organizationParent" itemLabel="#{organizationParent.organizationName}" itemValue="#{organizationParent}" converter="organizationConverter" 
+                                                forceSelection="true" size="98">  
+
+                                </p:autoComplete>
+                                <p:watermark for="basicPojo" value="Gợi ý theo: Tên tổ chức, Mã tổ chức, tên viết tắt, tên tiếng anh" />
+                            </div>
+                            <div class="UIClearLeft"><span></span></div>
+                        </div>
+                        <div class="UIPanelTable">
+
+                            <div class="UIFloatLeft UIMarginRight10px UIDivLabel UIWidth11em" >
+                                <h:outputLabel value="Chọn quốc gia"/>
+                            </div>
+                            <div class="UIFloatLeft UIMarginRight10px">
+                                <div class="UIFloatLeft UIMarginRight10px">
+                                    <p:selectOneMenu id="nationalId" style="width: 160px" converter="locationConverter"
+                                                     value="#{organizationController.locationComObj.nationalSelected}">  
+                                        <f:selectItems value="#{organizationController.locationComObj.nationalDefault}" />  
+                                        <p:ajax process="@this" event="change"  immediate="true"
+                                                update="UIProvinceListBoxId "/>
+                                    </p:selectOneMenu> 
+                                </div>
+                            </div>
+                            <!--                        <div class="UIFloatLeft UIMarginRight10px UIDivLabel UIWidth10em" >
+                                                        <h:outputLabel value="Chọn tỉnh/thành phố"/>
+                                                    </div>-->
+                            <div class="UIFloatLeft UIMarginRight10px">
+                                <div class="UIFloatLeft UIMarginRight10px">
+                                    <p:selectOneMenu value="#{organizationController.locationComObj.provinceSelected}"  style="width: 160px"
+                                                     id="UIProvinceListBoxId" converter="locationConverter">  
+                                        <f:selectItems value="#{organizationController.locationComObj.province4Change}" />  
+
+                                    </p:selectOneMenu>
+                                </div>
+                            </div>
+                            <div class="UIFloatLeft UIMarginRight10px">
+                                <div class="UIFloatLeft UIMarginRight10px">
+                                    <p:inputText id="searchOrganizationInputId" size="46" value="#{organizationController.searchOrganizationData}"/>
+                                    <p:watermark for="searchOrganizationInputId" value="Nhập: Tên, #mã, tên viết tắt, địa chỉ, điện thoại, email" />
+                                </div>
+                            </div>
+                            <div class="UIClearLeft"><span></span></div>
+                        </div>
+
+                        <div class="UIMarginBottom15px" style="display: table; margin: auto; padding-bottom: 15px;"> 
+                            <div class="UIFloatLeft UIMarginRight10px ">
+                                <p:commandButton value="#{msg['label_search']}" actionListener="#{organizationController.searchOrganization}" update=":orgSearchForm:organizationListId"/>
+                            </div>
+                            <div class="UIFloatLeft UIMarginRight10px ">
+                                <p:commandButton value="#{msg['label_create_new']}" action="#{organizationController.onStartCreatedNewOrganization}"  ajax="false">
+                                    <f:param name="actionFlag" value="org_add_new"/>
+                                </p:commandButton>
+                            </div>
+                            <div class="UIClearLeft"><span></span></div>
+                        </div>
+                    </h2j:searchBox>
+                </div>
+
+                <div class="UIThemesPanel">
+
+                    <p:contextMenu for="organizationListId">  
+                        <p:menuitem value="Chi tiết" icon="ui-icon-search" 
+                                    actionListener="#{organizationController.viewDetailOrganization}" 
+                                    oncomplete="organizationDigVar.show()" ajax="false">
+                            <f:param name="actionFlag" value="org_edit"/>
+                        </p:menuitem>  
+                        <p:menuitem value="Khóa" update="organizationListId" icon="ui-icon-close" >
+                        </p:menuitem>
+                    </p:contextMenu>   
+                    <div class="UIThemesPanel ">
+                        <p:dataTable  var="organization" style="z-index: 300" value="#{organizationController.organizationLazyDataModel}" paginator="true" rows="20"  
+                                      paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"  
+                                      rowsPerPageTemplate="20,30,40,50" selectionMode="single" selection="#{organizationController.organization}" id="organizationListId" lazy="true"
+                                      emptyMessage="Danh sách đơn vị/tổ chức rỗng!" draggableColumns="true" paginatorPosition="bottom"
+                                      styleClass="UITable UIMarginTop10px">  
+
+                            <p:column headerText="Tên công ty/đơn vị" sortBy="#{organization.organizationName}" 
+                                      width="30%">  
+                                <h:outputText value="#{organization.organizationName}" />  
+                            </p:column> 
+                            <p:column headerText="Tên viết tắt" sortBy="#{organization.shortName}" >  
+                                <h:outputText value="#{organization.shortName}" />  
+                            </p:column> 
+                            <p:column headerText="Địa chỉ" sortBy="#{organization.address}" width="20%">  
+                                <h:outputText value="#{organization.address}" />  
+                            </p:column> 
+                            <p:column headerText="Điện thoại" width="13%">  
+                                <h:outputText value="#{organization.phone}" />  
+                            </p:column> 
+                            <p:column headerText="Email" >  
+                                <h:outputText value="#{organization.emailAddress}" />  
+                            </p:column> 
+                            <!--                        <p:column headerText="Chi tiết" width="8%" styleClass="UITextCenter">  
+                                                        <p:commandLink  styleClass="UIViewLink" action="{organizationController.editDetailOrg}" >
+                                                            <f:setPropertyActionListener value="{organization}" target="#{organizationController.organization}" />  
+                                                        </p:commandLink>
+                                                    </p:column> -->
+                            <p:column headerText="Chi tiết" width="8%" styleClass="UITextCenter">  
+                                <h:link  outcome="edit_organization" styleClass="UIViewLink" >
+                                    <f:param name="orgId" value="#{organization.organizationId}" />
+                                    <f:param name="orgParentId" value="#{organization.parentId eq null ? '' : organization.parentId.organizationId}" />
+                                </h:link>
+                            </p:column> 
+
+
+                        </p:dataTable>
+                    </div>
+                    <div class="UIClearRight"><span></span></div>
+                </div>
+            </h:form>
+
+
+
+        </div>
+
+        <ui:include src="edit_popup.xhtml"/>
+    </ui:define>
+</ui:composition>

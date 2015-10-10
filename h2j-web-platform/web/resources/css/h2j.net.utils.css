@@ -1,0 +1,799 @@
+@charset "utf-8";
+
+
+html,  div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,input[type="text"], input[type="password"]
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    /*background:transparent;*/
+
+}
+
+
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+ul,ol {
+     list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+
+}
+
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000; 
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;   
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+/* 
+    Document   : utils
+    Created on : Dec 14, 2012, 9:47:40 AM
+    Author     : ancoti
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+
+/* CSS Document */
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+.UIPaddingButtom1em  {
+    padding-bottom: 1em;
+}
+.UIMarginBottom1em {
+    margin-bottom: 1em;
+}
+.UIFloatLeft {
+    float: left;
+}
+.UIFloatRight {
+    float: right;
+}
+.UIClearLeft {
+    clear: left;
+    height: 0px;
+}
+.UIClearRight {
+    clear: right;
+    height: 0px;
+}
+.UIClearBoth {
+    clear: both;
+    float: none;
+    height: 0px;
+}
+a, img {
+    border: 0 none;
+    outline: 0 none;
+    text-decoration: none;
+    vertical-align: top;
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+html[xmlns] .clearfix {
+    display: block;
+}
+
+* html .clearfix {
+    height: 1%;
+}
+.UICenterPanel {
+    display: table; 
+    margin: auto; 
+    padding-bottom: 15px;
+}
+.UIMarginTop8px {
+    margin-top: 8px;
+}
+.UIFontBoldUpper{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.LanguagleItem {
+    display: inline-block;
+    margin: 1px;
+}
+input[type="text"], input[type="password"] {
+    border-radius: 3px;
+    height: 1.8em;
+    padding: 0.2em;
+    border: 1px solid #A8A8A8;
+}
+
+
+.UIMargin5px {
+    margin: 5px;
+}
+.UIMargin15px {
+    margin: 15px;
+}
+.UIMargin10px {
+    margin: 10px;
+}
+.UIMargin40px {
+    margin: 40px;
+}
+
+.UIMarginLeft5px {
+    margin-left: 5px;
+}
+.UIMarginRight5px {
+    margin-right: 5px;
+}
+.UIMarginTop5px {
+    margin-top: 5px;
+}
+.UIMarginTop0a2em {
+    margin-top: 0.2em;
+}
+.UIMarginTop0a5em {
+    margin-top: 0.5em;
+}
+.UIMarginLeft0a5em {
+    margin-left: 0.5em;
+}
+.UIMarginTop0a8em {
+    margin-top: 0.8em;
+}
+.UIMarginTop1em {
+    margin-top: 1em;
+}
+.UIMarginBottom3px {
+    margin-bottom: 3px !important   ;
+}
+
+.UIMarginBottom5px {
+    margin-bottom: 5px;
+}
+
+.UIMarginLeft15em {
+    margin-left: 15em;
+}
+.UIMarginLeft15a5em {
+    margin-left: 15.5em;
+}
+.UIMarginLeft15px {
+    margin-left: 15px;
+}
+.UIMarginLeft50px {
+    margin-left: 50px;
+}
+.UIMarginRight15px {
+    margin-right: 15px;
+}
+.UIMarginRight30px {
+    margin-right: 30px;
+}
+.UIMarginRight35px {
+    margin-right: 35px;
+}
+.UIMarginTop15px {
+    margin-top: 15px;
+}
+.UIMarginBottom15px {
+    margin-bottom: 15px;
+}
+.UIMarginBottom40px {
+    margin-bottom: 40px;
+}
+
+.UIMarginLeft2em {
+    margin-left: 2em;
+}
+.UIMarginLeft0a5em {
+    margin-left: 0.5em;
+}
+.UIMarginLeft0a3em {
+    margin-left: 0.3em;
+}
+.UIMarginLeft3em {
+    margin-left: 3em;
+}
+.UIMarginLeft1em {
+    margin-left: 1em;
+}
+.UIMarginLeft1a5em {
+    margin-left: 1.5em;
+}
+.UIMarginLeft2a5em {
+    margin-left: 2.5em;
+}
+.UIMarginLeft0a6em {
+    margin-left: 0.6em;
+}
+.UIMarginLeft0a7em {
+    margin-left: 0.7em;
+}
+.UIMarginLeft0a8em {
+    margin-left: 0.8em;
+}
+.UIMarginLeft10px {
+    margin-left: 10px;
+}
+.UIMarginLeft10em {
+    margin-left:  10em;
+}
+.UIMarginLeft11a5em {
+    margin-left:  11.5em;
+}
+.UIMarginLeft11em {
+    margin-left:  11em;
+}
+.UIMarginLeft12em {
+    margin-left:  12em;
+}
+.UIMarginRight10px {
+    margin-right: 10px;
+}
+.UIMarginTop10px {
+    margin-top: 10px;
+}
+.UIMarginBottom10px {
+    margin-bottom: 10px;
+}
+.UIMarginLeft30px {
+    margin-left:  30px;
+}
+.UIMarginLeft35px {
+    margin-left:  35px;
+}
+.UIFixWidth130px {
+    width: 130px;
+}
+
+.UIFontBold {
+    font-weight: bold;
+}
+.UIFontNormal{
+    font-weight: normal;
+}
+.UIClearBg {
+    background: none;
+}
+.UIClearBgAndAll {
+    background: none !important;
+    width: 0  !important;
+    height: 0  !important;
+    padding: 0 !important;
+    margin: 0 !important;
+
+}
+
+
+.UIPanelTable {
+    margin-bottom: 10px;
+}
+.UIPanelTableMarginBottom0a2em {
+    margin-bottom: 0.3em;
+}
+.UIDivLabel{
+    padding: 0.5em 0em 0em 0em;
+    /*padding-top: 10px;*/
+}
+.UIPanelTable .UILabelPanel{
+    padding-top: 0.3em;
+}
+.UIPanelTable .UILabelPanel120 {
+    width: 120px;
+}
+
+.UIWidth2em{
+    width: 2em;
+    max-width: 2em;
+}
+.UIWidth2a5em{
+    width: 2.5em;
+    max-width:2.5em;
+}
+.UIWidth3em{
+    width: 3em !important;
+    max-width:3em !important;
+}
+.UIWidth3a9em{
+    width: 3.9em;
+    max-width:3.9em;
+}
+.UIWidth3a8em{
+    width: 3.8em;
+    max-width:3.8em;
+}
+.UIWidth3a5em{
+    width: 3.5em;
+    max-width:3.5em;
+}
+.UIWidth4em{
+    width: 4em;
+    max-width: 4em;
+}
+.UIWidth4a5em{
+    width: 4.5em;
+    max-width: 4.5em;
+}
+.UIWidth5em{
+    width: 5em;
+    max-width: 5em;
+}
+.UIWidth5a5em{
+    width: 5.5em;
+    max-width: 5.5em;
+}
+.UIWidth6em{
+    width: 6em !important;
+    max-width:6em ;
+    min-width: 6em;
+}
+.UIWidth6a5em{
+    width: 6.5em;
+    max-width:6.5em;
+}
+.UIWidth7em{
+    width: 7em;
+    max-width: 7em;
+    min-width: 7em;
+}
+.UIWidth7a5em{
+    width: 7.5em;
+    max-width: 7.5em;
+    min-width: 7.5em;
+}
+.UIWidth8em{
+    width: 8em;
+    max-width: 8em;
+    min-width:  8em;
+    min-height: 1px;
+}
+.UIWidth8a5em{
+    width: 8.5em;
+    max-width: 8.5em;
+    min-width: 8.5em;
+}
+.UIWidth9em{
+    width: 9em;
+    max-width: 9em;
+}
+.UIWidth9a5em{
+    width: 9.5em;
+    max-width: 9.5em;
+}
+.UIWidth10em{
+    width: 10em;
+    max-width:10em;
+}
+.UIWidth10a5em{
+    width: 10.5em;
+    max-width:10.5em;
+}
+.UIWidth11em{
+    width: 11em;
+    max-width:11em;
+}
+.UIWidth11a5em{
+    width: 11.5em;
+    max-width:11.5em;
+}
+.UIWidth12em{
+    width: 12em;
+    max-width:12em;
+    min-width: 12em;
+}
+.UIWidth12a5em{
+    width: 12.5em !important;
+    max-width:12.5em;
+}
+
+.UIWidth13em{
+    width: 13em;
+    max-width:13em;
+}
+.UIWidth13a3em{
+    width: 13.3em;
+    max-width: 13.3em;
+}
+.UIWidth13a5em{
+    width: 13.5em;
+    max-width: 13.5em;
+}
+.UIWidth14em{
+    width: 14em;
+    max-width:14em;
+}
+.UIWidth14a5em{
+    width: 14.5em;
+    max-width:14.5em;
+}
+.UIWidth15em{
+    width: 15em;
+    max-width:15em;
+}
+.UIWidth17a5em{
+    width: 17.5em;
+    max-width: 17.5em;
+}
+.UIWidth18em{
+    width: 18em;
+    max-width:18em;
+}
+.UIWidth15a5em{
+    width: 15.5em;
+    max-width:15.5em;
+}
+.UIWidth20a5em{
+    width: 20.5em;
+    max-width:20.5em;
+    min-width: 20.5em;
+}
+.UIWidth22em{
+    width: 22em;
+    max-width:22em;
+    min-width: 22em;
+}
+.UIWidth22a2em{
+    width: 22.2em;
+    max-width:22.2em;
+    min-width: 22.2em;
+}
+.UIWidth23em{
+    width: 23em;
+    max-width:23em;
+    min-width: 23em;
+}
+.UIWidth23a7em{
+    width: 23.7em;
+    max-width:23.7em;
+    min-width: 23.7em;
+}
+.UIWidth24em{
+    width: 24em;
+    max-width:24em;
+}
+.UIWidth25em{
+    width: 25em;
+    max-width:25em;
+}
+.UIWidth26em{
+    width: 26em;
+    max-width:26em;
+}
+.UIWidth24a5em{
+    width: 24.5em;
+    max-width:24.5em;
+}
+.UIWidth24a7em{
+    width: 24.7em;
+    max-width:24.7em;
+}
+
+
+.UIButtonPanel {
+    text-align: center;
+    padding: 1px 0px;
+}
+.UIBorderRightf0f1f2 {
+    border-right: 1px dotted #f0f1f2;
+    padding-right: 5px;
+    margin-right: 5px;
+}
+.UIButtonPanel button{
+    margin-right: 10px;
+}
+.UIBorderLeftpxsolidgray{
+    border-left: 2px solid #cccccc;
+}
+.UIBorderRightpxsolidgray{
+    border-right: 1px solid #1ec1fc;
+}
+a.UIViewLink {
+    background: url('../images/icons/view.png') no-repeat left center;
+    width: 2em;
+    height: 2em;
+    display: inline-block;
+}
+a.UILinkBookingTour {
+    background: url('../images/icons/booking_tour.png') no-repeat left center;
+    width: 2em;
+    height: 2em;
+    display: inline-block;
+}
+.UITextCenter {
+    text-align: center;
+}
+
+.UIWidth1percent {
+    width: 1%;
+}
+.UIWidth2percent {
+    width: 2%;
+}
+.UIWidth3percent {
+    width: 3%;
+}
+.UIWidth4percent {
+    width: 4%;
+}
+.UIWidth5percent {
+    width: 5%;
+}
+.UIWidth6percent {
+    width: 6%;
+}
+.UIWidth7percent {
+    width: 7%;
+}
+.UIWidth8percent {
+    width: 8%;
+}
+.UIWidth9percent {
+    width: 9%;
+}
+.UIWidth10percent {
+    width: 10%;
+}
+.UIWidth11percent {
+    width: 11%;
+}
+.UIWidth12percent {
+    width: 12%;
+}
+.UIWidth13percent {
+    width: 13%;
+}
+.UIWidth15percent {
+    width: 15%;
+}
+.UIWidth20percent {
+    width: 20%;
+}
+.UIWidth25percent {
+    width: 25%;
+}
+.UIWidth30percent {
+    width: 30%;
+}
+.UIPaddingLeft1px {
+    padding-left: 1px;
+}
+.UIPaddingLeft30px {
+    padding-left: 30px;
+}
+.UIMarginBottom0a5em {
+    margin-bottom: 0.5em !important;
+}
+.UIMarginBottom0a5em {
+    margin-bottom: 0.5em !important;
+}
+.UIPaddingTop0a2em {
+    margin-top: 0.2em;
+}
+.UIPaddingTop0a3em {
+    padding-top: 0.3em;
+}
+.UIFontBold {
+    font-weight: bold;
+}
+
+.UIDisplayBlock {
+    display: block;
+}
+.UIHeight0 {
+    height: 0;
+}
+.UIColorWhite {
+    color: #ffffff;
+}
+.UIMarginRight1em {
+    margin-right: 1em;
+}
+
+.UIModelPanelStyleNoHeader {
+    overflow: visible !important;
+    box-shadow: 0 0 10px #111111;
+    border: 0;
+}
+.UIModelPanelStyleNoHeader div.ui-dialog-content{
+    padding: 1em 1em;
+}
+.UIModelPanelStyleNoHeader a.ui-dialog-titlebar-close{
+    position: absolute;
+    right: -15px;
+    top: -12px !important;
+    z-index: 10000;
+    padding: 0 !important;
+}
+.UIModelPanelStyleNoHeader div.ui-widget-header{
+    /*padding: 0 !important;*/
+    background: #009fe3 !important;
+    color: #ffffff;
+   height: 0px;
+    padding: 0px;
+    /*height: 0px;*/
+}
+.UIModelPanelStyleNoHeaderAdv div.ui-dialog-content {
+    padding: 0px !important;
+    overflow: hidden;
+}
+.UIBorderButtomdottedA8A8A8 {
+    border-bottom: 1px dotted #A8A8A8;
+}
+
+input.height29px {
+    border-radius: 1px;
+    box-shadow: 0 1px 1px #f0f1f2 inset !important;
+    height: 27px !important;
+}
+span.height29px input {
+    border-radius: 1px;
+    box-shadow: 0 1px 1px #f0f1f2 inset !important;
+    height: 27px !important;
+}
+
+.UIModelPanelStyleNoHeader a.ui-state-hover{
+    padding: 0 !important;
+    background: none !important;
+    height: 33px;
+    width: 33px;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+.UIModelPanelStyleNoHeader div.ui-widget-header span.ui-icon-closethick{
+    background-image: url('../images/close39x39.png');
+    background-repeat: no-repeat;
+    background-size: 28px 28px;
+    height: 33px;
+    width: 33px;
+    padding: 0 !important;
+    background-position: center center;
+}
+
+input.UserName {
+    background-image: url('../images/user-login-icon-30x30.png') !important;
+    background-repeat: no-repeat !important;;
+    background-size: 20px 20px !important;;
+    background-position: 3px center !important;;
+    padding-left: 28px  !important;
+    height: 25px !important;
+    width: 160px;
+}
+input.password {
+    background-image: url('../images/key-30x30.png') !important;
+    background-repeat: no-repeat !important;;
+    background-size: 20px 20px !important;;
+    background-position: 3px center !important;;
+    padding-left: 28px !important;
+    height: 25px !important;
+    width: 160px;
+}
+
+
+.UIBottomBlue {
+    background: url("../images/buttomBlue.png") repeat-x scroll 0 0 rgba(0, 0, 0, 0) !important;
+    color: #FFFFFF !important;
+    display: inline-block !important;;
+    font-weight: bold;
+    padding: 0.55em 2.3em !important;
+    border-radius: 3px !important;
+
+}
+.UIPadding0px {
+    padding: 0 !important;
+}
+.UIPadding0px >div {
+    padding: 0 !important;
+}
+.UIBottomBlue:hover{
+    background: url('../images/buttomBlue.png') repeat-x 0 -3.7em !important;
+}
+
+.UIColor0073B0{
+    color: #0073B0 !important;
+}
+
+.UILinkContactDefault {
+    color: #00acee;
+    text-decoration: underline;
+}
+.UILinkContactDefault:hover {
+    color: #f7941e;
+    text-decoration: underline;
+}
+.UIMarginTopBottom1em{
+    margin: 1em 0em;
+}
+.UINoWrap {
+    white-space: nowrap;
+}
+
+.UIAdvLeftBg {
+    background: url("/resources/images/newyear/left_body_2015.jpg") no-repeat left 18px;
+    
+}
+.UIAdvRightBg {
+    background: url("/resources/images/newyear/right_body_2015.jpg") no-repeat right 18px;
+}

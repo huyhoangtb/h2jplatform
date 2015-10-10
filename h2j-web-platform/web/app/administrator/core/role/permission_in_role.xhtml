@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+    <h:form prependId="false">
+        <p:outputPanel id="searchPanelId" >
+            <div> 
+                <div class="UIFloatLeft UIMarginRight10px UIDivLabel">
+                    <h:outputLabel value="#{msg['permission_name']}"/>
+                </div>
+                <div class="UIFloatLeft UIMarginRight10px ">
+                    <h:inputText  value="#{roleController.permissionInData.permissionName}"/>
+                </div>
+
+                <div class="UIDivLabel UIFloatLeft UIMarginLeft10px " style="width: 80px">
+                    <h:outputText value="#{msg['status']}"/>
+                </div>
+                <div class=" UIFloatLeft UIMarginRight10px">
+                    <p:selectOneMenu style="width: 130px" value="#{roleController.permissionInData.status}" converter="javax.faces.Integer">
+                        <f:selectItem itemLabel="#{msg['select_status']}" itemValue="-1"/>
+                        <f:selectItems value="#{permisionController.permissionStatusList}"/>
+                    </p:selectOneMenu>
+                </div>
+
+            
+                <div class="UIFloatLeft UIMarginRight10px ">
+                    <p:commandButton  value="#{msg['label_search']}" ajax="false" actionListener="#{roleController.searchPermissionInRole}" />    
+                </div>
+                <div class="UIFloatLeft  ">
+                    <p:commandButton  value="#{msg['role_add_permission_label']}" ajax="true" actionListener ="#{roleController.startAddPermissionToRole}" 
+                                      oncomplete="PF('addPermissionInRole').show()"/>    
+                </div>
+                <div class="UIClearLeft"><span></span></div>
+            </div>
+
+            <p:outputPanel styleClass ="UITableControl" id="permissionInRolePanelId">
+                <p:contextMenu for="permissionInRoleListId">  
+                    <p:menuitem value="#{msg['label_active']}" icon="ui-icon-unlocked" 
+                                actionListener="#{roleController.activePermissionInRole}" update="searchPanelId">
+                    </p:menuitem>  
+                    <p:menuitem value="#{msg['label_inactive']}" icon="ui-icon-locked" 
+                                actionListener="#{roleController.inActivePermissionInRole}" update="permissionInRoleListId">
+                    </p:menuitem>  
+                    <p:menuitem value="#{msg['label_delete']}" icon="ui-icon-trash" 
+                                actionListener="#{roleController.deletePermissionInRole}" 
+                                update="permissionInRoleListId">
+                    </p:menuitem>  
+                </p:contextMenu>  
+
+                <p:dataTable  id="permissionInRoleListId" var="permissioninRoleData" value="#{roleController.permissionInRoleDataModel}" paginator="true" rows="10"  
+                              paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"  
+                              rowsPerPageTemplate="5,10,15" selection="#{roleController.selectionPermissionsInRoleList}"  lazy="true" 
+                              emptyMessage="Danh sách quyền truy cập rỗng!"  selectionMode="multiple" paginatorPosition="bottom"
+                                          styleClass="UITable UIMarginTop10px">  
+                    <p:columnGroup type="header">  
+                        <p:row>  
+                            <p:column rowspan="2" headerText="#{msg['permission_name']}"/>  
+                            <p:column rowspan="2"  headerText="#{msg['status']}"/>  
+                            <p:column colspan="3" headerText="#{msg['permission_extension_type']}" />  
+                        </p:row>  
+
+                        <p:row>  
+                            <p:column   headerText="#{msg['permission_view_type']}"/> 
+                            <p:column  headerText="#{msg['permission_edit_type']}"/>  
+                            <p:column  headerText="#{msg['permission_delete_type']}"/>  
+                        </p:row>  
+                    </p:columnGroup> 
+
+                    <p:column  headerText="" sortBy="#{permissioninRoleData.permissionName}" width="250">  
+                        <h:outputText id="permissionIdOutput" value="#{permissioninRoleData.permissionName}" />
+                        <p:tooltip for="permissionIdOutput"  
+                                   showEffect="slide" hideEffect="slide" rendered="#{permissioninRoleData.comments ne null}">
+                            <h:outputText value="#{permissioninRoleData.comments}" escape="false"/>
+                        </p:tooltip>  
+                    </p:column> 
+
+                    <p:column width="110">  
+                        <h:outputText value="#{permissioninRoleData.statusName}" />  
+                    </p:column> 
+                    
+                    <p:column width="110">  
+                        <p:selectBooleanCheckbox value="#{permissioninRoleData.allowView}" rendered="#{permissioninRoleData.fullControl}"> 
+                            <p:ajax process="@this" listener="#{roleController.changeExtensionPermissionMode}" />
+                            <f:attribute name="permissionRoleDto" value="#{permissioninRoleData}" />
+                        </p:selectBooleanCheckbox> 
+                    </p:column> 
+                    <p:column width="110">  
+                        <p:selectBooleanCheckbox value="#{permissioninRoleData.allowEdit}" rendered="#{permissioninRoleData.fullControl}"> 
+                            <p:ajax process="@this" listener="#{roleController.changeExtensionPermissionMode}" />
+                            <f:attribute name="permissionRoleDto" value="#{permissioninRoleData}" />
+                        </p:selectBooleanCheckbox> 
+                    </p:column> 
+                    <p:column width="110">  
+                        <p:selectBooleanCheckbox value="#{permissioninRoleData.allowDelete}" rendered="#{permissioninRoleData.fullControl}"> 
+                            <p:ajax process="@this" listener="#{roleController.changeExtensionPermissionMode}" />
+                            <f:attribute name="permissionRoleDto" value="#{permissioninRoleData}" />
+                        </p:selectBooleanCheckbox> 
+                    </p:column> 
+                </p:dataTable>
+
+                <div class="UIClearRight"><span></span></div>
+            </p:outputPanel>
+        </p:outputPanel>
+
+    </h:form>
+
+    <ui:include src="choise_permission_popup.xhtml"/>
+
+</ui:composition>

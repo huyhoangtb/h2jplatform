@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd">
+  <persistence-unit name="h2j-web-core/jdbc" transaction-type="RESOURCE_LOCAL">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <non-jta-data-source>mpay/jdbc</non-jta-data-source>
+    <class>net.hj2eplatform.core.models.Log4obj</class>
+    <class>net.hj2eplatform.core.models.PermissionDto</class>
+    <class>net.hj2eplatform.core.models.SecurityPermission</class>
+    <class>net.hj2eplatform.core.models.Sequence</class>
+    <class>net.hj2eplatform.dto.HumanDto</class>
+    <class>net.hj2eplatform.dto.OrgPartnerDto</class>
+    <class>net.hj2eplatform.dto.RolePermissionDto</class>
+    <class>net.hj2eplatform.dto.UserPermissionDto</class>
+    <class>net.hj2eplatform.models.AppParam</class>
+    <class>net.hj2eplatform.models.ContactUs</class>
+    <class>net.hj2eplatform.models.Domain</class>
+    <class>net.hj2eplatform.models.Human</class>
+    <class>net.hj2eplatform.models.Location</class>
+    <class>net.hj2eplatform.models.OrgPermission</class>
+    <class>net.hj2eplatform.models.OrgRole</class>
+    <class>net.hj2eplatform.models.Organization</class>
+    <class>net.hj2eplatform.models.Permission</class>
+    <class>net.hj2eplatform.models.Role</class>
+    <class>net.hj2eplatform.models.RolePermission</class>
+    <class>net.hj2eplatform.models.SystemResource</class>
+    <class>net.hj2eplatform.models.UserPermission</class>
+    <class>net.hj2eplatform.models.UserRole</class>
+    <class>net.hj2eplatform.models.Users</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+    </properties>
+  </persistence-unit>
+</persistence>

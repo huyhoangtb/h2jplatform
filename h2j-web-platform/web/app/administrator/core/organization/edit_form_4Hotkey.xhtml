@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h2j="http://xmlns.jcp.org/jsf/composite/h2j"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <f:view> 
+
+        <h:head>
+            <link rel="stylesheet" type="text/css" href="${facesContext.externalContext.requestContextPath}/themes/admin/resources/css/theme.include.css"></link> 
+            <script src="${facesContext.externalContext.requestContextPath}/themes/admin/resources/js/h2j.themes.admin.js"></script>
+        </h:head>
+        <h:body>
+            <h:form>
+
+
+                <div class="UIThemesPanel">
+                    <ui:include src="edit_form.xhtml"/>        
+                </div>
+            </h:form>
+
+        </h:body>
+    </f:view>
+</html>

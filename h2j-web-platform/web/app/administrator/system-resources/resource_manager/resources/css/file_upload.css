@@ -1,0 +1,27 @@
+
+.UIMyFileUpload .ui-fileupload-buttonbar{
+    
+    left: 45px;
+}
+.UIMyFileUpload .ui-fileupload-buttonbar{
+
+}
+.UIMyFileUpload .ui-fileupload-content{
+    width: 0px;
+    height: 0px;
+    visibility: hidden; 
+}
+.UIMyFileUpload .ui-widget-header{
+    background: none;
+    border: none;
+    border-radius: 2px !important;
+}
+.UIMyFileUpload .ui-state-default .ui-icon {
+    background: url('../images/upload_icon.png') no-repeat  -2px 0px !important;
+}
+.UIDeleteButton .ui-button-text{
+    background-image: url('../images/delete_icon.png')   !important;
+    background-repeat: no-repeat;
+    background-position: 3px;
+    padding-left: 25px;
+}

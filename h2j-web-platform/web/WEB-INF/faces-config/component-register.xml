@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    
+    <component>
+        <component-type>org.primefaces.component.fileupload.FileUpload</component-type>
+        <component-class>org.primefaces.component.fileupload.FileUpload</component-class>
+    </component>
+
+    <component>
+        <component-type>org.primefaces.component.DataList</component-type>
+        <component-class>net.hj2eplatform.core.component.DataList</component-class>
+    </component>
+
+    <component>
+        <component-type>org.primefaces.component.DataGrid</component-type>
+        <component-class>net.hj2eplatform.core.component.DataGrid</component-class>
+    </component>
+    <render-kit>
+        <renderer>
+            <component-family>org.primefaces.component</component-family>
+            <renderer-type>org.primefaces.component.DataListRenderer</renderer-type>
+            <renderer-class>net.hj2eplatform.core.component.DataListRenderer</renderer-class>
+        </renderer>
+        <renderer>
+            <component-family>org.primefaces.component</component-family>
+            <renderer-type>org.primefaces.component.DataGridRenderer</renderer-type>
+            <renderer-class>net.hj2eplatform.core.component.DataGridRenderer</renderer-class>
+        </renderer>
+        <renderer>
+            <component-family>org.primefaces.component</component-family>
+            <renderer-type>org.primefaces.component.fileupload.FileUploadRenderer</renderer-type>
+            <renderer-class>net.hj2eplatform.core.component.FileUploadRenderer</renderer-class>
+        </renderer>
+    </render-kit>
+</faces-config>

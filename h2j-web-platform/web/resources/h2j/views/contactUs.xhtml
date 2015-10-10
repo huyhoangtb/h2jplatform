@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <composite:interface> 
+
+    </composite:interface>
+    <composite:implementation>
+
+        <h2 class="UIContactUs">
+            <a href="#">#{Themes.siteOrg.organizationName} </a>
+
+        </h2>
+        <div class="UIFloatLeft">
+
+            <div class="UIPanelTable">
+                <div class="UILabelPanel UIFloatLeft UIWidth10em">
+                    <h:outputText class="UIFontBold" value="Sản phẩm &amp; dịch vụ:" />
+                </div>
+                <div class="UIFloatLeft">
+                    <p:selectOneMenu value="#{contactUsTag.contactUs.contactProduction}" style="width: 225px;">
+                        <f:selectItem itemLabel="Vui lòng lựa chọn" itemValue=""/>
+                        <f:selectItem itemLabel="Phần mềm du lich" itemValue="Phần mềm du lich"/>
+                        <f:selectItem itemLabel="Thiết kế website du lịch" itemValue="Thiết kế website du lịch"/>
+                        <f:selectItem itemLabel="Thiết kế website khác" itemValue="Thiết kế website khác"/>
+
+                        <f:selectItem itemLabel="Seo &amp; marketing online" itemValue="Phần mềm"/>
+                        <f:selectItem itemLabel="Tư vấn phát triển kinh doanh mạng" itemValue="Tư vấn phát triển kinh doanh mạng"/>
+                        <f:selectItem itemLabel="Sản phẩm khác" itemValue="Sản phẩm khác"/>
+                    </p:selectOneMenu>
+                </div>
+                <div class="UIClearLeft"><span></span></div>
+            </div>
+            <div class="UIPanelTable">
+                <div class="UILabelPanel UIFloatLeft UIWidth10em">
+                    <h:outputText class="UIFontBold"  value="Phòng/bộ phận:" />
+                </div>
+                <div class="UIFloatLeft">
+                    <p:selectOneMenu value="#{contactUsTag.contactUs.contactDepartment}" style="width: 225px;">
+                        <f:selectItem itemLabel="Vui lòng lựa chọn" itemValue=""/>
+                        <f:selectItem itemLabel="Phòng kỹ thuật" itemValue="Phòng kỹ thuật"/>
+                        <f:selectItem itemLabel="Phòng bán hàng" itemValue="Phòng bán hàng"/>
+                        <f:selectItem itemLabel="Phòng hỗ trợ hệ thống" itemValue="Phòng hỗ trợ hệ thống"/>
+                        <f:selectItem itemLabel="Phòng phát triển nghiệp vụ" itemValue="Phòng phát triển nghiệp vụ"/>
+                        <f:selectItem itemLabel="Giám đốc kỹ thuật" itemValue="Giám đốc kỹ thuật"/>
+                        <f:selectItem itemLabel="Ban giám đốc công ty" itemValue="Ban giám đốc công ty"/>
+                        <f:selectItem itemLabel="Liên hệ khác tới công ty" itemValue="Liên hệ khác tới công ty"/>
+                    </p:selectOneMenu>
+                </div>
+                <div class="UIClearLeft"><span></span></div>
+            </div>
+            <div class="UIPanelTable">
+                <div class="UILabelPanel UIFloatLeft UIWidth10em">
+                    <h:outputText class="UIFontBold"  value="Họ và tên:" />
+                </div>
+                <div class="UIFloatLeft">
+                    <p:inputText  value="#{contactUsTag.contactUs.contactFullname}" size="40"/>
+                </div>
+                <div class="UIClearLeft"><span></span></div>
+            </div>
+            <div class="UIPanelTable">
+                <div class="UILabelPanel UIFloatLeft UIWidth10em">
+                    <h:outputText class="UIFontBold"  value="Email:" />
+                </div>
+                <div class="UIFloatLeft">
+                    <p:inputText value="#{contactUsTag.contactUs.contactEmail}" size="40"/>
+                </div>
+                <div class="UIClearLeft"><span></span></div>
+            </div>
+        </div>
+        <div class="UIFloatRight UICapcharPanel">
+            <!--<p:captcha  theme="white" label="Captcha" />-->
+            <div class="UIContactUsOrgInfo">
+                <div class="UIPanelTableMarginBottom0a2em">
+                    <div class=" UIFloatLeft UIWidth6em">
+                        <h:outputText class="UIFontBold"  value="Address:" />
+                    </div>
+                    <div class="UIFloatLeft">
+                        <h:outputText  value="#{Themes.siteOrg.address}" />
+                    </div>
+                    <div class="UIClearLeft"><span></span></div>
+                </div>
+                <div class="UIPanelTableMarginBottom0a2em">
+                    <div class=" UIFloatLeft UIWidth5em">
+                        <h:outputText class="UIFontBold"  value="Phone:" />
+                    </div>
+                    <div class="UIFloatLeft">
+                        <h:outputText  value="#{Themes.siteOrg.phone} " />
+                    </div>
+                    <div class="UIFloatLeft">
+                        <h:outputText  value=" - (#{Themes.siteOrg.emailAddress})" />
+                    </div>
+                    <div class="UIClearLeft"><span></span></div>
+                </div>
+                 <div class="UIPanelTableMarginBottom0a2em">
+                    <div class=" UIFloatLeft UIWidth10em">
+                        <h:outputText class="UIFontBold"  value="Bank Name:" />
+                    </div>
+                    <div class="UIFloatLeft">
+                        <h:outputText  value="#{Themes.siteOrg.bankName}" />
+                    </div>
+                    <div class="UIClearLeft"><span></span></div>
+                </div>
+                 <div class="UIPanelTableMarginBottom0a2em">
+                    <div class=" UIFloatLeft UIWidth10em">
+                        <h:outputText class="UIFontBold"  value="Bank Holder:" />
+                    </div>
+                    <div class="UIFloatLeft">
+                        <h:outputText  value="#{Themes.siteOrg.bankHolder}" />
+                    </div>
+                    <div class="UIClearLeft"><span></span></div>
+                </div>
+                 <div class="UIPanelTableMarginBottom0a2em">
+                    <div class=" UIFloatLeft UIWidth10em">
+                        <h:outputText class="UIFontBold"  value="Bank Number:" />
+                    </div>
+                    <div class="UIFloatLeft">
+                        <h:outputText  value="#{Themes.siteOrg.bankNumber}" />
+                    </div>
+                    <div class="UIClearLeft"><span></span></div>
+                </div>
+            </div>
+        </div>
+        <div class="UIClearBoth"><span></span></div>
+
+
+        <div class="UIPanelTable">
+            <div class="UILabelPanel UIFloatLeft UIWidth10em">
+                <h:outputText class="UIFontBold"  value="Tiêu đề:" />
+            </div>
+            <div class="UIFloatLeft">
+                <p:inputText value="#{contactUsTag.contactUs.contactTitle}" size="65"/>
+            </div>
+            <div class="UIClearLeft"><span></span></div>
+        </div>
+        <div class="UIPanelTable">
+            <div class="UILabelPanel UIFloatLeft UIWidth10em">
+                <h:outputText class="UIFontBold"  value="Nội dung liên hệ:" />
+            </div>
+            <div class="UIClearLeft"><span></span></div>
+        </div>
+        <div class="UIPanelTable">
+            <p:editor value="#{contactUsTag.contactUs.contactDetail}"/>
+        </div>
+
+        <div class="UIPanelTable">
+            <div class="UILabelPanel UIFloatRight">
+                <p:commandButton styleClass="UIDetail" action="#{contactUsTag.createContactUs()}" ajax="false" value="Gửi liên hệ"/>
+            </div>
+            <div class="UIClearRight"><span></span></div>
+        </div>
+    </composite:implementation>
+</html>

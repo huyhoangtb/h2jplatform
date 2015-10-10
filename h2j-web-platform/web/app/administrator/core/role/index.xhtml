@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="#{Themes.currentTheme}"
+                xmlns:h2j="http://xmlns.jcp.org/jsf/composite/h2j">
+    <ui:define name="UIMainContentPage">
+        <div class="UIThemesPanel ">
+            <h:form prependId="false" id="searchFormId">
+                <p:messages  id="messagesId" autoUpdate="true"/>
+
+                <h2j:searchBox header="Tìm kiếm thông tin nhóm quyền truy cập" id="searchboxId" maxWidth="80">
+
+                    <div class="UIFloatLeft UIMarginRight10px ">
+                        <p:autoComplete value="#{organizationController.organizationSelection}"   
+                                        id="organizationSearchPojo" completeMethod="#{organizationController.completeOrganization}"  
+                                        var="organization" itemLabel="#{organization.organizationName}" itemValue="#{organization}" 
+                                        converter="organizationConverter" 
+                                        forceSelection="true" size="30">  
+
+                        </p:autoComplete>
+                        <p:watermark for="organizationSearchPojo" value="Tên tổ chức, Mã tổ chức, tên viết tắt, tên tiếng anh" />
+                    </div>
+
+
+                    <div class="UIFloatLeft UIMarginRight10px UIDivLabel">
+                        <h:outputLabel value="Tên nhóm quyền "/>
+                    </div>
+                    <div class="UIFloatLeft UIMarginRight10px ">
+                        <p:inputText  value="#{roleController.searchData.roleName}"/>
+                    </div>
+                    <div class="UIFloatLeft UIMarginRight10px UIDivLabel">
+                        <h:outputLabel value="Trạng thái"/>
+                    </div>
+
+                    <div class="UIFloatLeft UIMarginRight10px ">
+                        <p:selectOneMenu style="width: 130px" value="#{roleController.searchData.status}" converter="javax.faces.Integer">
+                            <f:selectItem itemLabel="#{msg['select_status']}" itemValue="-1"/>
+                            <f:selectItems value="#{roleController.roleStatusList}"/>
+                        </p:selectOneMenu>
+                    </div>
+                    <div class="UIFloatLeft UIMarginRight10px ">
+                        <p:commandButton  value="#{msg['label_search']}" ajax="false" actionListener ="#{roleController.searchRole}" update="userListId"/>
+                    </div>
+                    <div class="UIFloatLeft UIMarginRight10px ">
+                        <p:commandButton value="#{msg['label_create_new']}" action="edit_role_admin"  ajax="false">
+                            <f:param name="actionFlag" value="role_add_new"/>
+                        </p:commandButton>
+                    </div>
+                    <div class="UIClearLeft"><span></span></div>
+                </h2j:searchBox>
+                <div class=" UITableControl" >
+                    <p:contextMenu for="roleListId">  
+<!--                        <p:menuitem value="{msg['label_detail']}" icon="ui-icon-pencil" 
+                                    actionListener="{roleController.viewDetailRole}" 
+                                    action="edit_role_admin" ajax="false">
+
+                        </p:menuitem>  -->
+                        <p:menuitem value="#{msg['label_active']}" icon="ui-icon-unlocked" 
+                                    actionListener="#{roleController.activeRole}" update="messagesId roleListId">
+                        </p:menuitem>  
+                        <p:menuitem value="#{msg['label_inactive']}" icon="ui-icon-locked" 
+                                    actionListener="#{roleController.inactiveRole}" update="messagesId roleListId">
+                        </p:menuitem>  
+                        <p:menuitem value="#{msg['label_delete']}" icon="ui-icon-trash"  
+                                    actionListener="#{roleController.deleteRole}" 
+                                    update="messagesId roleListId">
+                        </p:menuitem>    
+
+                    </p:contextMenu>
+
+                    <p:dataTable  id="roleListId" var="roledata" value="#{roleController.dataModelRole}" paginator="true" rows="10"  
+                                  paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"  
+                                  rowsPerPageTemplate="5,10,15" selectionMode="single" selection="#{roleController.role}"  lazy="true"
+                                  emptyMessage="Danh sách thành viên rỗng!" draggableColumns="true"  paginatorPosition="bottom"
+                                  styleClass="UITable UIMarginTop10px">  
+                        <p:column headerText="Tên nhóm quyền" sortBy="#{roledata.roleName}" width="30%">  
+                            <h:outputText value="#{roledata.roleName}" />  
+                        </p:column> 
+                        <p:column headerText="Phân loại" sortBy="#{roledata.roleType}"  width="15%">  
+                            <h:outputText value="#{roledata.typeName}" />  
+                        </p:column> 
+
+                        <p:column headerText="Trạng thái" sortBy="#{roledata.status}" width="15%">  
+                            <h:outputText value="#{roledata.statusName}" >
+                            </h:outputText>  
+                        </p:column> 
+                        <p:column headerText="Mô tả" width="40%">  
+                            <h:outputText value="#{roledata.comments}" escape="false"/>  
+                        </p:column> 
+                         <p:column headerText="Chi tiết" width="8%" styleClass="UITextCenter">  
+                            <h:link  outcome="edit_role_admin" styleClass="UIViewLink" >
+                                <f:param name="roleId" value="#{roledata.roleId}" />
+                            </h:link>
+                        </p:column> 
+                    </p:dataTable>
+                    <div class="UIClearRight"><span></span></div>
+                </div>
+            </h:form>
+        </div>
+        <ui:include src="edit_popup.xhtml"/>
+        <!--<ui:include src="/views/admin/security/organization/edit_popup.xhtml"/>-->
+    </ui:define>
+</ui:composition>

@@ -1,0 +1,213 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="#{Themes.currentTheme}"
+                xmlns:h2j="http://xmlns.jcp.org/jsf/composite/h2j"
+                xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+ 
+    <ui:define name="title">Thông tin tài khoản</ui:define>
+    <ui:define name="pageModuleTitle">Tài khoản của tôi</ui:define>
+    <ui:define name="pageSmallTitle">
+        Thông tin tài khoản
+    </ui:define>
+    <ui:define name="breadcrumb">
+        <li class="active">Thông tin tài khoản</li>
+    </ui:define>
+    <ui:define name="UIBreadCrumb">
+        <h:form>
+            <p:breadCrumb>
+                <p:menuitem value="Quản lý menu" url="#" />  
+                <p:menuitem value="Danh sách menu" url="#" />  
+            </p:breadCrumb>
+        </h:form>
+    </ui:define>
+
+    <ui:define name="UIMainContentPage">
+        <h:form  prependId="false">
+            <div class="UIThemesPanel ui-custom-row">
+                <div class="ui-grid ui-grid-responsive">
+                    <div class="ui-grid-row">
+                        <div class="ui-grid-col-3">
+                            <div class="human-icon-panel">
+                                <p:outputPanel id="imagesh2jpanelId">
+                                    <h:graphicImage  value="#{h2jPlatformAppUtils.serverImage}#{authenticationController.human.avatarUrl}"
+                                                     rendered="#{authenticationController.human.avatarUrl ne null}"/>
+                                    <h:graphicImage  value="/resources/images/icon-user-default.png"
+                                                     rendered="#{authenticationController.human.avatarUrl eq null}"/>
+                                    <div class="edit-profile-icon" id="edithumanImg"  >
+                                        <a href="javascript:void(0)" onclick="PF('avatarEditPopupVar').show()">
+
+                                            <h:graphicImage   value="/resources/images/edit-image-profile.png" />
+                                            <h:outputText value="Sửa ảnh đại diện"/> 
+                                        </a>
+                                    </div>
+                                </p:outputPanel>
+                            </div>
+
+                        </div>
+                        <div class="ui-grid-col-9">
+                            <div class="ui-grid UIMarginTop5px">
+                                <h1>Thông tin cá nhân</h1>
+                            </div>
+                            <div class="ui-grid-row">
+                                <div class="ui-grid-col-3">
+                                    Họ và tên:
+                                </div>
+                                <div class="ui-grid-col-9">
+                                    (#{authenticationController.human.gender eq 1 ? 'Ông' : 'Bà'}) #{authenticationController.human.fullName}
+                                </div>
+                            </div>
+                            <div class="ui-grid-row">
+                                <div class="ui-grid-col-3">
+                                    Ngày sinh:
+                                </div>
+                                <div class="ui-grid-col-9">
+                                    <h:outputText value="#{authenticationController.human.birthday}">
+                                        <f:convertDateTime pattern="dd/MM/yyyy"/>
+                                    </h:outputText>
+                                </div>
+                            </div>
+                            <div class="ui-grid-row">
+                                <div class="ui-grid-col-3">
+                                    Chức danh:
+                                </div>
+                                <div class="ui-grid-col-9">
+                                    <h:outputText value="#{authenticationController.human.possition}"/>
+                                </div>
+                            </div>
+                            <div class="ui-grid-row">
+                                <div class="ui-grid-col-3">
+                                    CMTND/Hộ chiếu:
+                                </div>
+                                <div class="ui-grid-col-9">
+                                    <h:outputText value="#{authenticationController.human.cmt}"/> (
+                                    <h:outputText value="#{authenticationController.human.cmtApproveDate}">
+                                        <f:convertDateTime pattern="dd/MM/yyyy"/>
+                                    </h:outputText>)
+
+                                </div>
+                            </div>
+                            <div class="ui-grid-row">
+                                <div class="ui-grid-col-3">
+                                    Địa chỉ:
+                                </div>
+                                <div class="ui-grid-col-9">
+                                    <h:outputText value="#{authenticationController.human.address}"/>
+                                </div>
+                            </div>
+                            <div class="ui-grid-row">
+                                <div class="ui-grid-col-3">
+                                    Điện thoại:
+                                </div>
+                                <div class="ui-grid-col-9">
+                                    <h:outputText value="#{authenticationController.human.tel}"/>
+                                    <h:outputText value=" - #{authenticationController.human.phone}" rendered="#{authenticationController.human.phone ne null and authenticationController.human.phone ne ''}"/>
+                                </div>
+                            </div>
+                            <div class="ui-grid-row">
+                                <div class="ui-grid-col-3">
+                                    Email:
+                                </div>
+                                <div class="ui-grid-col-9">
+                                    <h:outputText value="#{authenticationController.human.emailAddress}"/>
+                                </div>
+                            </div>
+                            <div class="ui-grid-row">
+                                <div class="ui-grid-col-3">
+                                    Yahoo/Skype:
+                                </div>
+                                <div class="ui-grid-col-9">
+                                    <h:outputText value="#{authenticationController.human.yahoo}"/>
+                                    <h:outputText value=" - #{authenticationController.human.skype}" rendered="#{authenticationController.human.skype ne null and authenticationController.human.skype ne ''}"/>
+                                </div>
+                            </div>
+                            <div class="ui-grid UIMarginTop8px">
+                                <h1>Tài khoản đăng nhập hệ thống</h1>
+                            </div>
+                            <div class="ui-grid-row">
+                                <div class="ui-grid-col-3">
+                                    Tên đăng nhập:
+                                </div>
+                                <div class="ui-grid-col-9">
+                                    <h:outputText value="#{authenticationController.user.username}"/>
+                                    (#{authenticationController.human.statusName})
+                                </div>
+                            </div>
+                            <c:if test="#{authenticationController.user.startDate ne null}">
+                                <div class="ui-grid-row">
+                                    <div class="ui-grid-col-3">
+                                        Hiệu lực tài khoản:
+                                    </div>
+                                    <div class="ui-grid-col-9">
+
+                                        <h:outputText value="#{authenticationController.user.startDate}">
+                                            <f:convertDateTime pattern="dd/MM/yyyy"/>
+                                        </h:outputText> -
+                                        <h:outputText value="#{authenticationController.user.endDate}">
+                                            <f:convertDateTime pattern="dd/MM/yyyy"/>
+                                        </h:outputText>
+                                    </div>
+                                </div>
+                            </c:if>
+                            <div class="ui-grid-row">
+                                <div class="ui-grid-col-3">
+                                    Mật khẩu:
+                                </div>
+                                <div class="ui-grid-col-3">
+                                    <p:password value="#{authenticationController.user.password}" placeholder="Password"/>
+                                </div>
+                                <div class="ui-grid-col-6">
+                                    <p:password value="#{authenticationController.user.retypePassword}" placeholder="Nhập lại password"/>
+                                </div>
+                            </div>
+                            <div class="ui-grid-row">
+                                <div class="ui-grid-col-3">
+                                </div>
+                                <div class="ui-grid-col-9">
+                                    <h:commandLink action="#{authenticationController.updatePassword}"
+                                                   styleClass="btn btn-default btn-flat"
+                                                   value="Đổi mật khẩu"/>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </h:form>
+
+
+        <h:form>
+            <p:dialog id="avatarEditPopup"  widgetVar="avatarEditPopupVar" modal="true"
+                      height="510" width="930" styleClass="UIModelPanelStyleNoHeader UIModelPanelStyleNoHeaderAdv" > 
+                <div class="ui-grid ui-grid-responsive">
+                    <div class="ui-grid-row">
+                        <div class="ui-grid-col-4">
+                            <p:fileUpload styleClass="ui-cuscomt-attach-avatar"  fileUploadListener="#{resourceManagerController.handleFileUploadAvatar}" auto="true"  mode="advanced" dragDropSupport="true"
+                                          update="cropImgPanel"  allowTypes="/(\.|\/)(gif|jpe?g|png)$/" uploadLabel="Chọn file ảnh"/>
+                            <p:commandLink   actionListener="#{resourceManagerController.crop}" 
+                                             styleClass="btn btn-default btn-flat" ajax="false"
+                                             value="Chọn ảnh &#38; cập nhật" />
+                        </div>
+                        <div class="ui-grid-col-8" styleClass="cropperImgPanel">
+                            <p:imageCropper id="cropImgPanel"  value="#{resourceManagerController.croppedImage}" image="#{h2jPlatformAppUtils.serverImage}#{resourceManagerController.avatarDraftUrl}" initialCoords="225,75,300,125"/>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+            </p:dialog>   
+        </h:form>
+    </ui:define>
+
+</ui:composition>

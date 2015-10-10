@@ -1,0 +1,40 @@
+h2.UITourName {
+}
+h2.UITourName a{
+    color: #0073B0 !important;
+    font-weight: bold;
+}
+.UIColor0073B0bold{
+    color: #0073B0 !important;
+    font-weight: bold;
+}
+.UIColor0073B0{
+    color: #0073B0 !important;
+}
+.UITourShortInfo {
+    width: 44.5em;
+    margin-right: 0.5em;
+    border-right: 1px solid #cccccc;
+    padding-right: 0.5em;
+}
+.UITourContactInfo {
+    width: 28em;
+}
+.UITourServiceBookingInfo {
+   width: 23em;
+   min-height: 300px;
+    margin-right: 0.5em;
+    border-right: 1px solid #cccccc;
+    padding-right: 0.5em;
+}
+.UITourServiceBookingList {
+     width: 49.5em;
+}
+.UILabelColor {
+    color: #111111;
+    font-weight: bold;
+}
+
+.UISelectOneMenu {
+    padding: 0.3em 0.1em;
+}

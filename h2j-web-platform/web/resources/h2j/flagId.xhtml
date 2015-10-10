@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <composite:interface> 
+        <composite:attribute name="locationId"  />
+        <composite:attribute name="name"  />
+
+
+    </composite:interface>
+    <composite:implementation>
+        <span>
+            <!--<span class="clearfix">-->
+            <span class="UIPaddingTop0a2em  UIFloatLeft UIHeight0">
+                <p:graphicImage  value="#{facesContext.externalContext.requestContextPath}/resources/images/location_flag/id/#{cc.attrs.locationId}.png"/>
+            </span>
+            <span class=" UIMarginLeft0a3em">
+                <h:outputLabel value="#{cc.attrs.name}"/>
+            </span>  
+            <div class="UIClearLeft"><span></span></div>
+        </span>
+        <!--</span>-->  
+        <!--        </c:if>
+        
+                <c:if test="{cc.attrs.name == null}">
+                    <p:graphicImage  value="{facesContext.externalContext.requestContextPath}/resources/images/location_flag/id/#{cc.attrs.locationId}.png"/>
+                </c:if>-->
+
+
+
+    </composite:implementation>
+</html>

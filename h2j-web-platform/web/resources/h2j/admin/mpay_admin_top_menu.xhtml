@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:h2jView="http://xmlns.jcp.org/jsf/composite/h2j/views">
+
+    <composite:interface> 
+    </composite:interface>
+    <composite:implementation>
+        <h:outputStylesheet library="css" name="topMenuStyle01.css"/>
+        <h:outputScript library="js" name="jquery.menu.top.01.js"/>
+
+        <div class="H2jTopMenuStyle01 clearfix">
+            <ul>
+
+                <li class="UIHomeIcon">
+                    <a href="/" ><span></span></a>
+                </li>
+
+                <li class="has-sub">
+                    <a href="#" > Khách hàng cá nhân </a>
+                    <h2jView:ulPanel>
+                        <li class="#{menuLevel0.addSubClass('has-sub')}">
+                            <a href="/app/administrator/core/partner/customer/index.jsf">Khách hàng cá nhân</a>
+                        </li>
+                    </h2jView:ulPanel>
+                </li>
+                <li class="has-sub">
+                    <a href="#" > Quản lý tổ chức </a>
+                    <h2jView:ulPanel>
+                        <li class="has-sub">
+                            <a href="/app/administrator/core/organization/index.jsf">Phòng ban</a>
+                            <h2jView:ulPanel>
+                                <li><a href="/app/administrator/core/staff/index.jsf" >Danh sách Phòng ban</a></li>
+                                <li><a href="/app/administrator/core/staff/edit.jsf" >Thêm mới Phòng ban</a></li>
+                            </h2jView:ulPanel>
+                        </li>
+                        <li class="has-sub">
+                            <a href="/app/administrator/core/organization/index.jsf">Nhân viên</a>
+                            <h2jView:ulPanel>
+                                <li><a href="/app/administrator/core/staff/index.jsf" >Danh sách Nhân viên</a></li>
+                                <li><a href="/app/administrator/core/staff/edit_form_full.jsf" >Thêm mới Nhân viên</a></li>
+                            </h2jView:ulPanel>
+                        </li>
+                        <li class="has-sub">
+                            <a href="/app/administrator/core/partner/supplier/index.jsf">Nhà cung cấp</a>
+                            <h2jView:ulPanel>
+                                <li><a href="/app/administrator/core/partner/supplier/index.jsf" >Danh sách nhà cung cấp</a></li>
+                                <li><a href="/app/administrator/core/partner/supplier/index.jsf" >Thêm mới nhà cung cấp</a></li>
+                            </h2jView:ulPanel>
+                        </li>
+                        <li class="has-sub">
+                            <a href="/app/administrator/core/partner/agent/index.jsf">Quản lý đại lý</a>
+                            <h2jView:ulPanel>
+                                <li><a href="/app/administrator/core/partner/agent/index.jsf" >Danh sách đại lý</a></li>
+                                <li><a href="/app/administrator/core/partner/agent/edit.jsf" >Thêm mới đại lý</a></li>
+                            </h2jView:ulPanel>
+                        </li>
+                         <li class="has-sub">
+                            <a href="/app/administrator/core/role/index.jsf">Nhóm quyền truy cập</a>
+                            <h2jView:ulPanel>
+                                <li><a href="/app/administrator/core/role/index.jsf" >Danh sách nhóm quyền</a></li>
+                                <li><a href="/app/administrator/core/role/edit.jsf" >Thêm mới nhóm quyền</a></li>
+                            </h2jView:ulPanel>
+                        </li>
+                         <li class="has-sub">
+                            <a href="/app/administrator/core/permission/index.jsf">Quyền truy cập</a>
+                            <h2jView:ulPanel>
+                                <li><a href="/app/administrator/core/permission/index.jsf" >Danh sách quyền truy cập</a></li>
+                                <li><a href="/app/administrator/core/permission/edit.jsf" >Thêm mới quyền truy cập</a></li>
+                            </h2jView:ulPanel>
+                        </li>
+                    </h2jView:ulPanel>
+                </li>
+
+            </ul>
+        </div>
+    </composite:implementation>
+</html>

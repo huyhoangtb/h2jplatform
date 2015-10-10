@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:component xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+              xmlns:h="http://xmlns.jcp.org/jsf/html"
+              xmlns:f="http://xmlns.jcp.org/jsf/core"
+              xmlns:p="http://primefaces.org/ui"
+              xmlns:h2jAdmin="http://xmlns.jcp.org/jsf/composite/h2j/admin">
+    <h:form>
+
+        <script type="text/javascript">
+            //<![CDATA[
+            $(document).ready(function () {
+                $("#ui-main-left-admin-menu").find("li.active").parents("li").attr('class', 'active');
+            });
+            //]]>
+        </script> 
+
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul id="ui-main-left-admin-menu" class="sidebar-menu">
+            <li class="header">QUẢN LÝ KHÁCH HÀNG</li>
+            <h2jAdmin:admin-menu-item outcome="/app/administrator/core/partner/customer/index.jsf"
+                                      iconLeftClass="fa fa-angle-double-right"
+                                      itemLabel="Khách hàng cá nhân"/>
+            <h2jAdmin:admin-menu-item outcome="/app/administrator/core/partner/org_customer/index.jsf"
+                                      iconLeftClass="fa fa-angle-double-right"
+                                      itemLabel="Khách hàng doanh nghiệp"/>
+
+            <li class="header">QUẢN LÝ NGƯỜI DÙNG</li>
+            <h2jAdmin:admin-menu-item  classPanel="treeview" 
+                                       iconLeftClass="fa fa-sitemap"
+                                       iconRightClass="fa fa-angle-right pull-right"
+                                       itemLabel="Quản lý tổ chức">
+                <h2jAdmin:ulPanel styleClass="treeview-menu">
+                    <h2jAdmin:admin-menu-item outcome="/app/administrator/core/organization/index.jsf"
+                                              iconLeftClass="fa fa-angle-double-right"
+
+                                              itemLabel="Phòng ban - chi nhánh">
+
+                    </h2jAdmin:admin-menu-item>
+                    <h2jAdmin:admin-menu-item outcome="/app/administrator/core/staff/index.jsf"
+                                              iconLeftClass="fa fa-angle-double-right"
+                                              itemLabel="Nhân viên">
+                    </h2jAdmin:admin-menu-item>
+                </h2jAdmin:ulPanel>
+            </h2jAdmin:admin-menu-item>
+            <h2jAdmin:admin-menu-item  classPanel="treeview" 
+                                       iconLeftClass="fa fa-sitemap"
+                                       iconRightClass="fa fa-angle-right pull-right"
+                                       itemLabel="Quản lý nhà cung cấp">
+                <h2jAdmin:ulPanel styleClass="treeview-menu">
+                    <h2jAdmin:admin-menu-item outcome="/app/administrator/core/partner/supplier/index.jsf"
+                                              iconLeftClass="fa fa-angle-double-right"
+
+                                              itemLabel="Danh sách nhà cung cấp">
+
+                    </h2jAdmin:admin-menu-item>
+                    <h2jAdmin:admin-menu-item outcome="/app/administrator/core/partner/supplier/edit.jsf"
+                                              iconLeftClass="fa fa-angle-double-right"
+                                              itemLabel="Thêm mới nhà cung cấp">
+                    </h2jAdmin:admin-menu-item>
+                </h2jAdmin:ulPanel>
+            </h2jAdmin:admin-menu-item>
+            <h2jAdmin:admin-menu-item  classPanel="treeview" 
+                                       iconLeftClass="fa fa-sitemap"
+                                       iconRightClass="fa fa-angle-right pull-right"
+                                       itemLabel="Quản lý đại lý">
+                <h2jAdmin:ulPanel styleClass="treeview-menu">
+                    <h2jAdmin:admin-menu-item outcome="/app/administrator/core/partner/agent/index.jsf"
+                                              iconLeftClass="fa fa-angle-double-right"
+
+                                              itemLabel="Danh sách đại lý">
+
+                    </h2jAdmin:admin-menu-item>
+                    <h2jAdmin:admin-menu-item outcome="/app/administrator/core/partner/agent/edit.jsf"
+                                              iconLeftClass="fa fa-angle-double-right"
+
+                                              itemLabel="Thêm mới đại lý">
+                    </h2jAdmin:admin-menu-item>
+                </h2jAdmin:ulPanel>
+            </h2jAdmin:admin-menu-item>
+            <h2jAdmin:admin-menu-item  classPanel="treeview" 
+                                       iconLeftClass="fa fa-sitemap"
+                                       iconRightClass="fa fa-angle-right pull-right"
+                                       itemLabel="Quản quyền - nhóm quyền">
+                <h2jAdmin:ulPanel styleClass="treeview-menu">
+                    <h2jAdmin:admin-menu-item outcome="/app/administrator/core/role/index.jsf"
+                                              iconLeftClass="fa fa-angle-double-right"
+
+                                              itemLabel="Nhóm quyền truy cập">
+
+                    </h2jAdmin:admin-menu-item>
+                    <h2jAdmin:admin-menu-item outcome="/app/administrator/core/permission/index.jsf"
+                                              iconLeftClass="fa fa-angle-double-right"
+
+                                              itemLabel="Quyền truy cập">
+                    </h2jAdmin:admin-menu-item>
+                </h2jAdmin:ulPanel>
+            </h2jAdmin:admin-menu-item>
+
+        </ul>
+
+
+    </h:form>
+</ui:component>

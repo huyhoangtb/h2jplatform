@@ -1,0 +1,974 @@
+@charset "utf-8";
+
+
+html,  div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000; 
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;   
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+/* 
+    Document   : utils
+    Created on : Dec 14, 2012, 9:47:40 AM
+    Author     : ancoti
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+
+/* CSS Document */
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+
+.UIFloatLeft {
+    float: left;
+}
+.UIFloatRight {
+    float: right;
+}
+.UIClearLeft {
+    clear: left;
+}
+.UIClearRight {
+    clear: right;
+}
+.UIClearBoth {
+    clear: both;
+    float: none;
+    height: 0px;
+}
+a, img {
+    border: 0 none;
+    outline: 0 none;
+    text-decoration: none;
+    vertical-align: top;
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+html[xmlns] .clearfix {
+    display: block;
+}
+
+* html .clearfix {
+    height: 1%;
+}
+
+input[type='text'], input[type='password'] {
+    height: 2.5em;
+    /*border-radius: 0.05em;*/
+    border-radius: 3px;
+    /*border: 1px solid #A8A8A8;*/
+    /*box-shadow:none !important;*/
+    padding: 0.2em;
+}
+.UISuggestCustom ul li span.ui-autocomplete-token-label {
+    padding: 0.3em 2.1em 0.3em 0.5em;
+}
+.UISuggestCustomFinish ul li.ui-autocomplete-input-token {
+    display: none;
+}
+.UIWidthSuggest377px ul{
+    width: 377px;
+}
+.UIWidthSuggest470px ul{
+    width: 470px;
+}
+.UIMarginTop5px {
+    margin-top: 5px;
+}
+.UIMarginTop0a5em {
+    margin-top: 0.5em;
+}
+.UIMarginTop0a8em {
+    margin-top: 0.8em;
+}
+.UIFloatLeft {
+    float: left;
+}
+.UIFloatRight {
+    float: right;
+}
+.UIClearLeft {
+    clear: left;
+}
+.UIClearRight {
+    clear: right;
+}
+.UIClearBoth {
+    clear: both;
+    float: none;
+    height: 0px;
+}
+a, img {
+    border: 0 none;
+    outline: 0 none;
+    text-decoration: none;
+    vertical-align: top;
+}
+.clearfix:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+html[xmlns] .clearfix {
+    display: block;
+}
+
+* html .clearfix {
+    height: 1%;
+}
+
+.UIMargin5px {
+    margin: 5px;
+}
+.UIMargin15px {
+    margin: 15px;
+}
+.UIMargin10px {
+    margin: 10px;
+}
+
+.UIMarginLeft5px {
+    margin-left: 5px;
+}
+.UIMarginRight1em {
+    margin-right: 1em;
+}
+.UIMarginRight1a3em {
+    margin-right: 1.3em;
+}
+.UIMarginRight5px {
+    margin-right: 5px;
+}
+.UIMarginTop5px {
+    margin-top: 5px;
+}
+.UIMarginBottom5px {
+    margin-bottom: 5px;
+}
+.UIPaddingButtom1em {
+    padding-bottom: 1em;
+}
+.UIPaddingButtom0a2em {
+    padding-bottom: 0.2em;
+}
+
+.UIMarginLeft15em {
+    margin-left: 15em;
+}
+.UIMarginLeft15a5em {
+    margin-left: 15.5em;
+}
+.UIMarginLeft15px {
+    margin-left: 15px;
+}
+.UIMarginRight15px {
+    margin-right: 15px;
+}
+.UIMarginTop15px {
+    margin-top: 15px;
+}
+.UIMarginBottom15px {
+    margin-bottom: 15px;
+}
+
+.UIMarginLeft2em {
+    margin-left: 2em;
+}
+.UIMarginLeft0a3em {
+    margin-left: 0.3em;
+}
+.UIMarginLeft3em {
+    margin-left: 3em;
+}
+.UIMarginLeft1em {
+    margin-left: 1em;
+}
+.UIMarginLeft10px {
+    margin-left: 10px;
+}
+.UIMarginLeft10em {
+    margin-left:  10em;
+}
+.UIMarginLeft11a5em {
+    margin-left:  11.5em;
+}
+.UIMarginLeft11em {
+    margin-left:  11em;
+}
+.UIMarginLeft12em {
+    margin-left:  12em;
+}
+.UIMarginRight10px {
+    margin-right: 10px;
+}
+.UIMarginRight8px {
+    margin-right: 8px;
+}
+.UIMarginTop10px {
+    margin-top: 10px;
+}
+.UIMarginTop8px {
+    margin-top: 8px;
+}
+.UIMarginBottom10px {
+    margin-bottom: 10px;
+}
+.UIMarginLeft30px {
+    margin-left:  30px;
+}
+.UIMarginLeft35px {
+    margin-left:  35px;
+}
+.UIFixWidth130px {
+    width: 130px;
+}
+.UIPaddingTop0a2em {
+    margin-top: 0.2em;
+}
+.UIFontBold {
+    font-weight: bold;
+}
+.UIClearBg {
+    background: none;
+}
+.UIClearBgAndAll {
+    background: none !important;
+    width: 0  !important;
+    height: 0  !important;
+    padding: 0 !important;
+    margin: 0 !important;
+
+}
+
+
+.UIPanelTable {
+    margin-bottom: 10px;
+}
+.UIDivLabel{
+    padding: 0.5em 0em 0em 0em;
+    /*padding-top: 10px;*/
+}
+.UIPanelTable .UILabelPanel{
+    padding-top: 0.3em;
+}
+
+
+.UIWidth4a4em{
+     width: 4.4em;
+    min-width: 4.4em;
+    max-width: 4.4em;
+}
+.UIWidth4a55em{
+    width: 4.55em;
+    max-width:  4.55em;
+   min-width: 4.55em;
+}
+.UIWidth4a6em{
+    width: 4.6em;
+    max-width:  4.6em;
+   min-width: 4.6em;
+}
+.UIWidth4a7em{
+    width: 4.7em;
+    max-width: 4.7em;
+    min-width: 4.7em;
+}
+.UIWidth2a4em{
+    width: 2.4em;
+    min-width: 2.4em;
+    max-width: 2.4em;
+}
+.UIWidth2a3em{
+    width: 2.3em;
+    min-width: 2.3em;
+    max-width: 2.3em;
+}
+.UIWidth2a2em{
+    width: 2.2em;
+    min-width: 2.2em;
+    max-width: 2.2em;
+}
+.UIWidth2a1em{
+    width: 2.1em;
+    min-width: 2.1em;
+    max-width: 2.1em;
+}
+.UIWidth1a2em{
+    width: 1.2em;
+    max-width: 1.2em;
+     min-width: 2.1em;
+}
+.UIWidth1a25em{
+    width: 1.25em;
+    max-width: 1.25em;
+     min-width: 1.25em;
+}
+.UIWidth1a3em{
+    width: 1.3em;
+    max-width: 1.3em;
+     min-width:1.3em;
+}
+.UIWidth1a05em{
+    width: 1.05em;
+    max-width: 1.05em;
+     min-width:1.05em;
+}
+.UIWidth1a2em{
+    width: 1.2em;
+    max-width: 1.2em;
+    min-width:1.2em;
+}
+.UIWidth1a5em{
+    width: 1.5em;
+    max-width:1.5em;
+     min-width:1.5em;
+}
+.UIWidth1a8em{
+    width: 1.8em;
+    max-width:1.8em;
+     min-width:1.8em;
+}
+.UIWidth1a95em{
+    width: 1.95em;
+    max-width:1.95em;
+     min-width:1.95em;
+}
+.UIWidth2em{
+    width: 2em;
+    max-width: 2em;
+}
+.UIWidth2a5em{
+    width: 2.5em;
+    max-width:2.5em;
+}
+.UIWidth3em{
+    width: 3em !important;
+    max-width:3em !important;
+}
+.UIWidth3a5em{
+    width: 3.5em;
+    max-width:3.5em;
+}
+.UIWidth3a8em{
+    width: 3.8em;
+    max-width:3.8em;
+     min-width: 3.8em;
+}
+.UIWidth4em{
+    width: 4em;
+    max-width: 4em;
+    min-width: 4em;
+}
+.UIWidth4a45em{
+    width: 4.45em;
+    max-width: 4.45em;
+    min-width: 4.45em;
+}
+.UIWidth4a5em{
+    width: 4.5em;
+    max-width: 4.5em;
+    min-width: 4.5em;
+}
+.UIWidth5em{
+    width: 5em;
+    max-width: 5em;
+    min-width: 5em;
+}
+.UIWidth5a15em{
+    width: 5.15em;
+    max-width: 5.15em;
+     min-width:  5.15em;
+}
+.UIWidth5a1em{
+    width: 5.1em;
+    max-width: 5.1em;
+     min-width:  5.1em;
+}
+.UIWidth5a2em{
+    width: 5.2em;
+    max-width: 5.2em;
+     min-width:  5.2em;
+}
+.UIWidth5a6em{
+    width: 5.6em;
+    max-width: 5.6em;
+     min-width:  5.6em;
+}
+.UIWidth5a65em{
+    width: 5.65em;
+    max-width: 5.65em;
+     min-width:  5.65em;
+}
+.UIWidth5a7em{
+    width: 5.7em;
+    max-width: 5.7em;
+     min-width:  5.7em;
+}
+.UIWidth5a5em{
+    width: 5.5em;
+    max-width: 5.5em;
+    min-width:  5.5em;
+}
+.UIWidth5a4em{
+    width: 5.4em;
+    max-width: 5.4em;
+     min-width:  5.4em;
+}
+.UIWidth5a3em{
+    width: 5.3em;
+    max-width: 5.3em;
+     min-width: 5.3em;
+}
+.UIWidth5a8em{
+    width: 5.8em;
+    max-width: 5.8em;
+     min-width: 5.8em;
+}
+.UIWidth6em{
+    width: 6em !important;
+    max-width:6em ;
+    min-width: 6em;
+}
+.UIMarginLeft0a5em {
+    margin-left: 0.5em;
+}
+.UIWidth6a1em{
+    width: 6.1em !important;
+    max-width:6.1em ;
+    min-width: 6.1em;
+}
+.UIWidth6a23em{
+    width: 6.23em !important;
+    max-width:6.23em ;
+    min-width: 6.23em;
+}
+.UIWidth6a5em{
+    width: 6.5em;
+    max-width:6.5em;
+}
+.UIWidth6a2em{
+    width: 6.2em;
+    max-width:6.2em;
+}
+.UIWidth7em{
+    width: 7em;
+    max-width: 7em;
+    min-width: 7em;
+}
+.UIWidth7a2em{
+    width: 7.2em;
+    max-width:7.2em;
+}
+.UIWidth7a5em{
+    width: 7.5em;
+    max-width: 7.5em;
+    min-width: 7.5em;
+}
+.UIWidth8em{
+    width: 8em;
+    max-width: 8em;
+    min-width:  8em;
+}
+.UIWidth8a5em{
+    width: 8.5em;
+    max-width: 8.5em;
+    min-width: 8.5em;
+}
+.UIWidth9em{
+    width: 9em;
+    max-width: 9em;
+}
+.UIWidth9a5em{
+    width: 9.5em;
+    max-width: 9.5em;
+}
+.UIWidth10em{
+    width: 10em;
+    max-width:10em;
+}
+.UIWidth10a5em{
+    width: 10.5em;
+    max-width:10.5em;
+}
+.UIWidth11em{
+    width: 11em;
+    max-width:11em;
+}
+.UIWidth11a5em{
+    width: 11.5em;
+    max-width:11.5em;
+}
+.UIWidth12em{
+    width: 12em;
+    max-width:12em;
+}
+.UIWidth12a5em{
+    width: 12.5em;
+    max-width:12.5em;
+}
+
+.UIWidth13em{
+    width: 13em;
+    max-width:13em;
+}
+.UIWidth13a5em{
+    width: 13.5em;
+    max-width: 13.5em;
+}
+.UIWidth14em{
+    width: 14em;
+    max-width:14em;
+}
+.UIWidth14a5em{
+    width: 14.5em;
+    max-width:14.5em;
+}
+.UIWidth15em{
+    width: 15em;
+    max-width:15em;
+}
+.UIWidth15a5em{
+    width: 15.5em;
+    max-width:15.5em;
+}
+.UIWidth18em{
+    width: 18em;
+    max-width:18em;
+}
+.UIWidth17em{
+    width: 17em;
+    max-width:17em;
+}
+.UIWidth16em{
+    width: 16em;
+    max-width:16em;
+}
+.UIWidth20a6em{
+    width: 20.6em;
+    max-width:20.6em;
+    min-width: 20.6em;
+}
+.UIWidth20a3em{
+    width: 20.3em;
+    max-width:20.3em;
+    min-width: 20.3em;
+}
+.UIWidth19a8em{
+    width: 19.8em;
+    max-width:19.8em;
+    min-width: 19.8em;
+}
+.UIWidth20em{
+    width: 20em;
+    max-width:20em;
+    min-width: 20em;
+}
+.UIWidth20a1em{
+    width: 20.1em;
+    max-width:20.1em;
+    min-width: 20.1em;
+}
+.UIWidth20a5em{
+    width: 20.5em;
+    max-width:20.5em;
+    min-width: 20.5em;
+}
+.UIWidth23em{
+    width: 23em;
+    max-width:23em;
+    min-width: 23em;
+}
+.UIWidth23a7em{
+    width: 23.7em;
+    max-width:23.7em;
+    min-width: 23.7em;
+}
+.UIWidth24em{
+    width: 24em;
+    max-width:24em;
+}
+.UIWidth24a5em{
+    width: 24.5em;
+    max-width:24.5em;
+}
+.UIWidth24a7em{
+    width: 24.7em;
+    max-width:24.7em;
+}
+
+button {
+    background-color: #337ab7;
+    border-color: #2e6da4;
+    color: #fff;
+}
+button {
+    -moz-user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    padding: 6px 12px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+.UIButtonPanel {
+    text-align: center;
+    padding: 10px 0px;
+}
+.UIButtonPanel button{
+    margin-right: 10px;
+}
+a.UIViewLink {
+    background: url('../images/icon/view.png') no-repeat left center;
+    width: 2em;
+    height: 2em;
+    display: inline-block;
+}
+.UIViewLink {
+    background: url('../images/icon/view.png') no-repeat left center;
+    width: 2em;
+    height: 2em;
+    display: inline-block;
+}
+a.UIViewLinkMoreMenu {
+    background: url('../images/icon/view.png') no-repeat left center;
+    padding-left: 2.3em;
+    padding-top: 0.5em;
+/*    height: 2em;*/
+    display: inline-block;
+}
+
+a.UIWaitingOperatorApprove {
+    background: url('../images/operator_ok.png') no-repeat left center;
+    padding-left: 2.3em !important;
+    padding-top: 0.5em !important;
+    background-size: 20px 20px;
+/*    height: 2em;*/
+    display: inline-block;
+}
+a.UIWaitingOperatorReject {
+    background: url('../images/operator_reject.png') no-repeat left center;
+    padding-left: 2.3em !important;
+    padding-top: 0.5em !important;
+/*    height: 2em;*/
+background-size: 20px 20px;
+    display: inline-block;
+}
+a.UISaleLink {
+    background: url('../images/icon/sale_icon_small.png') no-repeat left center;
+    width: 2em;
+    height: 2em;
+    display: inline-block;
+}
+a.UIEditLink {
+    background: url('../images/icon/edit-icon.png') no-repeat left center;
+    width: 2em;
+    height: 2em;
+    display: inline-block;
+}
+a.UIDeleteLink {
+    background: url('../images/icon/delete-icon.png') no-repeat left center;
+    width: 2em;
+    height: 2em;
+    display: inline-block;
+}
+a.UILinkBookingTour {
+    background: url('../images/icon/booking_tour.png') no-repeat left center;
+    width: 2em;
+    height: 2em;
+    display: inline-block;
+}
+.UIOrderAgentIcon {
+    background: url('../images/icon/agent_order_icon.png') no-repeat left center;
+    padding-left: 18px;
+    display: inline-block;
+}
+.UIOrderCustomerIcon {
+    background: url('../images/icon/customer_order_icon.png') no-repeat left center;
+    padding-left: 18px;
+    display: inline-block;
+}
+.UITextCenter {
+    text-align: center;
+}
+
+.UIWidth1percent {
+    width: 1%;
+}
+.UIWidth2percent {
+    width: 2%;
+}
+.UIWidth3percent {
+    width: 3%;
+}
+.UIWidth4percent {
+    width: 4%;
+}
+.UIWidth5percent {
+    width: 5%;
+}
+.UIWidth6percent {
+    width: 6%;
+}
+.UIWidth7percent {
+    width: 7%;
+}
+.UIWidth8percent {
+    width: 8%;
+}
+.UIWidth9percent {
+    width: 9%;
+}
+.UIWidth10percent {
+    width: 10%;
+}
+.UIWidth11percent {
+    width: 11%;
+}
+.UIWidth12percent {
+    width: 12%;
+}
+.UIWidth13percent {
+    width: 13%;
+}
+.UIWidth15percent {
+    width: 15%;
+}
+.UIWidth20percent {
+    width: 20%;
+}
+.UIWidth25percent {
+    width: 25%;
+}
+.UIWidth30percent {
+    width: 30%;
+}
+.UIPaddingLeft1px {
+    padding-left: 1px;
+}
+.UIInputDefault input[type="text"].ui-inputfield{
+    background: none repeat scroll 0 0 #FFFFFF;
+    box-shadow: 0 2px 2px #8F8F8F inset !important;
+}
+ input[type="text"].UIInputDefault{
+    background: none repeat scroll 0 0 #FFFFFF;
+    box-shadow: 0 2px 2px #8F8F8F inset !important;
+}
+.UIBorderTopA8A8A8 {
+    border-top: 1px solid #A8A8A8;
+    padding: 0.3em 0 0 0.3em;
+}
+.UINoBorderTopA8A8A8 {
+    padding: 0.3em 0 0 0;
+}
+.UIMarginBottom0a5em {
+    margin-bottom: 0.5em !important;
+}
+.UIMarginBottom0a5em {
+    margin-bottom: 0.5em !important;
+}
+.UIHeight0 {
+    height: 0;
+}
+
+a.UIOutputLink {
+    /*color: #0E71B4;*/
+}
+a.UIOutputLink:hover {
+    /*color: #F7941E !important;*/
+    color: #0E71B4;
+}
+.UICenterPanel {
+    display: table; 
+    margin: auto; 
+    padding-bottom: 15px;
+}
+.UIMarginTop1em {
+    margin-top: 1em;
+}
+.UIColor0E71B4 {
+    color: #0E71B4;
+}
+.UIButtonMenuStyle01 {
+      border: none;
+}
+.UIButtonMenuStyle01 button.ui-button{
+    width: 30px;
+    height: 30px;
+    background-image: url('/resources/images/menu_button_bg.png') !important;
+    background-repeat: no-repeat !important;;
+    background-position: center center !important;;
+    background-size: 30px 30px !important;
+    border: none !important;
+}
+.UIButtonMenuStyle01 button span{
+    display: none !important;
+}
+
+.UIModelPanelStyleNoHeader {
+    overflow: visible !important;
+    box-shadow: 0 0 10px #111111;
+    border: 0;
+}
+.UIModelPanelStyleNoHeader div.ui-dialog-content{
+    padding: 1em 1em;
+}
+.UIModelPanelStyleNoHeader a.ui-dialog-titlebar-close{
+    position: absolute;
+    right: -15px;
+    top: -12px !important;
+    z-index: 10000;
+    padding: 0 !important;
+}
+.UIModelPanelStyleNoHeader div.ui-widget-header{
+    padding: 0 !important;
+    background: none !important;
+    height: 0px;
+}
+.UIModelPanelStyleNoHeader a.ui-state-hover{
+    padding: 0 !important;
+    background: none !important;
+    height: 33px;
+    width: 33px;
+    border: none;
+    box-shadow: none;
+    border-radius: none;
+}
+.UIModelPanelStyleNoHeader div.ui-widget-header span.ui-icon-closethick{
+    background-image: url('../images/close39x39.png');
+    background-repeat: no-repeat;
+    background-size: 28px 28px;
+    height: 33px;
+    width: 33px;
+    padding: 0 !important;
+    background-position: center center;
+}
+.UIWidth30em{
+    width: 30em !important;
+}
+.UIPositionAbs{
+    position: absolute;
+}
+.UIHidden{
+    display: none;
+}
+.UIActive{
+    display: block;
+}
+.UIMarginTopBottom1em{
+    margin: 1em 0em;
+}

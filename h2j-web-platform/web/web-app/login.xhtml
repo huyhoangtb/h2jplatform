@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <f:view contentType="text/html"> 
+        <h:head>
+            <ui:insert name="title"/>
+            <ui:insert name="HeaderMeta"/>
+            <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+            <meta name="msvalidate.01" content="2FCE9B42BC11BDD613E25D07C67A432F" />
+            <f:facet name="middle">
+                <link rel="stylesheet" type="text/css" href="${facesContext.externalContext.requestContextPath}/themes/web-app/travelTemp02/resources/css/theme.include.css"></link> 
+
+            </f:facet>
+            <ui:insert name="scriptCss"/>
+            <ui:insert name="scriptJS"/>
+            <ui:insert name="f-param"/>
+            <link href="${facesContext.externalContext.requestContextPath}/resources/images/vntravelsoft/logo_vntravelsoft.ico" rel="Shortcut Icon" />
+        </h:head> 
+        <h:body>
+            <iframe src="/app/administrator/login/index.jsf" width="100%" height="100%"/>
+        </h:body>
+    </f:view>
+</html>

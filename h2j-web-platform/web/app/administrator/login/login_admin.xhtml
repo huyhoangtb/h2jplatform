@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:p="http://primefaces.org/ui">
+
+    <div class="UIThemesPanel ">
+        <div class="  UILoginBgVnTravelSoft" >
+            <div class="UIMainThemesPanel UIDivPanel ">
+
+                <div class="UITopThemePanelBg1ea2d3 UILoginPanel">
+                    <div class="UISearchBePanel" >
+                        <div class="UISBePanelContent">
+                            <div class="UIPanelHeader">
+                                <span>
+                                   Đăng nhập hệ thống
+                                </span>
+                            </div>
+                            <div class="UIPanelContent">
+
+                                <h:form >
+                                    <div class="UIMarginLeft15px">
+
+                                        <p:messages/>
+                                        <div class="UIPanelTable">
+                                            <div class="UILabelPanel UIWidth10em UIFloatLeft">
+                                                <h:outputText value="Tên đăng nhập"/>
+                                            </div>
+                                            <div class="UIFloatLeft">
+                                                <p:inputText styleClass="UserName" id="j_username" value="#{authenticationController.username}"
+                                                             size="23"/>
+                                            </div>
+                                            <div class="UIClearLeft"><span></span></div>
+                                        </div>
+                                        <div class="UIPanelTable">
+                                            <div class="UILabelPanel UIWidth10em UIFloatLeft">
+                                                <h:outputText value="Mật khẩu"/>
+                                            </div>
+                                            <div class="UIFloatLeft">
+                                                <p:password styleClass="password" id="j_password" value="#{authenticationController.password}"
+                                                            size="23"/>
+                                            </div>
+                                            <div class="UIClearLeft"><span></span></div>
+                                        </div>
+                                        <div class="UIPanelTable">
+                                            <!--                <div class="UILabelPanel UILabelWidth10em UIFloatLeft">
+                                                            </div>-->
+                                            <div class=" UIFloatLeft">
+                                                <p:selectBooleanCheckbox label="Nhớ mật khẩu"  id="_spring_security_remember_me"/>
+                                            </div>
+                                            <div class=" UIFloatLeft UILabelPanel UIMarginLeft10px">
+                                                Nhớ mật khẩu
+                                            </div>
+                                            <div class="UIClearLeft"><span></span></div>
+                                        </div>
+                                        <div class="UIButtonPanel">
+                                            <p:commandButton styleClass ="UIButtonClass" ajax="false" value="Đăng nhập" action="#{authenticationController.login}" />
+                                        </div>
+
+                                    </div>
+                                </h:form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</ui:composition>

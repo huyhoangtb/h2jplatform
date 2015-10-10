@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition xmlns:ui="http://xmlns.jcp.org/jsf/facelets" 
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <div class="UIFloatLeft UIWidth60percent" style="border-radius: 3px;border: 1px solid #00ACEE; background: aliceblue; margin: 0 auto; padding: 10px 20px 10px 20px;">
+        <div>
+            <h:form id="formLogin">
+                <div class="UIFloatLeft UIBorderRightpxsolidgray" style="width:220px;padding-right: 20px;">
+                    <div id="fb-root"></div>
+                    <p class="UIMarginBottom40px UIFontBold UIColor0073B0">Đăng nhập bằng một click!</p>
+                    <a class="btnLoginSocial" onclick="loginFBB()"
+                       style="display: inline-block; color: #fff; font-weight: bold; height: 34px; width: 60%;
+                       background-color: #f4f4f4; line-height: 34px; padding: 0px 15px 0 34px;
+                       border-radius: 3px; text-align: center; text-decoration: none;
+                       background: #3b5998 url(http://assets-9gag-ftw.9cache.com/static/main/web6/20141201_1417408392/img/sharing-button-a.png) 0 0 no-repeat;">Facebook</a>
+                    <img class="loadingFb" src="/resources/bantour/images/loading.gif" style="margin-top:10px;display: none"/>
+                    <br/>
+                    <br/>
+                    <a class="btnLoginSocial" onclick="loginGG()()" style="display: block; color: #fff; 
+                       font-weight: bold; height: 34px;width: 60%;
+                       background-color: #f4f4f4; line-height: 34px; padding: 0px 15px 0 34px;
+                       border-radius: 3px; text-align: center; text-decoration: none;
+                       background: #DF4A32 url(http://www.neosyntheticoil.com/google-plus.png) 0 0 no-repeat;
+                       background-size: 35px;">Google</a>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <span class="UIFontBold clbtnShowLoginSite" style="color: gray; cursor: pointer;" id="btnShowLoginSite">Đăng nhập Bookingtour.vn</span>
+                    <br/>
+                    <span class="UIFontBold clbtnShowRegSite"  style="color: gray; cursor: pointer;" id="btnShowRegSite">Đăng ký Bookingtour.vn</span>
+                    <!--                    <img width="200px" src="http://www.hostinger.vn/images/oauth/fb.jpg" onclick="loginFBB()" style="cursor: pointer;"/>
+                                        <img class="loadingFb" src="/resources/bantour/images/loading.gif" style="margin-top:30px;display: none"/>-->
+                    <!--                    <br/><br/>
+                                        <img width="200px" src="http://www.hostinger.vn/images/oauth/gg.jpg" onclick="loginGG()" style="cursor: pointer;"/>-->
+                    <p id="notiLoginFb" style="color: red"></p>
+                </div>
+                <div class="UIFloatLeft UIPaddingLeft30px">
+
+                    <!--<span class="UIFontBold clbtnShowLoginSite" style="color: gray; cursor: pointer;" id="btnShowLoginSite">Đăng nhập Bookingtour.vn</span> |--> 
+                    <!--<span class="UIFontBold clbtnShowRegSite"  style="color: gray; cursor: pointer;" id="btnShowRegSite">Đăng ký Bookingtour.vn</span>-->
+                    <div id="detailShowLoginSite" style="">
+                        <p class="UIMarginBottom40px UIFontBold UIColor0073B0">Đăng nhập</p>
+                        <div class="UIPanelTable">
+                            <div class="UILabelPanel UIWidth8em UIFloatLeft">
+                                <h:outputText value="Tên đăng nhập"/>
+                            </div>
+                            <div class="UIFloatLeft">
+                                <p:inputText styleClass="UserName height29px" id="j_username" value="#{authenticationController.username}"
+                                             size="23"/>
+                            </div>
+                            <div class="UIClearLeft"><span></span></div>
+                        </div>
+                        <div class="UIPanelTable">
+                            <div class="UILabelPanel UIWidth8em UIFloatLeft">
+                                <h:outputText value="Mật khẩu"/>
+                            </div>
+                            <div class="UIFloatLeft">
+                                <p:password styleClass="password height29px" id="j_password" value="#{authenticationController.password}"
+                                            size="23"/>
+                            </div>
+                            <div class="UIClearLeft"><span></span></div>
+                        </div>
+                        <div class="UIPanelTable">
+                            <div class="UILabelPanel UILabelWidth10em UIFloatLeft">
+                            </div>
+                            <div class=" UIFloatLeft">
+                                <p:selectBooleanCheckbox label="Nhớ mật khẩu"  id="_spring_security_remember_me"/>
+                            </div>
+                            <div class=" UIFloatLeft UILabelPanel UIMarginLeft10px">
+                                Nhớ mật khẩu
+                            </div>
+                        </div>
+                        <div class="UIButtonPanel">
+                            <p:commandButton process="formLogin" styleClass ="UIBantourSearchBottom" value="Đăng nhập" actionListener ="#{authenticationController.loginOnSite}" oncomplete="handleLoginRequest(xhr, status, args)" />
+                        </div>
+                        <div class="UIClearLeft"><span></span></div>
+                    </div>
+                    
+                    <div id="detailShowRegisSite" style="display: none">
+                        <p class="UIMarginBottom40px UIFontBold UIColor0073B0">Đăng ký</p>
+                        <div class="UIPanelTable">
+                            <div class="UIPanelTable">
+                                <div class="UILabelPanel UIWidth8em UIFloatLeft">
+                                    <h:outputText value="Tên đăng nhập"/>
+                                </div>
+                                <div class="UIFloatLeft">
+                                    <p:inputText size="40" styleClass="height29px" value="#{customerRegister.customer.username}"/>
+                                </div>
+                                <div class="UIClearLeft"><span></span></div>
+                            </div>
+                            <div class="UIPanelTable">
+                                <div class="UILabelPanel UIWidth8em UIFloatLeft">
+                                    <h:outputText value="Tên hiển thị" />
+                                </div>
+                                <div class="UIFloatLeft">
+                                    <p:inputText size="40" styleClass="height29px" value="#{customerRegister.customer.fullName}"/>
+                                </div>
+                                <div class="UIClearLeft"><span></span></div>
+                            </div>
+                            <div class="UIPanelTable">
+                                <div class="UILabelPanel UIWidth8em UIFloatLeft">
+                                    <h:outputText value="Email" />
+                                </div>
+                                <div class="UIFloatLeft">
+                                    <p:inputText size="40" styleClass="height29px" value="#{customerRegister.customer.emailAddress}"/>
+                                </div>
+                                <div class="UIClearLeft"><span></span></div>
+                            </div>                     
+                            <div class="UIPanelTable">
+                                <div class="UILabelPanel UIWidth8em UIFloatLeft">
+                                    <h:outputText value="Mật khẩu"/>
+                                </div>
+                                <div class="UIFloatLeft">
+                                    <p:password value="#{customerRegister.customer.password}"  size="40" styleClass="height29px"/>
+                                </div>
+                                <div class="UIClearLeft"><span></span></div>
+                            </div>
+                            <div class="UIPanelTable">
+                                <div class="UILabelPanel UIWidth8em UIFloatLeft">
+                                    <h:outputText value="Xác nhận lại"/>
+                                </div>
+                                <div class="UIFloatLeft">
+                                    <p:password  value="#{customerRegister.customer.retypePassword}"
+                                                 size="40" styleClass="height29px"/>
+                                </div>
+                                <div class="UIClearLeft"><span></span></div>
+                            </div>
+                            <div class="UIButtonPanel">
+                                <p:commandButton styleClass ="UIBantourSearchBottom" value="Tiếp tục đăng ký" actionListener="#{customerRegister.registerCustomerSite()}" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="UIClearLeft"><span></span></div>
+                </div>
+            </h:form>
+            <script type="text/javascript">
+                function handleLoginRequest(xhr, status, args) {
+                    if (args.validationFailed || !args.loggedIn) {
+                        PF('loginDig').jq.effect("shake", {times: 5}, 100);
+                    }
+                    else {
+                        //                        PF('loginDi).hide();
+                        //                        $('#loginLink').fadeOut();g'
+                        location.reload();
+                    }
+                }
+            </script>
+        </div>
+    </div>
+    <div class=" UIFloatRight UIWidth30percent">
+        <!--            <h:form>
+                        <ui:include src="right_menu.xhtml"/>
+                    </h:form>-->
+
+    </div>
+    <div class="UIClearBoth"><span></span></div>
+ 
+
+</ui:composition>

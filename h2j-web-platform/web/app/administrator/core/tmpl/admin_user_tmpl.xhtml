@@ -1,0 +1,207 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+
+    <div class="UIPanelTable">
+        <div class="UILabelPanel UIFloatLeft UIWidth12em">
+            <h:outputText value="#{msg['user_fullname']}"/>
+        </div>
+        <div class="UIRightContent">
+            <div class=" UIFloatLeft">
+                <p:inputText value="#{humanController.human.fullName}"/>
+            </div>
+            <div class="UILabelPanel UIFloatLeft UIMarginLeft10px UIMarginRight10px UIWidth10em" >
+                <h:outputText value="#{msg['user_gender']}"/>
+            </div>
+            <div class=" UIFloatLeft">
+                <p:selectOneMenu style="width: 120px" value="#{humanController.human.gender}" converter="javax.faces.Integer">
+                    <f:selectItem itemLabel="#{msg['user_gender_select']}" itemValue="-1"/>
+                    <f:selectItems value="#{humanController.userGenderList}"/>
+                </p:selectOneMenu>
+            </div>
+        </div>
+        <div class="UIClearLeft"><span></span></div>
+    </div>
+    <div class="UIPanelTable">
+        <div class="UILabelPanel UIFloatLeft UIWidth12em">
+            <h:outputText value="#{msg['user_birthday']}"/>
+        </div>
+        <div class="UIRightContent">
+            <div class=" UIFloatLeft">
+                <p:calendar value="#{humanController.human.birthday}" pattern="dd/MM/yyyy" showButtonPanel="true" navigator="true"/>
+            </div>
+            <div class="UILabelPanel UIFloatLeft UIMarginLeft10px UIMarginRight10px UIWidth10em" >
+                <h:outputText value="#{msg['user_work_postion']}"/>
+            </div>
+            <div class=" UIFloatLeft">
+                <p:inputText value="#{humanController.human.possition}"/>
+            </div>
+        </div>
+        <div class="UIClearLeft"><span></span></div>
+    </div>
+
+
+    <div class="UIPanelTable">
+        <div class="UILabelPanel UIFloatLeft UIWidth12em">
+            <h:outputText value="#{msg['user_cmt']}"/>
+        </div>
+        <div class="UIRightContent">
+            <div class=" UIFloatLeft">
+                <p:inputText value="#{humanController.human.cmt}"/>
+            </div>
+            <div class="UILabelPanel UIFloatLeft UIMarginLeft10px UIMarginRight10px UIWidth10em">
+                <h:outputText value="#{msg['user_cmt_issue_date']}"/>
+            </div>
+            <div class=" UIFloatLeft">
+                <p:calendar value="#{humanController.human.cmtApproveDate}" pattern="dd/MM/yyyy"/>
+            </div>
+        </div>
+        <div class="UIClearLeft"><span></span></div>
+    </div>
+    <div class="UIPanelTable">
+        <div class="UILabelPanel UIFloatLeft UIWidth12em">
+            <h:outputText value="Địa chỉ "/>
+        </div>
+        <div class="UIRightContent">
+            <p:inputText size="66"   value="#{humanController.human.address}"/>
+        </div>
+        <div class="UIClearLeft"><span></span></div>
+    </div>
+
+    <div class="UIPanelTable">
+        <div class="UILabelPanel UIFloatLeft UIWidth12em">
+            <h:outputText value="#{msg['user_tel']}"/>
+        </div>
+        <div class="UIRightContent">
+            <div class="UIFloatLeft UIMarginRight10px">
+                <p:inputMask mask="(+999) 099.999.9999?.9"   value="#{humanController.human.tel}"/>
+            </div>
+            <div class="UIFloatLeft UIMarginRight10px UILabelPanel UIWidth10em" >
+                <h:outputText value="#{msg['user_phone']}"/>
+            </div>
+            <div class="UIFloatLeft UIPanel UIMarginRight10px">
+                <p:inputMask mask="(+999) 099.999.9999?.9"   value="#{humanController.human.phone}"/>   
+            </div>
+            <div class="UIClearLeft"><span></span></div>
+        </div>
+        <div class="UIClearLeft"><span></span></div>
+    </div>
+    <div class="UIPanelTable">
+        <div class="UILabelPanel UIFloatLeft UIWidth12em">
+            <h:outputText value="#{msg['user_email']}"/>
+        </div>
+        <div class="UIRightContent">
+            <div class="UIFloatLeft UIMarginRight10px">
+                <p:inputText   value="#{humanController.human.emailAddress}"/>
+            </div>
+            <div class="UIFloatLeft UIMarginRight10px UILabelPanel UIWidth10em" >
+                <h:outputText value="#{msg['user_contact_yahoo']}"/>
+            </div>
+            <div class="UIFloatLeft UIPanel UIMarginRight10px">
+                <p:inputText   value="#{humanController.human.yahoo}"/>
+            </div>
+            <div class="UIClearLeft"><span></span></div>
+        </div>
+        <div class="UIClearLeft"><span></span></div>
+    </div>
+    <div class="UIPanelTable">
+        <div class="UILabelPanel UIFloatLeft UIWidth12em">
+            <h:outputText value="#{msg['user_contact_skype']}"/>
+        </div>
+        <div class="UIRightContent">
+            <p:inputText  value="#{humanController.human.skype}"/>
+        </div>
+        <div class="UIClearLeft"><span></span></div>
+    </div>
+
+
+
+    <p:fieldset legend="Tài khoản đăng nhập hệ thống" toggleable="true" toggleSpeed="500"
+                styleClass="UIFieldsetSpace">  
+
+        <div class="UIPanelTable">
+            <div class="UILabelPanel UIFloatLeft UIWidth12em">
+                <h:outputText value="#{msg['user_username']}"/>
+            </div>
+            <div class="UIRightContent">
+                <div class=" UIFloatLeft">
+                    <p:inputText value="#{humanController.human.username}"/>
+                </div>
+
+            </div>
+
+            <div class="UIClearLeft"><span></span></div>
+        </div>
+
+        <div class="UIPanelTable">
+            <div class="UILabelPanel UIFloatLeft UIWidth12em">
+                <h:outputText value="#{msg['user_password']}"/>
+            </div>
+            <div class="UIRightContent ">
+                <div class=" UIFloatLeft">
+                    <h:inputSecret value="#{humanController.human.password}" />    
+                </div>
+
+                <div class="UILabelPanel UIFloatLeft UIMarginLeft10px UIMarginRight10px" style="width: 132px">
+                    <h:outputText value="#{msg['user_retype_password']}"/>
+                </div>
+                <div class="UIFloatLeft">
+                    <h:inputSecret value="#{humanController.human.retypePassword}" />
+                </div>
+                <div class="UIClearLeft"><span></span></div>
+            </div>
+
+            <div class="UIClearLeft"><span></span></div>
+        </div>
+
+        <div class="UIPanelTable">
+            <div class="UILabelPanel UIFloatLeft UIWidth12em">
+                <h:outputText value="#{msg['label_status_account']}"/>
+            </div>
+            <div class="UIRightContent">
+                <div class=" UIFloatLeft">
+                    <p:selectOneMenu style="width: 167px" value="#{humanController.human.status}" converter="javax.faces.Integer">
+                        <f:selectItem itemLabel="#{msg['select_status']}" itemValue="-1"/>
+                        <f:selectItems value="#{humanController.userStatuList}"/>
+                    </p:selectOneMenu>
+                </div>
+                <div class=" UIFloatLeft UIMargin10px">
+                    <p:selectBooleanCheckbox value="#{humanController.human.mandatoryResetPass}"/>
+                </div>
+                <div class=" UIFloatLeft UIMarginTop15px UIMarginRight10px" >
+                    <h:outputText value="#{msg['account_mandatoryResetPass_label']}"/>
+                </div>
+
+            </div>
+            <div class="UIClearLeft"><span></span></div>
+        </div>
+        <fieldset >
+            <legend>#{msg['label_limited_time_use']}</legend>
+            <div class="UIPanelTable">
+                <div class="UILabelPanel UIFloatLeft UIWidth12em">
+                    <h:outputText value="#{msg['label_from_date']}"/>
+                </div>
+                <div class="UIRightContent">
+                    <div class=" UIFloatLeft">
+                        <p:calendar value="#{humanController.human.startDate}" pattern="dd/MM/yyyy" showButtonPanel="true" navigator="true"/>
+                    </div>
+                    <div class="UILabelPanel UIFloatLeft UIMarginLeft10px UIMarginRight10px" style="width: 132px">
+                        <h:outputText value="#{msg['label_to_date']}"/>
+                    </div>
+                    <div class=" UIFloatLeft">
+                        <p:calendar value="#{humanController.human.endDate}" pattern="dd/MM/yyyy" showButtonPanel="true" navigator="true"/>
+                    </div>
+                </div>
+                <div class="UIClearLeft"><span></span></div>
+            </div>
+        </fieldset>
+    </p:fieldset>
+
+
+
+
+</ui:composition>

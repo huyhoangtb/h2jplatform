@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:h2j="http://xmlns.jcp.org/jsf/composite/h2j/admin">
+
+    <div class="UIThemesPanel">
+        <h:form  >
+
+            <p:messages />
+            <!--<ui:include src="/app/administrator/core/tmpl/admin_user_tmpl.xhtml"/>-->
+            <h2j:adminUserTmpl humanDto="#{orgPartnerController.human}"
+                               userGenderList="#{humanController.userGenderList}"
+                               userStatuList="#{humanController.userStatuList}"/>
+            <div class="UIButtonPanel">
+
+                <p:commandButton oncomplete ="onSuccessMessages()" value="#{msg['label_create_new']}"  rendered="#{orgPartnerController.human.humanId eq null}"
+                                 actionListener="#{orgPartnerController.saveHuman4Org}" ajax="false">
+
+                </p:commandButton>
+                <p:commandButton value="Cập nhật thông tin"  rendered="#{orgPartnerController.human.humanId ne null}"
+                                 actionListener="#{orgPartnerController.saveHuman4Org}" update=":orgTabPanelId">
+                </p:commandButton>
+                <p:commandButton value="Cập nhật tài khoản"  rendered="#{orgPartnerController.human.userId ne null}"
+                                 actionListener="#{orgPartnerController.saveUserOnly}" ajax="false">
+                </p:commandButton>
+                <p:commandButton value="Tạo tài khoản"  rendered="#{orgPartnerController.human.humanId ne null and orgPartnerController.human.userId eq null}"
+                                 actionListener="#{orgPartnerController.saveUserOnly}" update=":orgTabPanelId">
+                </p:commandButton>
+                <p:commandButton value="Đổi mật khẩu"  rendered="#{orgPartnerController.human.userId ne null}"
+                                 actionListener="#{orgPartnerController.updateUserPassword}" ajax="false">
+                </p:commandButton>
+                <p:commandButton oncomplete ="onSuccessMessages()" value="#{msg['label_retyping_date']}"  rendered="#{humanController.human.humanId eq null}"
+                                 actionListener="#{organizationController.retypeOrganization}" ajax="false">
+                </p:commandButton>
+
+                <p:commandButton value="#{msg['user_delete']}"  rendered="#{humanController.human.humanId ne null}"
+                                 actionListener="#{humanController.deleteHuman}" ajax="false">
+                    <p:confirmDialog  header="Xóa nhân viên này" message="Bạn có chắc chắn muốn xóa nhân viên này không?"  /> 
+                </p:commandButton>
+
+            </div>
+        </h:form>
+    </div>
+
+</ui:composition>

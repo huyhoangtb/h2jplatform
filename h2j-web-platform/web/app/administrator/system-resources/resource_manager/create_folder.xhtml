@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+
+
+    <p:dialog id="folderDigId" header="Tạo thư mục mới" widgetVar="folderDig" modal="true"  width="300" dynamic="true">  
+        <h:form id="folderDigFormId">
+            <p:messages autoUpdate="true" />
+            <div >
+                <div class="UIFloatLeft UIDivLabel UIMarginRight10px">
+                    <p:outputLabel value="Tên thư cha " rendered="#{resourceManagerController.folderTree.parentFolder ne null}"/>
+                </div>
+                <div class="UIFloatLeft">
+                    <p:outputLabel value="#{resourceManagerController.folderTree.parentFolder}"
+                                 rendered="#{resourceManagerController.folderTree.parentFolder ne null}"/>
+                </div>
+                <div class="UIClearLeft"><span></span></div>
+            </div>
+            <div class="UIMarginTop10px">
+                <div class="UIFloatLeft UIDivLabel UIMarginRight10px">
+                    <p:outputLabel value="Tên thư mục: "/>
+                </div>
+                <div class="UIFloatLeft">
+                    <p:inputText value="#{resourceManagerController.folderTree.folderName}"/>
+                </div>
+                <div class="UIClearLeft"><span></span></div>
+            </div>
+            <div style="display: table; margin: 15px auto; ">
+                <p:commandButton value="Tạo mới" actionListener="#{resourceManagerController.folderTree.createFolder()}" update=":treeFormId:treeFolder" rendered="#{resourceManagerController.folderTree.actionFlag eq 0}"
+                                 oncomplete="PF('folderDig').hide()"/>
+                <p:commandButton value="Tạo mới" actionListener="#{resourceManagerController.folderTree.createSubFolder()}" update=":treeFormId:treeFolder" rendered="#{resourceManagerController.folderTree.actionFlag eq 1}"
+                                 oncomplete="PF('folderDig').hide()"/>
+            </div>
+
+        </h:form>
+    </p:dialog>  
+
+</ui:composition>

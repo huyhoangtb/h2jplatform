@@ -1,0 +1,293 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<faces-config version="2.2"
+              xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>index</from-outcome>
+            <to-view-id>/index.jsf</to-view-id>
+            <redirect include-view-params="true"/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>login</from-outcome>
+            <to-view-id>/app/administrator/login/index.jsf</to-view-id>
+            <redirect include-view-params="true"/>
+        </navigation-case>
+    </navigation-rule>
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>edit_permission_detail</from-outcome>
+            <to-view-id>/app/administrator/core/permission/permission_detail.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>permission_list</from-outcome>
+            <to-view-id>/app/administrator/core/permission/index.xhtml</to-view-id>
+            <redirect include-view-params="true"/>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>edit_permission</from-outcome>
+            <to-view-id>/app/administrator/core/permission/edit.xhtml</to-view-id>
+            <redirect include-view-params="true"/>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>org-list</from-outcome>
+            <to-view-id>/app/administrator/core/organization/index.xhtml</to-view-id>
+            <redirect include-view-params="true"/>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>edit_organization</from-outcome>
+            <to-view-id>/app/administrator/core/organization/edit.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>org_form_addNew</from-outcome>
+            <to-view-id>/app/administrator/core/organization/edit_form_4Hotkey.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>edit_staff_admin</from-outcome>
+            <to-view-id>/app/administrator/core/staff/edit_form_full.xhtml</to-view-id>
+            <redirect include-view-params="true"/>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>staff_list_admin</from-outcome>
+            <to-view-id>/app/administrator/core/staff/index.xhtml</to-view-id>
+            <redirect include-view-params="true"/>
+        </navigation-case>
+        
+        <!--Quan ly agent-->
+        <navigation-case>
+            <from-outcome>add_new_agent</from-outcome>
+            <to-view-id>/app/administrator/core/partner/agent/edit.xhtml</to-view-id>
+            <redirect include-view-params="true"/>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>agent_list_admin</from-outcome>
+            <to-view-id>/app/administrator/core/partner/agent/index.xhtml</to-view-id>
+            <redirect include-view-params="true"/>
+        </navigation-case>
+        <!--Quan ly agent-->  
+           
+        <!--Quan ly supplier-->
+        <navigation-case>
+            <from-outcome>add_new_supplier</from-outcome>
+            <to-view-id>/app/administrator/core/partner/supplier/edit.xhtml</to-view-id>
+            <redirect include-view-params="true"/>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>supplier_list_admin</from-outcome>
+            <to-view-id>/app/administrator/core/partner/supplier/index.xhtml</to-view-id>
+            <redirect include-view-params="true"/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>supplier_tour_list_admin</from-outcome>
+            <to-view-id>/app/administrator/core/partner/supplier/supplier_tour/index.xhtml</to-view-id>
+            <redirect include-view-params="true"/>
+        </navigation-case>
+        <!--Quan ly supplier-->  
+           
+        <!--Quan ly khach hang-->
+        <navigation-case>
+            <from-outcome>add_new_customer</from-outcome>
+            <to-view-id>/app/administrator/core/partner/customer/edit.xhtml</to-view-id>
+            <redirect include-view-params="true"/>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>customer_list_admin</from-outcome>
+            <to-view-id>/app/administrator/core/partner/customer/index.xhtml</to-view-id>
+            <redirect include-view-params="true"/>
+        </navigation-case>
+       
+        
+        <navigation-case>
+            <from-outcome>add_new_org_cus</from-outcome>
+            <to-view-id>/app/administrator/core/partner/org_customer/edit.xhtml</to-view-id>
+            <redirect include-view-params="true"/>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>org_customer_list_admin</from-outcome>
+            <to-view-id>/app/administrator/core/partner/org_customer/index.xhtml</to-view-id>
+            <redirect include-view-params="true"/>
+        </navigation-case>
+        <!--Quan ly khach hang-->  
+           
+        <navigation-case>
+            <from-outcome>category_list</from-outcome>
+            <to-view-id>/app/administrator/core/cms/category/index.xhtml</to-view-id>
+            <redirect include-view-params="true"/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>edit_category</from-outcome>
+            <to-view-id>/app/administrator/core/cms/category/edit.xhtml</to-view-id>
+            <redirect include-view-params="true"/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>edit_permission_admin</from-outcome>
+            <to-view-id>/app/administrator/core/permission/edit.xhtml</to-view-id>
+            <redirect include-view-params="true"/>
+        </navigation-case>
+       
+        <navigation-case>
+            <from-outcome>edit_article</from-outcome>
+            <to-view-id>/app/administrator/core/cms/article/edit.xhtml</to-view-id>
+            <redirect include-view-params="true">
+            </redirect>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>editArticle</from-outcome>
+            <to-view-id>/app/administrator/core/cms/article/edit.xhtml</to-view-id>
+            <redirect include-view-params="true">
+            </redirect>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>article_list</from-outcome>
+            <to-view-id>/app/administrator/core/cms/article/index.xhtml</to-view-id>
+            <redirect include-view-params="true"/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>edit_location</from-outcome>
+            <to-view-id>/app/administrator/core/location/edit.xhtml</to-view-id>
+            <redirect include-view-params="true">
+            </redirect>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>create_location</from-outcome>
+            <to-view-id>/app/administrator/core/location/edit.xhtml</to-view-id>
+            <redirect include-view-params="true">
+                <!--                <redirect-param>
+                    <name>artid</name>
+                    <value>{articleManagerController.article.articleId}</value>
+                </redirect-param>-->
+                
+            </redirect>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>edit_role_admin</from-outcome>
+            <to-view-id>/app/administrator/core/role/edit.xhtml</to-view-id>
+            <redirect include-view-params="true"/>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>role_list</from-outcome>
+            <to-view-id>/app/administrator/core/role/index.xhtml</to-view-id>
+            <redirect include-view-params="true"/>
+        </navigation-case>
+        
+      
+    </navigation-rule>
+    
+    <navigation-rule>
+        <description>Site Manager</description>
+        
+        <navigation-case>
+            <from-outcome>site-administrator</from-outcome>
+            <to-view-id>/app/administrator/site_manager/site_menu/index.xhtml</to-view-id>
+            <redirect include-view-params="true"/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>site-manager-menu</from-outcome>
+            <to-view-id>/app/administrator/site_manager/site_menu/index.xhtml</to-view-id>
+            <redirect include-view-params="true"/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>edit-menu</from-outcome>
+            <to-view-id>/app/administrator/site_manager/site_menu/edit.xhtml</to-view-id>
+            <redirect include-view-params="true"/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>edit-menu</from-outcome>
+            <to-view-id>/app/administrator/site_manager/site_menu/edit.xhtml</to-view-id>
+            <redirect include-view-params="true"/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>edit-menu-group</from-outcome>
+            <to-view-id>/app/administrator/site_manager/site_menu/edit_menu_group.xhtml</to-view-id>
+            <redirect include-view-params="true"/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>menu-group-list</from-outcome>
+            <to-view-id>/app/administrator/site_manager/site_menu/menu_group_list.xhtml</to-view-id>
+            <redirect include-view-params="true"/>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>manager_modules_list</from-outcome>
+            <to-view-id>/app/administrator/site_manager/module_manager/index.xhtml</to-view-id>
+            <redirect include-view-params="true"/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>editModules</from-outcome>
+            <to-view-id>/app/administrator/site_manager/module_manager/edit.xhtml</to-view-id>
+            <redirect include-view-params="true"/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>edit_discount_code</from-outcome>
+            <to-view-id>/app/administrator/discount_code/edit.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>discount_code_list</from-outcome>
+            <to-view-id>/app/administrator/discount_code/index.xhtml</to-view-id>
+            <redirect include-view-params="true"/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>suplier_register_web</from-outcome>
+            <to-view-id>/web-app/bantour052014/register/suplier_register.xhtml</to-view-id>
+            <redirect include-view-params="true"/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>suplier_register_web_step2</from-outcome>
+            <to-view-id>/web-app/bantour052014/register/production_package.xhtml</to-view-id>
+            <redirect include-view-params="true"/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>suplier_register_web_step3</from-outcome>
+            <to-view-id>/web-app/bantour052014/register/account_setup.xhtml</to-view-id>
+            <redirect include-view-params="true"/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>suplier_register_web_step4</from-outcome>
+            <to-view-id>/web-app/bantour052014/register/finish_register.xhtml</to-view-id>
+            <redirect include-view-params="true"/>
+        </navigation-case>
+        
+        <navigation-case>
+            <from-outcome>user_login</from-outcome>
+            <to-view-id>/web-app/bantour052014/logined_user/login.jsf</to-view-id>
+            <redirect include-view-params="true"/>
+        </navigation-case>
+    </navigation-rule>
+    
+    <converter>
+        <converter-id>organizationConverter</converter-id>
+        <converter-class>net.hj2eplatform.converter.OrganizationAutoConverter</converter-class>
+    </converter>
+   
+    <converter>
+        <converter-id>locationConverter</converter-id>
+        <converter-class>net.hj2eplatform.converter.LocationConverter</converter-class>
+    </converter>
+   
+    <converter>
+        <converter-id>permissionConverter</converter-id>
+        <converter-class>net.hj2eplatform.converter.PermissionConverter</converter-class>
+    </converter>
+   
+    <converter>
+        <converter-id>roleConverter</converter-id>
+        <converter-class>net.hj2eplatform.converter.RoleConverter</converter-class>
+    </converter>
+
+
+</faces-config>

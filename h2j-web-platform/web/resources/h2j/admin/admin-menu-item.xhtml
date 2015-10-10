@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:composite="http://java.sun.com/jsf/composite"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h2jView="http://xmlns.jcp.org/jsf/composite/h2j/views"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
+
+    <composite:interface>
+        <composite:attribute name="outcome"  type="java.lang.String"/>
+        <composite:attribute name="iconLeftClass" />
+        <composite:attribute name="iconRightClass" />
+        <composite:attribute name="itemLabel"/>
+        <composite:attribute name="classPanel"/>
+        <composite:attribute name="pageParameter"/>
+    </composite:interface>
+    <composite:implementation>
+        <li class="#{cc.attrs.classPanel} #{h2jPlatformAppUtils.isCurrentView(view.viewId,cc.attrs.outcome,cc.attrs.pageParameter) ? 'active' : ''}">
+            <h:link outcome="#{h2jPlatformAppUtils.concatURL(cc.attrs.outcome, cc.attrs.pageParameter)}" rendered="#{cc.attrs.outcome ne null}">
+                <c:if test="#{cc.attrs.iconLeftClass ne null}">
+                    <i class="#{cc.attrs.iconLeftClass}"></i>
+                </c:if>
+                <span>#{cc.attrs.itemLabel}</span>
+                <c:if test="#{cc.attrs.iconRightClass ne null}">
+                    <i class="#{cc.attrs.iconRightClass}"></i>
+                </c:if>
+            </h:link>
+            <c:if test="#{cc.attrs.outcome eq null}">
+                <a href="javascript:void(0)">
+                    <c:if test="#{cc.attrs.iconLeftClass ne null}">
+                        <i class="#{cc.attrs.iconLeftClass}"></i>
+                    </c:if>
+                    <span>#{cc.attrs.itemLabel}</span>
+                    <c:if test="#{cc.attrs.iconRightClass ne null}">
+                        <i class="#{cc.attrs.iconRightClass}"></i>
+                    </c:if>
+                </a>
+            </c:if>
+            <composite:insertChildren/>
+        </li>
+    </composite:implementation>
+</html>

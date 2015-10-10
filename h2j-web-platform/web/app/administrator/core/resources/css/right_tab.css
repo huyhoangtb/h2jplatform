@@ -1,0 +1,15 @@
+.UIMenuRightPanel .ui-menu, .ui-menu .ui-menu-child .ui-state-hover{
+    background: none transparent !important;
+}
+.UIMenuRightPanel .ui-menuitem-active {
+ 
+    font-weight: bold;
+}
+.UIMenuRightPanel .ui-menuitem-active .ui-state-hover{
+    background: none transparent !important;
+    box-shadow: none !important;
+    font-weight: bold;
+}
+.uirighmenuactive {
+    font-weight: bold !important;
+}

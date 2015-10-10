@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui">
+    <div class="UIPanelTable">
+        <div class="UILabelPanel UIFloatLeft UIWidth10em">
+            <h:outputText value="#{msg['user_username']}"/>
+        </div>
+        <div class="UIRightContent">
+            <p:outputPanel styleClass=" UIFloatLeft" rendered="#{humanController.human.userId eq null}">
+                <p:inputText value="#{humanController.human.username}" />
+            </p:outputPanel>
+            <p:outputPanel styleClass=" UIFloatLeft UILabelPanel" rendered="#{humanController.human.userId ne null}">
+                <p:outputLabel value="#{humanController.human.username}" />
+            </p:outputPanel>
+        </div>
+
+        <div class="UIClearLeft"><span></span></div>
+    </div>
+
+    <div class="UIPanelTable">
+        <div class="UILabelPanel UIFloatLeft UIWidth10em">
+            <h:outputText value="#{msg['user_password']}" />
+        </div>
+        <div class="UIRightContent ">
+            <div class=" UIFloatLeft">
+                <h:inputSecret value="#{humanController.human.password}" redisplay="false" styleClass="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all"/>    
+            </div>
+
+            <div class="UILabelPanel UIFloatLeft UIMarginLeft10px UIMarginRight10px" style="width: 132px">
+                <h:outputText value="#{msg['user_retype_password']}"/>
+            </div>
+            <div class="UIFloatLeft">
+                <h:inputSecret value="#{humanController.human.retypePassword}" redisplay="false" styleClass="ui-inputfield ui-inputtext ui-widget ui-state-default ui-corner-all"/>
+            </div>
+            <div class="UIClearLeft"><span></span></div>
+        </div>
+
+        <div class="UIClearLeft"><span></span></div>
+    </div>
+    <p:outputPanel styleClass="UIPanelTable" rendered="#{authenticationController.isGranted('ROLE_SUPER_ADMIN,ROLE_AS_ADMIN')}">
+        <div class="UILabelPanel UIFloatLeft UIWidth10em">
+            <h:outputText value="Gán nhóm quyền cho tài khoản" />
+        </div>
+        <div class="UIRightContent  ">
+            <div class=" UIMarginRight10px UIFloatLeft">
+                <p:autoComplete value="#{userController.userRoleList}"   styleClass="UIAutoComplate" disabled="#{userController.human.userId eq null}"
+                                id="userRolePojoId" completeMethod="#{userController.completeRole4User}"  
+                                var="role4User" itemLabel="#{role4User.roleName}" itemValue="#{role4User}" 
+                                converter="roleConverter"  forceSelection="true" multiple="true"
+                                >
+                    <p:ajax event="itemSelect" listener="#{userController.roleOnSelect4User}"  />  
+                    <p:ajax event="itemUnselect" listener="#{userController.roleOnUnselect4User}" />  
+                </p:autoComplete>  
+                <p:watermark for="userRolePojoId" value="Tên nhóm quyền" />
+            </div>
+            <div class="UIClearLeft"><span></span></div>
+        </div>
+        <div class="UIClearLeft"><span></span></div>
+    </p:outputPanel>
+    <div class="UIPanelTable">
+        <div class="UILabelPanel UIFloatLeft UIWidth10em">
+            <h:outputText value="#{msg['label_status_account']}"/>
+        </div>
+        <div class="UIRightContent">
+            <div class=" UIFloatLeft">
+                <p:selectOneMenu style="width: 167px" value="#{humanController.human.status}" converter="javax.faces.Integer">
+                    <f:selectItem itemLabel="#{msg['select_status']}" itemValue="-1"/>
+                    <f:selectItems value="#{humanController.userStatuList}"/>
+                </p:selectOneMenu>
+            </div>
+            <div class=" UIFloatLeft UIMargin10px">
+                <p:selectBooleanCheckbox value="#{humanController.human.mandatoryResetPass}"/>
+            </div>
+            <div class=" UIFloatLeft UIMarginTop15px UIMarginRight10px" >
+                <h:outputText value="#{msg['account_mandatoryResetPass_label']}"/>
+            </div>
+
+        </div>
+        <div class="UIClearLeft"><span></span></div>
+    </div>
+    <fieldset >
+        <legend>#{msg['label_limited_time_use']}</legend>
+        <div class="UIPanelTable">
+            <div class="UILabelPanel UIFloatLeft UIWidth10em">
+                <h:outputText value="#{msg['label_from_date']}"/>
+            </div>
+            <div class="UIRightContent">
+                <div class=" UIFloatLeft">
+                    <p:calendar value="#{humanController.human.startDate}" pattern="dd/MM/yyyy" showButtonPanel="true" navigator="true"/>
+                </div>
+                <div class="UILabelPanel UIFloatLeft UIMarginLeft10px UIMarginRight10px" style="width: 132px">
+                    <h:outputText value="#{msg['label_to_date']}"/>
+                </div>
+                <div class=" UIFloatLeft">
+                    <p:calendar value="#{humanController.human.endDate}" pattern="dd/MM/yyyy" showButtonPanel="true" navigator="true"/>
+                </div>
+            </div>
+            <div class="UIClearLeft"><span></span></div>
+        </div>
+    </fieldset>
+
+    <div class="UIButtonPanel">
+
+
+        <p:commandButton value="Tạo tài khoản"  rendered="#{humanController.human.userId eq null}"
+                         actionListener="#{humanController.saveUserOnly}" ajax="false">
+
+        </p:commandButton>
+        <p:commandButton value="#{msg['label_confirm_update']}"  rendered="#{humanController.human.userId ne null}"
+                         actionListener="#{humanController.saveUserOnly}" ajax="false">
+        </p:commandButton>
+        <p:commandButton value="Đổi mật khẩu"  rendered="#{humanController.human.userId ne null}"
+                         actionListener="#{humanController.savePasswordUserAccountOnly}" ajax="false">
+        </p:commandButton>
+    </div>
+
+
+
+
+</ui:composition>

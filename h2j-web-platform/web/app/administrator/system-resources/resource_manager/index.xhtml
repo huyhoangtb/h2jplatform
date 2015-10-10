@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <f:view>
+        <h:head>
+            <title>#{ckeditor[browser_images_popup_title]}</title>
+            <link rel="stylesheet" type="text/css" href="resources/css/browser.css"></link>
+            <link rel="stylesheet" type="text/css" href="resources/css/file_upload.css"></link>
+            <link rel="stylesheet" type="text/css" href="${facesContext.externalContext.requestContextPath}/themes/admin/resources/css/h2j.net.utils.css"></link>
+            <link rel="stylesheet" type="text/css" href="${facesContext.externalContext.requestContextPath}/themes/admin/resources/css/h2j.theme.all.css"></link>
+            <f:loadBundle basename="frameworks.ckeditor" var="ckeditor"/>
+        </h:head>
+        <h:body>
+
+            <div class="UITopResourcePanel">
+
+                <div class="UIFloatLeft UILabelFolder">
+                    <span >Thư mục</span>
+
+                </div>
+                <div class="UIFloatRight clearfix">
+
+                    <div class="UIFloatRight" style="padding: 3px;">
+                        <h:form   prependId="false">
+                            <p:inputText  id="brownResourceId" 
+                                          value="#{resourceManagerController.searchData}" style="padding: 5px; height: 1.1em"
+                                          onkeypress="if (event.keyCode == 13) {
+                                                      jQuery('#brownResourceId').trigger('change');
+                                                      return false;
+                                                  }" >
+                                <p:ajax event="change" update=":centerForm:ResourceManagerListId"  listener="#{resourceManagerController.searchActionListener}" />
+                            </p:inputText>
+                            <p:watermark for="brownResourceId" value="Tìm kiếm ảnh" />
+
+                        </h:form>
+                    </div>
+                    <div class="UIFloatRight " style="margin-top: 3px">
+                        <h:form>
+                            <p:commandButton  value="Delete" styleClass="UIDeleteButton"/>
+                        </h:form>
+                    </div>
+
+
+                    <div class="UIFloatRight">
+                        <h:form>
+                            <div class="UIMyImagePanel"> 
+                                <p:fileUpload id="uploadFile" styleClass="UIMyFileUpload" fileUploadListener="#{resourceManagerController.handleFileUpload}"
+                                              label="Upload" update=":centerForm:ResourceManagerListId"
+                                              mode="advanced" dragDropSupport="true"  auto="true"  multiple="true"
+                                              sizeLimit="1000000" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" 
+                                              invalidFileMessage="Vui lòng nhập đúng định dạng ảnh"
+                                              invalidSizeMessage="Dung lượng ảnh quá lớn, vui lòng kiểm tra lại"
+                                              onerror="PF('messagesDiglog').show()"/>   
+                            </div>
+                            <p:dialog id="messagesDiglog" widgetVar="messagesDiglog">
+                                <h:message for="uploadFile"/>
+                            </p:dialog> 
+                        </h:form>            
+                    </div>
+
+
+
+                    <div class="UIClearRight"><span></span></div>       
+                </div>
+
+            </div>
+
+
+            <p:layout stateful="true" style="min-width:1000px;min-height:600px;" >
+
+                <p:layoutUnit id="left" position="west"  resizable="true"  minSize="200">
+                    <h:form id="treeFormId">
+                        <p:contextMenu for="treeFolder">  
+                            <p:menuitem value="Tạo thư mục" ajax="true" actionListener="#{resourceManagerController.folderTree.creeateTypeListener(0)}"
+                                        onclick="PF('folderDig').show()" icon="ui-icon-search" 
+                                        update="treeFolder :folderDigFormId">
+                            </p:menuitem>  
+                            <p:menuitem value="Tạo thư mục con" ajax="true"  onclick="PF('folderDig').show()" icon="ui-icon-search" 
+                                        update="treeFolder :folderDigFormId" actionListener="#{resourceManagerController.folderTree.creeateTypeListener(1)}">
+
+                            </p:menuitem>  
+                            <p:menuitem value="Đồng bộ lại dữ liệu" ajax="true"  actionListener="#{resourceManagerController.folderTree.reImportDatabase}" icon="ui-icon-search" >
+                            </p:menuitem>  
+                            <p:menuitem value="Xóa thư mục này" update="treeFolder " actionListener="#{resourceManagerController.folderTree.deleteThisFolder}" icon="ui-icon-close" > 
+
+                            </p:menuitem>  
+                        </p:contextMenu>  
+
+
+                        <p:tree animate="true" style="min-height: 350px;" value="#{resourceManagerController.folderTree.root}"
+                                var="folder" dynamic="true" 
+                                selectionMode="single" selection="#{resourceManagerController.folderTree.selectedNode}"
+                                id="treeFolder" >  
+                            <p:ajax event="expand" listener="#{resourceManagerController.folderTree.onNodeExpand}"  update=":centerForm:ResourceManagerListId"/>  
+                            <p:ajax event="select"  listener="#{resourceManagerController.folderTree.onNodeSelected}" update=":centerForm:ResourceManagerListId"/>
+                            <p:treeNode expandedIcon="ui-icon ui-icon-folder-open" collapsedIcon="ui-icon ui-icon-folder-collapsed">  
+                                <h:outputText value="#{folder.folderName}"/>  
+                            </p:treeNode> 
+                        </p:tree>  
+                    </h:form>
+                </p:layoutUnit>
+
+
+
+                <p:layoutUnit id="center" position="center">
+                    <h:form  id="centerForm" >
+                        <p:dataList styleClass="UIResourceBrowser" id="ResourceManagerListId"
+                                    var="data" value="#{resourceManagerController.resourceData}" 
+                                    rows="12" paginator="true"  paginatorPosition="bottom" lazy="true"> 
+                            <div class="UIResourceBrowserImg">
+                                <div class="UIResourceImgContent">
+                                    <div class="UIImgContainer">
+                                        <div class="UIImgPanel">
+                                            <p:contextMenu for="ImgItemsId">  
+                                                <p:menuitem value="Xem và chỉnh sửa" ajax="true" actionListener="#{resourceManagerController.viewImage(data)}"
+                                                            onclick="PF('customImgDigVar').show()" icon="ui-icon-search" update=":customImgFormDigId">
+                                                </p:menuitem>  
+                                                <p:menuitem value="Xóa ảnh này" ajax="true" actionListener="#{resourceManagerController.viewImage(data)}"
+                                                            onclick="PF('customImgDigVar').show()" icon="ui-icon-search" >
+                                                </p:menuitem>  
+                                            </p:contextMenu>
+
+                                            <p:graphicImage id="ImgItemsId" value="/h2je/viewer/images?imgId=#{data.resourceId}" alt="#{data.metaAlt}"
+                                                            title="#{data.metaTitle}"/>        
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="UIResourceName">
+                                    <p:commandLink value="#{data.fileName}.#{data.extension}"
+                                                   onclick="selectFile('#{h2jPlatformAppUtils.serverImage}#{data.imageUrl}','')">
+                                    </p:commandLink>
+                                    
+                                </div>
+                            </div>
+                        </p:dataList>
+                    </h:form>
+                </p:layoutUnit>
+
+            </p:layout>
+
+            <ui:include src="create_folder.xhtml"/>
+            <ui:include src="custom_img.xhtml"/>
+
+            <script type="text/javascript">
+                    function selectFile(Url, msg) {
+
+                        window.opener.window.parent.CKEDITOR.tools.callFunction(#{articleManagerController.CKEditorFuncNum}, Url, msg);
+                        self.close();
+
+                    }
+            </script>
+
+        </h:body>
+    </f:view>
+</html>
+
+
+
